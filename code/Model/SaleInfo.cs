@@ -41,7 +41,7 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 购房日期
 		/// </summary>
-		private DateTime date;
+		private DateTime payingDate;
 		/// <summary>
 		/// 定金
 		/// </summary>
@@ -106,7 +106,7 @@ namespace TVMS.Model {
         /// <param name="salePrice"></param>
         /// <param name="deposit"></param>
         /// <param name="depositDate"></param>
-        /// <param name="date"></param>
+        /// <param name="payingDate"></param>
         /// <param name="cjk"></param>
         /// <param name="cjmj"></param>
         /// <param name="cjyy"></param>
@@ -130,7 +130,7 @@ namespace TVMS.Model {
         /// <param name="imprest5"></param>
         /// <param name="imprest5Date"></param>
         /// <param name="imprest5State"></param>
-        public SaleInfo(int saleId, decimal salePrice, decimal deposit, decimal depositDate, DateTime date, decimal cjk, float cjmj, float cjyy, int cjts, string remark, int quartersId, int customerId, int contractId, decimal imprest1, DateTime imprest1Date, int imprest1State, decimal imprest2, DateTime imprest2Date, int imprest2State, decimal imprest3, DateTime imprest3Date, int imprest3State, decimal imprest4, DateTime imprest4Date, int imprest4State, decimal imprest5, DateTime imprest5Date, int imprest5State)
+        public SaleInfo(int saleId, decimal salePrice, decimal deposit, decimal depositDate, DateTime payingDate, decimal cjk, float cjmj, float cjyy, int cjts, string remark, int quartersId, int customerId, int contractId, decimal imprest1, DateTime imprest1Date, int imprest1State, decimal imprest2, DateTime imprest2Date, int imprest2State, decimal imprest3, DateTime imprest3Date, int imprest3State, decimal imprest4, DateTime imprest4Date, int imprest4State, decimal imprest5, DateTime imprest5Date, int imprest5State)
         {
 
         }
@@ -210,12 +210,12 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 购房日期
 		/// </summary>
-		public DateTime Date{
+		public DateTime PayingDate{
 			get{
-				return date;
+				return payingDate;
 			}
 			set{
-				date = value;
+                payingDate = value;
 			}
 		}
 

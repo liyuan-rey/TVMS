@@ -15,7 +15,7 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 销售日期
 		/// </summary>
-		private DateTime date;
+		private DateTime signingDate;
 		/// <summary>
 		/// 合同号码
 		/// </summary>
@@ -45,10 +45,10 @@ namespace TVMS.Model {
         /// <param name="contractId"></param>
         /// <param name="sn"></param>
         /// <param name="type"></param>
-        /// <param name="date"></param>
+        /// <param name="signingDate"></param>
         /// <param name="customerId"></param>
         /// <param name="quartersId"></param>
-        public ContractInfo(int contractId, string sn, int type, DateTime date, int customerId, int quartersId)
+        public ContractInfo(int contractId, string sn, int type, DateTime signingDate, int customerId, int quartersId)
         {
 
         }
@@ -56,12 +56,12 @@ namespace TVMS.Model {
         /// <summary>
 		/// 销售日期
 		/// </summary>
-		public DateTime Date{
+        public DateTime SigningDate{
 			get{
-				return date;
+                return signingDate;
 			}
 			set{
-				date = value;
+                signingDate = value;
 			}
 		}
 
