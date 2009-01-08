@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TVMS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SQLConnString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tvms.mdb</Value>
+    </Setting>
+    <Setting Name="CommonDAL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TVMS.OleDbDAL</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
