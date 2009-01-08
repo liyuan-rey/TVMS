@@ -47,49 +47,4 @@ namespace TVMS.BLL {
 
 	}//end Tenement
 
-}
-
-namespace BLL {
-	public class Tenement {
-
-		public Tenement(){
-
-		}
-
-		~Tenement(){
-
-		}
-
-		/// 
-		/// <param name="tenementId"></param>
-		public void Delete(int tenementId){
-
-		}
-
-		/// 
-		/// <param name="tenementId"></param>
-		public TenementInfo GetTenement(int tenementId){
-
-			return null;
-		}
-
-		public IList<TenementInfo> GetTenements(){
-
-			return null;
-		}
-
-		/// 
-		/// <param name="tenement"></param>
-		public void Insert(TenementInfo tenement){
-
-		}
-
-		/// 
-		/// <param name="tenement"></param>
-		public void Save(TenementInfo tenement){
-
-		}
-
-	}//end Tenement
-
 }//end namespace BLL//end namespace BLL

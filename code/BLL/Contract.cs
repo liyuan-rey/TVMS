@@ -47,49 +47,4 @@ namespace TVMS.BLL {
 
 	}//end Contract
 
-}
-
-namespace BLL {
-	public class Contract {
-
-		public Contract(){
-
-		}
-
-		~Contract(){
-
-		}
-
-		/// 
-		/// <param name="contractId"></param>
-		public void Delete(int contractId){
-
-		}
-
-		/// 
-		/// <param name="contractId"></param>
-		public ContractInfo GetContract(int contractId){
-
-			return null;
-		}
-
-		public IList<ContractInfo> GetContracts(){
-
-			return null;
-		}
-
-		/// 
-		/// <param name="contract"></param>
-		public void Insert(ContractInfo contract){
-
-		}
-
-		/// 
-		/// <param name="contract"></param>
-		public void Save(ContractInfo contract){
-
-		}
-
-	}//end Contract
-
 }//end namespace BLL//end namespace BLL

@@ -47,49 +47,4 @@ namespace TVMS.BLL {
 
 	}//end Customer
 
-}
-
-namespace BLL {
-	public class Customer {
-
-		public Customer(){
-
-		}
-
-		~Customer(){
-
-		}
-
-		/// 
-		/// <param name="customerId"></param>
-		public void Delete(int customerId){
-
-		}
-
-		/// 
-		/// <param name="customerId"></param>
-		public CustomerInfo GetCustomer(int customerId){
-
-			return null;
-		}
-
-		public IList<CustomerInfo> GetCustomers(){
-
-			return null;
-		}
-
-		/// 
-		/// <param name="customer"></param>
-		public void Insert(CustomerInfo customer){
-
-		}
-
-		/// 
-		/// <param name="customer"></param>
-		public void Save(CustomerInfo customer){
-
-		}
-
-	}//end Customer
-
 }//end namespace BLL//end namespace BLL
