@@ -53,6 +53,37 @@
     <Compile Include="OleDbDAL\Quarters.cs" />
     <Compile Include="OleDbDAL\Sale.cs" />
     <Compile Include="OleDbDAL\Tenement.cs" />
+    <Compile Include="SmartClient\Controls\ContractsListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SmartClient\Controls\ContractsListView.Designer.cs">
+      <DependentUpon>ContractsListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClient\Controls\CustomersListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SmartClient\Controls\CustomersListView.Designer.cs">
+      <DependentUpon>CustomersListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClient\Controls\ITvmsListView.cs" />
+    <Compile Include="SmartClient\Controls\QuartersListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SmartClient\Controls\QuartersListView.Designer.cs">
+      <DependentUpon>QuartersListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClient\Controls\SalesListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SmartClient\Controls\SalesListView.Designer.cs">
+      <DependentUpon>SalesListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClient\Controls\TenementsListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SmartClient\Controls\TenementsListView.Designer.cs">
+      <DependentUpon>TenementsListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmartClient\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +107,26 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SmartClient\Controls\ContractsListView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ContractsListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartClient\Controls\CustomersListView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CustomersListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartClient\Controls\QuartersListView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>QuartersListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartClient\Controls\SalesListView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SalesListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartClient\Controls\TenementsListView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TenementsListView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SmartClient\MainForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -94,6 +145,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SmartClient\TvmsTypeInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IBLLStrategy\" />
