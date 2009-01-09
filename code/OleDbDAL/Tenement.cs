@@ -18,35 +18,84 @@ using TVMS.DBUtility;
 namespace TVMS.OleDbDAL {
 	public class Tenement : ITenement {
 
+        private const string SQL_SELECT_TENEMENTS = "SELECT Id, Name FROM TVMS_Tenements";
+        private const string SQL_SELECT_TENEMENT = "INSERT INTO TVMS_Tenements (TenementName) VALUES (@TenementName)";
+        private const string SQL_INSERT_TENEMENT = "SELECT Id, Name FROM TVMS_Tenements WHERE Id = @TenementId";
+        private const string SQL_UPDATE_TENEMENT = "UPDATE TVMS_Tenements SET TenementName = @TenementName WHERE TenementId = @TenementId";
+        private const string SQL_DELETE_TENEMENT = "DELETE FROM TVMS_Tenements WHERE TenementId = @TenementId";
+        private const string PARM_TENEMENT_ID = "@TenementId";
+        private const string PARM_TENEMENT_NAME = "@TenementName";
+
 		public IList<TenementInfo> GetTenements(){
 
-			return null;
-		}
+            IList<TenementInfo> tenements = new List<TenementInfo>();
+
+            using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_TENEMENTS, null))
+            {
+                while (rdr.Read())
+                {
+                    TenementInfo ten = new TenementInfo(rdr.GetInt32(0), rdr.GetString(1));
+                    tenements.Add(ten);
+                }
+            }
+            return tenements;
+        }
 
 		/// 
 		/// <param name="tenementId"></param>
 		public TenementInfo GetTenement(int tenementId){
 
-			return null;
-		}
+            TenementInfo tenement = null;
+
+            OleDbParameter parm = new OleDbParameter(PARM_TENEMENT_ID, OleDbType.Integer);
+            parm.Value = tenementId;
+
+            using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_TENEMENT, parm))
+            {
+                if (rdr.Read())
+
+                    tenement = new TenementInfo(rdr.GetInt32(0), rdr.GetString(1));
+                else
+                    tenement = new TenementInfo();
+            }
+            return tenement;
+        }
 
 		/// 
 		/// <param name="tenement"></param>
 		public void Insert(TenementInfo tenement){
 
+            OleDbParameter parm = new OleDbParameter(PARM_TENEMENT_NAME, OleDbType.VarChar, 20);
+            parm.Value = tenement.Name;
+
+            int numInserted = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_INSERT_TENEMENT, parm);
+            if (numInserted != 1)
+                throw new ApplicationException("DATA INTEGRITY ERROR ON TENEMENT INSERT");
 		}
 
 		/// 
 		/// <param name="tenementId"></param>
 		public void Delete(int tenementId){
 
-		}
+            OleDbParameter parm = new OleDbParameter(PARM_TENEMENT_ID, OleDbType.Integer);
+            parm.Value = tenementId;
+
+            int numDeleted = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_DELETE_TENEMENT, parm);
+            if (numDeleted != 1)
+                throw new ApplicationException("DATA INTEGRITY ERROR ON TENEMENT DELETE");
+        }
 
 		/// 
 		/// <param name="tenement"></param>
 		public void Update(TenementInfo tenement){
 
-		}
+            OleDbParameter parm = new OleDbParameter(PARM_TENEMENT_NAME, OleDbType.VarChar, 20);
+            parm.Value = tenement.Name;
+
+            int numUpdated = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_UPDATE_TENEMENT, parm);
+            if (numUpdated != 1)
+                throw new ApplicationException("DATA INTEGRITY ERROR ON TENEMENT UPDATE");
+        }
 
 	}//end Tenement
 
