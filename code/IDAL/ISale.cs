@@ -42,7 +42,7 @@ namespace TVMS.IDAL {
 
 		/// 
 		/// <param name="sale"></param>
-		void Save(SaleInfo sale);
+		void Update(SaleInfo sale);
 	}//end ISale
 
 }//end namespace IDAL

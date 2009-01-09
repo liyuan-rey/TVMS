@@ -30,7 +30,7 @@ namespace TVMS.IDAL {
 
 		/// 
 		/// <param name="tenement"></param>
-		void Save(TenementInfo tenement);
+		void Update(TenementInfo tenement);
 	}//end ITenement
 
 }//end namespace IDAL

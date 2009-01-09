@@ -46,7 +46,7 @@ namespace TVMS.OleDbDAL {
 
 		/// 
 		/// <param name="quarters"></param>
-		public void Save(QuartersInfo quarters){
+		public void Update(QuartersInfo quarters){
 
 		}
 

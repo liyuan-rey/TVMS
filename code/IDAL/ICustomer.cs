@@ -30,7 +30,7 @@ namespace TVMS.IDAL {
 
 		/// 
 		/// <param name="customer"></param>
-		void Save(CustomerInfo customer);
+		void Update(CustomerInfo customer);
 	}//end ICustomer
 
 }//end namespace IDAL

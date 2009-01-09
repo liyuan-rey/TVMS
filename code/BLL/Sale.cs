@@ -62,7 +62,7 @@ namespace TVMS.BLL {
 
 		/// 
 		/// <param name="sale"></param>
-		public void Save(SaleInfo sale){
+		public void Update(SaleInfo sale){
 
 		}
 

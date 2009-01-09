@@ -36,7 +36,7 @@ namespace TVMS.IDAL {
 
 		/// 
 		/// <param name="quarters"></param>
-		void Save(QuartersInfo quarters);
+		void Update(QuartersInfo quarters);
 	}//end IQuarters
 
 }//end namespace IDAL

@@ -41,7 +41,7 @@ namespace TVMS.BLL {
 
 		/// 
 		/// <param name="tenement"></param>
-		public void Save(TenementInfo tenement){
+		public void Update(TenementInfo tenement){
 
 		}
 

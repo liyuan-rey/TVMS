@@ -44,7 +44,7 @@ namespace TVMS.OleDbDAL {
 
 		/// 
 		/// <param name="customer"></param>
-		public void Save(CustomerInfo customer){
+		public void Update(CustomerInfo customer){
 
 		}
 

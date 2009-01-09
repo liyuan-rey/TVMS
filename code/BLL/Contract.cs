@@ -41,7 +41,7 @@ namespace TVMS.BLL {
 
 		/// 
 		/// <param name="contract"></param>
-		public void Save(ContractInfo contract){
+		public void Update(ContractInfo contract){
 
 		}
 

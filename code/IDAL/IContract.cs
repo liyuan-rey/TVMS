@@ -30,7 +30,7 @@ namespace TVMS.IDAL {
 
 		/// 
 		/// <param name="contract"></param>
-		void Save(ContractInfo contract);
+		void Update(ContractInfo contract);
 	}//end IContract
 
 }//end namespace IDAL
