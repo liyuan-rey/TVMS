@@ -15,7 +15,7 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 项目编号
 		/// </summary>
-		private int id;
+		private int tenementId;
 		/// <summary>
 		/// 项目名称
 		/// </summary>
@@ -26,9 +26,9 @@ namespace TVMS.Model {
 		}
 
         /// 
-        /// <param name="id"></param>
+        /// <param name="tenementId"></param>
         /// <param name="name"></param>
-        public TenementInfo(int id, string name)
+        public TenementInfo(int tenementId, string name)
         {
 
         }
@@ -36,12 +36,12 @@ namespace TVMS.Model {
         /// <summary>
 		/// 项目编号
 		/// </summary>
-		public int Id{
+		public int TenementId{
 			get{
-				return id;
+				return tenementId;
 			}
 			set{
-				id = value;
+				tenementId = value;
 			}
 		}
 

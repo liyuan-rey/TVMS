@@ -19,7 +19,7 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 客户编号
 		/// </summary>
-		private int id;
+		private int customerId;
 		/// <summary>
 		/// 客户姓名
 		/// </summary>
@@ -34,11 +34,11 @@ namespace TVMS.Model {
 		}
 
         /// 
-        /// <param name="id"></param>
+        /// <param name="customerId"></param>
         /// <param name="name"></param>
         /// <param name="tel"></param>
         /// <param name="address"></param>
-        public CustomerInfo(int id, string name, string tel, string address)
+        public CustomerInfo(int customerId, string name, string tel, string address)
         {
 
         }
@@ -58,12 +58,12 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 客户编号
 		/// </summary>
-		public int Id{
+		public int CustomerId{
 			get{
-				return id;
+				return customerId;
 			}
 			set{
-				id = value;
+				customerId = value;
 			}
 		}
 

@@ -45,7 +45,7 @@ CREATE TABLE TVMS_Contracts (
 );
 
 CREATE TABLE TVMS_Customers ( 
-	Id int identity(200000,1)  NOT NULL,
+	CustomerId int identity(200000,1)  NOT NULL,
 	Name nvarchar(20) NOT NULL,
 	Address nvarchar(60),
 	Tel nvarchar(20)
@@ -95,7 +95,7 @@ CREATE TABLE TVMS_Sales (
 );
 
 CREATE TABLE TVMS_Tenements ( 
-	Id int identity(100000,1)  NOT NULL,
+	TenementId int identity(100000,1)  NOT NULL,
 	Name nvarchar(20) NOT NULL
 );
 
@@ -104,7 +104,7 @@ ALTER TABLE TVMS_Contracts ADD CONSTRAINT PK_Contracts
 	PRIMARY KEY CLUSTERED (ContractId);
 
 ALTER TABLE TVMS_Customers ADD CONSTRAINT PK_Customers 
-	PRIMARY KEY CLUSTERED (Id);
+	PRIMARY KEY CLUSTERED (CustomerId);
 
 ALTER TABLE TVMS_Quarters ADD CONSTRAINT PK_Quarters 
 	PRIMARY KEY CLUSTERED (QuartersId);
@@ -113,25 +113,25 @@ ALTER TABLE TVMS_Sales ADD CONSTRAINT PK_Sales
 	PRIMARY KEY CLUSTERED (SaleId);
 
 ALTER TABLE TVMS_Tenements ADD CONSTRAINT PK_Tenements 
-	PRIMARY KEY CLUSTERED (Id);
+	PRIMARY KEY CLUSTERED (TenementId);
 
 
 
 
 ALTER TABLE TVMS_Contracts ADD CONSTRAINT FK_Contracts_Customers 
-	FOREIGN KEY (CustomerId) REFERENCES TVMS_Customers (Id);
+	FOREIGN KEY (CustomerId) REFERENCES TVMS_Customers (CustomerId);
 
 ALTER TABLE TVMS_Contracts ADD CONSTRAINT FK_Contracts_Quarters 
 	FOREIGN KEY (QuartersId) REFERENCES TVMS_Quarters (QuartersId);
 
 ALTER TABLE TVMS_Quarters ADD CONSTRAINT FK_Quarters_Tenements 
-	FOREIGN KEY (TenementId) REFERENCES TVMS_Tenements (Id);
+	FOREIGN KEY (TenementId) REFERENCES TVMS_Tenements (TenementId);
 
 ALTER TABLE TVMS_Sales ADD CONSTRAINT FK_Sales_Contracts 
 	FOREIGN KEY (ContractId) REFERENCES TVMS_Contracts (ContractId);
 
 ALTER TABLE TVMS_Sales ADD CONSTRAINT FK_Sales_Customers 
-	FOREIGN KEY (CustomerId) REFERENCES TVMS_Customers (Id);
+	FOREIGN KEY (CustomerId) REFERENCES TVMS_Customers (CustomerId);
 
 ALTER TABLE TVMS_Sales ADD CONSTRAINT FK_Sales_Quarters 
 	FOREIGN KEY (QuartersId) REFERENCES TVMS_Quarters (QuartersId);
