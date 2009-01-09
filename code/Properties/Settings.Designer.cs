@@ -25,7 +25,8 @@ namespace TVMS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("tvms.mdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.\\Data\\tvms.mdb;Persist Security Inf" +
+            "o=False;Jet OLEDB:Database Password=")]
         public string SQLConnString {
             get {
                 return ((string)(this["SQLConnString"]));
