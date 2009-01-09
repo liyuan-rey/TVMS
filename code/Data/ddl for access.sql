@@ -36,23 +36,23 @@ DROP TABLE TVMS_Tenements;
 
 
 CREATE TABLE TVMS_Contracts ( 
-	ContractId long identity(300000,1)  NOT NULL,
+	ContractId int identity(300000,1)  NOT NULL,
 	Sn nvarchar(30),
 	Type int,
 	SigningDate datetime,
-	CustomerId long,
-	QuartersId long
+	CustomerId int,
+	QuartersId int
 );
 
 CREATE TABLE TVMS_Customers ( 
-	Id long identity(200000,1)  NOT NULL,
+	Id int identity(200000,1)  NOT NULL,
 	Name nvarchar(20) NOT NULL,
 	Address nvarchar(60),
 	Tel nvarchar(20)
 );
 
 CREATE TABLE TVMS_Quarters ( 
-	QuartersId long identity(500000,1)  NOT NULL,
+	QuartersId int identity(500000,1)  NOT NULL,
 	Model int,
 	BuiltUpArea real,
 	MarketPrice money,
@@ -60,11 +60,11 @@ CREATE TABLE TVMS_Quarters (
 	Property int,
 	Code nvarchar(20),
 	Quantity int,
-	TenementId long
+	TenementId int
 );
 
 CREATE TABLE TVMS_Sales ( 
-	SaleId long identity(400000,1)  NOT NULL,
+	SaleId int identity(400000,1)  NOT NULL,
 	SalePrice money,
 	PayingDate datetime,
 	Deposit money,
@@ -89,13 +89,13 @@ CREATE TABLE TVMS_Sales (
 	Imprest5Date datetime,
 	Imprest5State int,
 	Remark nvarchar(100),
-	QuartersId long,
-	ContractId long,
-	CustomerId long
+	QuartersId int,
+	ContractId int,
+	CustomerId int
 );
 
 CREATE TABLE TVMS_Tenements ( 
-	Id long identity(100000,1)  NOT NULL,
+	Id int identity(100000,1)  NOT NULL,
 	Name nvarchar(20) NOT NULL
 );
 
