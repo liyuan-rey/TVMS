@@ -18,57 +18,233 @@ using TVMS.DBUtility;
 namespace TVMS.OleDbDAL {
 	public class Sale : ISale {
 
-		/// 
+        private const string SQL_SELECT_SALES = "SELECT SaleId, SalePrice, PayingDate, Deposit, DepositDate, Cjk, Cjmj, Cjts, Cjyy, Imprest1, Imprest1Date, Imprest1State, Imprest2, Imprest2Date, Imprest2State, Imprest3, Imprest3Date, Imprest3State, Imprest4, Imprest4Date, Imprest4State, Imprest5, Imprest5Date, Imprest5State, Remark, QuartersId, ContractId, CustomerId FROM TVMS_Sales";
+        private const string SQL_SELECT_SALE = "SELECT SaleId, SalePrice, PayingDate, Deposit, DepositDate, Cjk, Cjmj, Cjts, Cjyy, Imprest1, Imprest1Date, Imprest1State, Imprest2, Imprest2Date, Imprest2State, Imprest3, Imprest3Date, Imprest3State, Imprest4, Imprest4Date, Imprest4State, Imprest5, Imprest5Date, Imprest5State, Remark, QuartersId, ContractId, CustomerId FROM TVMS_Sales WHERE SaleId = @SaleId";
+        private const string SQL_INSERT_SALE = "INSERT INTO TVMS_Sales (SalePrice, PayingDate, Deposit, DepositDate, Cjk, Cjmj, Cjts, Cjyy, Imprest1, Imprest1Date, Imprest1State, Imprest2, Imprest2Date, Imprest2State, Imprest3, Imprest3Date, Imprest3State, Imprest4, Imprest4Date, Imprest4State, Imprest5, Imprest5Date, Imprest5State, Remark, QuartersId, ContractId, CustomerId) VALUES (@SalePrice, @PayingDate, @Deposit, @DepositDate, @Cjk, @Cjmj, @Cjts, @Cjyy, @Imprest1, @Imprest1Date, @Imprest1State, @Imprest2, @Imprest2Date, @Imprest2State, @Imprest3, @Imprest3Date, @Imprest3State, @Imprest4, @Imprest4Date, @Imprest4State, @Imprest5, @Imprest5Date, @Imprest5State, @Remark, @QuartersId, @ContractId, @CustomerId)";
+        private const string SQL_UPDATE_SALE = "UPDATE TVMS_Sales SET SalePrice = @SalePrice, PayingDate = @PayingDate, Deposit = @Deposit, DepositDate = @DepositDate, Cjk = @Cjk, Cjmj = @Cjmj, Cjts = @Cjts, Cjyy = @Cjyy, Imprest1 = @Imprest1, Imprest1Date = @Imprest1Date, Imprest1State = @Imprest1State, Imprest2 = @Imprest2, Imprest2Date = @Imprest2Date, Imprest2State = @Imprest2State, Imprest3 = @Imprest3, Imprest3Date = @Imprest3Date, Imprest3State = @Imprest3State, Imprest4 = @Imprest4, Imprest4Date = @Imprest4Date, Imprest4State = @Imprest4State, Imprest5 = @Imprest5, Imprest5Date = @Imprest5Date, Imprest5State = @Imprest5State, Remark = @Remark, QuartersId = @QuartersId, ContractId = @ContractId, CustomerId = @CustomerId WHERE SaleId = @SaleId";
+        private const string SQL_DELETE_SALE = "DELETE FROM TVMS_Sales WHERE SaleId = @SaleId";
+        private const string PARM_SALE_ID = "@SaleId";
+        private const string PARM_SALE_PRICE = "@SalePrice";
+        private const string PARM_PAYING_DATE = "@PayingDate";
+        private const string PARM_DEPOSIT = "@Deposit";
+        private const string PARM_DEPOSIT_DATE = "@DepositDate";
+        private const string PARM_CJK = "@Cjk";
+        private const string PARM_CJMJ = "@Cjmj";
+        private const string PARM_CJTS = "@Cjts";
+        private const string PARM_CJYY = "@Cjyy";
+        private const string PARM_IMPREST1 = "@Imprest1";
+        private const string PARM_IMPREST1_DATE = "@Imprest1Date";
+        private const string PARM_IMPREST1_STATE = "@Imprest1State";
+        private const string PARM_IMPREST2 = "@Imprest2";
+        private const string PARM_IMPREST2_DATE = "@Imprest2Date";
+        private const string PARM_IMPREST2_STATE = "@Imprest2State";
+        private const string PARM_IMPREST3 = "@Imprest3";
+        private const string PARM_IMPREST3_DATE = "@Imprest3Date";
+        private const string PARM_IMPREST3_STATE = "@Imprest3State";
+        private const string PARM_IMPREST4 = "@Imprest4";
+        private const string PARM_IMPREST4_DATE = "@Imprest4Date";
+        private const string PARM_IMPREST4_STATE = "@Imprest4State";
+        private const string PARM_IMPREST5 = "@Imprest5";
+        private const string PARM_IMPREST5_DATE = "@Imprest5Date";
+        private const string PARM_IMPREST5_STATE = "@Imprest5State";
+        private const string PARM_REMARK = "@Remark";
+        private const string PARM_QUARTERS_ID = "@QuartersId";
+        private const string PARM_CONTRACT_ID = "@ContractId";
+        private const string PARM_CUSTOMER_ID = "@CustomerId";
+
+        public IList<SaleInfo> GetSales(){
+
+            IList<SaleInfo> sales = new List<SaleInfo>();
+
+            using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_SALES, null))
+            {
+                while (rdr.Read())
+                {
+                    SaleInfo sal = new SaleInfo(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetDateTime(2), rdr.GetDecimal(3), rdr.GetDateTime(4), rdr.GetDecimal(5), rdr.GetFloat(6), rdr.GetInt32(7), rdr.GetFloat(8), rdr.GetDecimal(9), rdr.GetDateTime(10), rdr.GetInt32(11), rdr.GetDecimal(12), rdr.GetDateTime(13), rdr.GetInt32(14), rdr.GetDecimal(15), rdr.GetDateTime(16), rdr.GetInt32(17), rdr.GetDecimal(18), rdr.GetDateTime(19), rdr.GetInt32(20), rdr.GetDecimal(21), rdr.GetDateTime(22), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
+                    sales.Add(sal);
+                }
+            }
+            return sales;
+        }
+
+        /// 
 		/// <param name="saleId"></param>
 		public SaleInfo GetSale(int saleId){
 
-			return null;
-		}
+            SaleInfo sale = null;
 
-		public IList<SaleInfo> GetSales(){
+            OleDbParameter parm = new OleDbParameter(PARM_SALE_ID, OleDbType.Integer);
+            parm.Value = saleId;
 
-			return null;
-		}
+            using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_SALE, parm))
+            {
+                if (rdr.Read())
+
+                    sale = new SaleInfo(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetDateTime(2), rdr.GetDecimal(3), rdr.GetDateTime(4), rdr.GetDecimal(5), rdr.GetFloat(6), rdr.GetInt32(7), rdr.GetFloat(8), rdr.GetDecimal(9), rdr.GetDateTime(10), rdr.GetInt32(11), rdr.GetDecimal(12), rdr.GetDateTime(13), rdr.GetInt32(14), rdr.GetDecimal(15), rdr.GetDateTime(16), rdr.GetInt32(17), rdr.GetDecimal(18), rdr.GetDateTime(19), rdr.GetInt32(20), rdr.GetDecimal(21), rdr.GetDateTime(22), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
+                else
+                    sale = new SaleInfo();
+            }
+            return sale;
+        }
 
 		/// 
 		/// <param name="sale"></param>
 		public void Insert(SaleInfo sale){
 
-		}
+            OleDbParameter[] salesParms = GetQuartersParameters();
 
-		/// 
-		/// <param name="quartersId"></param>
-		public SaleInfo GetSaleByQuarters(int quartersId){
+            salesParms[0].Value = sale.SaleId;
+            salesParms[1].Value = sale.SalePrice;
+            salesParms[2].Value = sale.PayingDate;
+            salesParms[3].Value = sale.Deposit;
+            salesParms[4].Value = sale.DepositDate;
+            salesParms[5].Value = sale.Cjk;
+            salesParms[6].Value = sale.Cjmj;
+            salesParms[7].Value = sale.Cjts;
+            salesParms[8].Value = sale.Cjyy;
+            salesParms[9].Value = sale.Imprest1;
+            salesParms[10].Value = sale.Imprest1Date;
+            salesParms[11].Value = sale.Imprest1State;
+            salesParms[12].Value = sale.Imprest2;
+            salesParms[13].Value = sale.Imprest2Date;
+            salesParms[14].Value = sale.Imprest2State;
+            salesParms[15].Value = sale.Imprest3;
+            salesParms[16].Value = sale.Imprest3Date;
+            salesParms[17].Value = sale.Imprest3State;
+            salesParms[18].Value = sale.Imprest4;
+            salesParms[19].Value = sale.Imprest4Date;
+            salesParms[20].Value = sale.Imprest4State;
+            salesParms[21].Value = sale.Imprest5;
+            salesParms[22].Value = sale.Imprest5Date;
+            salesParms[23].Value = sale.Imprest5State;
+            salesParms[24].Value = sale.Remark;
+            salesParms[25].Value = sale.QuartersId;
+            salesParms[26].Value = sale.ContractId;
+            salesParms[27].Value = sale.CustomerId;
 
-			return null;
-		}
-
-		/// 
-		/// <param name="customerId"></param>
-		public IList<SaleInfo> GetSalesByCustomer(int customerId){
-
-			return null;
-		}
-
-		/// 
-		/// <param name="contractId"></param>
-		public SaleInfo GetSaleByContract(int contractId){
-
-			return null;
-		}
+            int numInserted = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_INSERT_SALE, salesParms);
+            if (numInserted != 1)
+                throw new ApplicationException("DATA INTEGRITY ERROR ON SALE INSERT");
+        }
 
 		/// 
 		/// <param name="saleId"></param>
 		public void Delete(int saleId){
 
-		}
+            OleDbParameter parm = new OleDbParameter(PARM_SALE_ID, OleDbType.Integer);
+            parm.Value = saleId;
+
+            int numDeleted = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_DELETE_SALE, parm);
+            if (numDeleted != 1)
+                throw new ApplicationException("DATA INTEGRITY ERROR ON SALE DELETE");
+        }
 
 		/// 
 		/// <param name="sale"></param>
 		public void Update(SaleInfo sale){
 
-		}
+            OleDbParameter[] salesParms = GetQuartersParameters();
 
-	}//end Sale
+            salesParms[0].Value = sale.SaleId;
+            salesParms[1].Value = sale.SalePrice;
+            salesParms[2].Value = sale.PayingDate;
+            salesParms[3].Value = sale.Deposit;
+            salesParms[4].Value = sale.DepositDate;
+            salesParms[5].Value = sale.Cjk;
+            salesParms[6].Value = sale.Cjmj;
+            salesParms[7].Value = sale.Cjts;
+            salesParms[8].Value = sale.Cjyy;
+            salesParms[9].Value = sale.Imprest1;
+            salesParms[10].Value = sale.Imprest1Date;
+            salesParms[11].Value = sale.Imprest1State;
+            salesParms[12].Value = sale.Imprest2;
+            salesParms[13].Value = sale.Imprest2Date;
+            salesParms[14].Value = sale.Imprest2State;
+            salesParms[15].Value = sale.Imprest3;
+            salesParms[16].Value = sale.Imprest3Date;
+            salesParms[17].Value = sale.Imprest3State;
+            salesParms[18].Value = sale.Imprest4;
+            salesParms[19].Value = sale.Imprest4Date;
+            salesParms[20].Value = sale.Imprest4State;
+            salesParms[21].Value = sale.Imprest5;
+            salesParms[22].Value = sale.Imprest5Date;
+            salesParms[23].Value = sale.Imprest5State;
+            salesParms[24].Value = sale.Remark;
+            salesParms[25].Value = sale.QuartersId;
+            salesParms[26].Value = sale.ContractId;
+            salesParms[27].Value = sale.CustomerId;
+
+            int numUpdated = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_UPDATE_SALE, salesParms);
+            if (numUpdated != 1)
+                throw new ApplicationException("DATA INTEGRITY ERROR ON SALE UPDATE");
+        }
+
+        /// 
+        /// <param name="saleId"></param>
+        public SaleInfo GetSaleByQuarters(int saleId){
+
+            throw new ApplicationException("The method or operation is not implemented.");
+            return null;
+        }
+
+        /// 
+        /// <param name="customerId"></param>
+        public IList<SaleInfo> GetSalesByCustomer(int customerId){
+
+            throw new ApplicationException("The method or operation is not implemented.");
+            return null;
+        }
+
+        /// 
+        /// <param name="contractId"></param>
+        public SaleInfo GetSaleByContract(int contractId){
+
+            throw new ApplicationException("The method or operation is not implemented.");
+            return null;
+        }
+
+        private static OleDbParameter[] GetQuartersParameters()
+        {
+            OleDbParameter[] parms = OleDbHelper.GetCachedParameters(SQL_INSERT_SALE);
+
+            if (parms == null)
+            {
+                parms = new OleDbParameter[] {
+					new OleDbParameter(PARM_SALE_ID, OleDbType.Integer),
+					new OleDbParameter(PARM_SALE_PRICE, OleDbType.Currency),
+					new OleDbParameter(PARM_PAYING_DATE, OleDbType.DBTimeStamp),
+					new OleDbParameter(PARM_DEPOSIT, OleDbType.Currency),
+					new OleDbParameter(PARM_DEPOSIT_DATE, OleDbType.DBTimeStamp),
+					new OleDbParameter(PARM_CJK, OleDbType.Currency),
+					new OleDbParameter(PARM_CJMJ, OleDbType.Single),
+					new OleDbParameter(PARM_CJTS, OleDbType.Integer),
+					new OleDbParameter(PARM_CJYY, OleDbType.Single),
+					new OleDbParameter(PARM_IMPREST1, OleDbType.Currency),
+					new OleDbParameter(PARM_IMPREST1_DATE, OleDbType.DBTimeStamp),
+					new OleDbParameter(PARM_IMPREST1_STATE, OleDbType.Integer),
+					new OleDbParameter(PARM_IMPREST2, OleDbType.Currency),
+					new OleDbParameter(PARM_IMPREST2_DATE, OleDbType.DBTimeStamp),
+					new OleDbParameter(PARM_IMPREST2_STATE, OleDbType.Integer),
+					new OleDbParameter(PARM_IMPREST3, OleDbType.Currency),
+					new OleDbParameter(PARM_IMPREST3_DATE, OleDbType.DBTimeStamp),
+					new OleDbParameter(PARM_IMPREST3_STATE, OleDbType.Integer),
+					new OleDbParameter(PARM_IMPREST4, OleDbType.Currency),
+					new OleDbParameter(PARM_IMPREST4_DATE, OleDbType.DBTimeStamp),
+					new OleDbParameter(PARM_IMPREST4_STATE, OleDbType.Integer),
+					new OleDbParameter(PARM_IMPREST5, OleDbType.Currency),
+					new OleDbParameter(PARM_IMPREST5_DATE, OleDbType.DBTimeStamp),
+					new OleDbParameter(PARM_IMPREST5_STATE, OleDbType.Integer),
+					new OleDbParameter(PARM_REMARK, OleDbType.VarChar, 100),
+					new OleDbParameter(PARM_QUARTERS_ID, OleDbType.Integer),
+					new OleDbParameter(PARM_CONTRACT_ID, OleDbType.Integer),
+					new OleDbParameter(PARM_CUSTOMER_ID, OleDbType.Integer),
+                };
+
+                OleDbHelper.CacheParameters(SQL_INSERT_SALE, parms);
+            }
+
+            return parms;
+        }
+    }//end Sale
 
 }//end namespace OleDbDAL

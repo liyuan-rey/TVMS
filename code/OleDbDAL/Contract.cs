@@ -21,6 +21,8 @@ namespace TVMS.OleDbDAL {
         private const string SQL_SELECT_CONTRACTS = "SELECT ContractId, Sn, ContractType, SigningDate, CustomerId, QuartersId FROM TVMS_Contracts";
         private const string SQL_SELECT_CONTRACT = "SELECT ContractId, Sn, ContractType, SigningDate, CustomerId, QuartersId FROM TVMS_Contracts WHERE ContractId = @ContractId";
         private const string SQL_INSERT_CONTRACT = "INSERT INTO TVMS_Contracts (Sn, ContractType, SigningDate, CustomerId, QuartersId) VALUES (@Sn, @ContractType, @SigningDate, @CustomerId, @QuartersId)";
+        private const string SQL_UPDATE_CONTRACT = "UPDATE TVMS_Contracts SET Sn = @Sn, ContractType = @ContractType, SigningDate = @SigningDate, CustomerId = @CustomerId, QuartersId = @QuartersId WHERE ContractId = @ContractId";
+        private const string SQL_DELETE_CONTRACT = "DELETE FROM TVMS_Contracts WHERE ContractId = @ContractId";
         private const string PARM_CONTRACT_ID = "@ContractId";
         private const string PARM_SN = "@Sn";
         private const string PARM_CONTRACT_TYPE = "@ContractType";
@@ -28,8 +30,7 @@ namespace TVMS.OleDbDAL {
         private const string PARM_CUSTOMER_ID = "@CustomerId";
         private const string PARM_QUARTERS_ID = "@QuartersId";
 
-        public IList<ContractInfo> GetContracts()
-        {
+        public IList<ContractInfo> GetContracts(){
 
             IList<ContractInfo> contracts = new List<ContractInfo>();
 
@@ -37,8 +38,8 @@ namespace TVMS.OleDbDAL {
             {
                 while (rdr.Read())
                 {
-                    ContractInfo ten = new ContractInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), rdr.GetDateTime(3), rdr.GetInt32(4), rdr.GetInt32(5));
-                    contracts.Add(ten);
+                    ContractInfo con = new ContractInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), rdr.GetDateTime(3), rdr.GetInt32(4), rdr.GetInt32(5));
+                    contracts.Add(con);
                 }
             }
             return contracts;
@@ -56,7 +57,6 @@ namespace TVMS.OleDbDAL {
             using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_CONTRACT, parm))
             {
                 if (rdr.Read())
-
                     contract = new ContractInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), rdr.GetDateTime(3), rdr.GetInt32(4), rdr.GetInt32(5));
                 else
                     contract = new ContractInfo();
@@ -86,13 +86,31 @@ namespace TVMS.OleDbDAL {
 		/// <param name="contractId"></param>
 		public void Delete(int contractId){
 
-		}
+            OleDbParameter parm = new OleDbParameter(PARM_CONTRACT_ID, OleDbType.Integer);
+            parm.Value = contractId;
+
+            int numDeleted = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_DELETE_CONTRACT, parm);
+            if (numDeleted != 1)
+                throw new ApplicationException("DATA INTEGRITY ERROR ON CONTRACT DELETE");
+        }
 
 		/// 
 		/// <param name="contract"></param>
 		public void Update(ContractInfo contract){
 
-		}
+            OleDbParameter[] contractParms = GetContractParameters();
+
+            contractParms[0].Value = contract.ContractId;
+            contractParms[1].Value = contract.Sn;
+            contractParms[2].Value = contract.ContractType;
+            contractParms[3].Value = contract.SigningDate;
+            contractParms[4].Value = contract.CustomerId;
+            contractParms[5].Value = contract.QuartersId;
+
+            int numUpdated = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_UPDATE_CONTRACT, contractParms);
+            if (numUpdated != 1)
+                throw new ApplicationException("DATA INTEGRITY ERROR ON CONTRACT UPDATE");
+        }
 
         private static OleDbParameter[] GetContractParameters()
         {
