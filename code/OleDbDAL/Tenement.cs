@@ -19,12 +19,12 @@ namespace TVMS.OleDbDAL {
 	public class Tenement : ITenement {
 
         private const string SQL_SELECT_TENEMENTS = "SELECT TenementId, Name FROM TVMS_Tenements";
-        private const string SQL_SELECT_TENEMENT = "INSERT INTO TVMS_Tenements (TenementName) VALUES (@TenementName)";
-        private const string SQL_INSERT_TENEMENT = "SELECT TenementId, Name FROM TVMS_Tenements WHERE Id = @TenementId";
-        private const string SQL_UPDATE_TENEMENT = "UPDATE TVMS_Tenements SET TenementName = @TenementName WHERE TenementId = @TenementId";
+        private const string SQL_SELECT_TENEMENT = "SELECT TenementId, Name FROM TVMS_Tenements WHERE TenementId = @TenementId";
+        private const string SQL_INSERT_TENEMENT = "INSERT INTO TVMS_Tenements (Name) VALUES (@Name)";
+        private const string SQL_UPDATE_TENEMENT = "UPDATE TVMS_Tenements SET Name = @Name WHERE TenementId = @TenementId";
         private const string SQL_DELETE_TENEMENT = "DELETE FROM TVMS_Tenements WHERE TenementId = @TenementId";
         private const string PARM_TENEMENT_ID = "@TenementId";
-        private const string PARM_TENEMENT_NAME = "@TenementName";
+        private const string PARM_NAME = "@Name";
 
 		public IList<TenementInfo> GetTenements(){
 
@@ -65,7 +65,7 @@ namespace TVMS.OleDbDAL {
 		/// <param name="tenement"></param>
 		public void Insert(TenementInfo tenement){
 
-            OleDbParameter parm = new OleDbParameter(PARM_TENEMENT_NAME, OleDbType.VarChar, 20);
+            OleDbParameter parm = new OleDbParameter(PARM_NAME, OleDbType.VarChar, 20);
             parm.Value = tenement.Name;
 
             int numInserted = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_INSERT_TENEMENT, parm);
@@ -89,7 +89,7 @@ namespace TVMS.OleDbDAL {
 		/// <param name="tenement"></param>
 		public void Update(TenementInfo tenement){
 
-            OleDbParameter parm = new OleDbParameter(PARM_TENEMENT_NAME, OleDbType.VarChar, 20);
+            OleDbParameter parm = new OleDbParameter(PARM_NAME, OleDbType.VarChar, 20);
             parm.Value = tenement.Name;
 
             int numUpdated = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_UPDATE_TENEMENT, parm);
