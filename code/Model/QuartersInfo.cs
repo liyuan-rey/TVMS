@@ -57,23 +57,23 @@ namespace TVMS.Model {
 		/// <param name="quartersId"></param>
 		/// <param name="model"></param>
 		/// <param name="builtUpArea"></param>
-		/// <param name="property"></param>
-		/// <param name="doorplate"></param>
 		/// <param name="marketPrice"></param>
-		/// <param name="tenementId"></param>
+		/// <param name="doorplate"></param>
+		/// <param name="property"></param>
 		/// <param name="code"></param>
 		/// <param name="quantity"></param>
-        public QuartersInfo(int quartersId, int model, float builtUpArea, int property, string doorplate, decimal marketPrice, int tenementId, string code, int quantity)
+		/// <param name="tenementId"></param>
+        public QuartersInfo(int quartersId, int model, float builtUpArea, decimal marketPrice, string doorplate, int property, string code, int quantity, int tenementId)
         {
             this.quartersId = quartersId;
             this.model = model;
             this.builtUpArea = builtUpArea;
-            this.property = property;
-            this.doorplate = doorplate;
             this.marketPrice = marketPrice;
-            this.tenementId = tenementId;
+            this.doorplate = doorplate;
+            this.property = property;
             this.code = code;
             this.quantity = quantity;
+            this.tenementId = tenementId;
         }
 
 		/// <summary>
