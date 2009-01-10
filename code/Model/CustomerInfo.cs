@@ -36,14 +36,14 @@ namespace TVMS.Model {
         /// 
         /// <param name="customerId"></param>
         /// <param name="name"></param>
-        /// <param name="tel"></param>
         /// <param name="address"></param>
-        public CustomerInfo(int customerId, string name, string tel, string address)
+        /// <param name="tel"></param>
+        public CustomerInfo(int customerId, string name, string address, string tel)
         {
             this.customerId = customerId;
             this.name = name;
-            this.tel = tel;
             this.address = address;
+            this.tel = tel;
         }
 
         /// <summary>
