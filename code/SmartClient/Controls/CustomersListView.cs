@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TVMS.BLL;
+using TVMS.Model;
 
 namespace TVMS.SmartClient.Controls
 {
@@ -17,7 +19,18 @@ namespace TVMS.SmartClient.Controls
 
         public void RefreshList()
         {
+            this.Items.Clear();
 
+            Customer cus = new Customer();
+            IList<CustomerInfo> cuss = cus.GetCustomers();
+
+            foreach (CustomerInfo ci in cuss)
+            {
+                ListViewItem lvi = new ListViewItem(new string[] { ci.CustomerId.ToString(), ci.Name, ci.Address, ci.Tel });
+                lvi.Tag = ci;
+
+                this.Items.Add(lvi);
+            }
         }
     }
 }

@@ -15,16 +15,18 @@ using TVMS.IDAL;
 namespace TVMS.BLL {
 	public class Sale {
 
-		/// 
-		/// <param name="saleId"></param>
-		public SaleInfo GetSale(int saleId){
-
-			return null;
-		}
+        private static readonly ISale dal = TVMS.DALFactory.DataAccess.CreateSale();
 
 		public IList<SaleInfo> GetSales(){
 
-			return null;
+            return dal.GetSales();
+		}
+
+        /// 
+		/// <param name="saleId"></param>
+		public SaleInfo GetSale(int saleId){
+
+            return null;
 		}
 
 		/// 

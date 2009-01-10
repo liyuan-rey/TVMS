@@ -19,8 +19,6 @@ namespace TVMS.SmartClient.Controls
 
         public void RefreshList()
         {
-            this.SuspendLayout();
-
             this.Items.Clear();
 
             Tenement ten = new Tenement();
@@ -33,8 +31,6 @@ namespace TVMS.SmartClient.Controls
 
                 this.Items.Add(lvi);
             }
-
-            this.ResumeLayout(true);
         }
     }
 }

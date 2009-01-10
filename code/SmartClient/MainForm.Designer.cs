@@ -47,6 +47,9 @@
             this.pnlCaption = new System.Windows.Forms.Panel();
             this.lblCaption = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.pnlList = new System.Windows.Forms.Panel();
+            this.pnlNavagator = new System.Windows.Forms.Panel();
+            this.lblNavagator = new System.Windows.Forms.Label();
             this.tabDetail = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
@@ -56,9 +59,6 @@
             this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.pnlNavagator = new System.Windows.Forms.Panel();
-            this.lblNavagator = new System.Windows.Forms.Label();
-            this.pnlList = new System.Windows.Forms.Panel();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -72,10 +72,10 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.pnlNavagator.SuspendLayout();
             this.tabDetail.SuspendLayout();
             this.mnuMain.SuspendLayout();
             this.tsMain.SuspendLayout();
-            this.pnlNavagator.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -152,26 +152,31 @@
             this.tvwWorkspace.HideSelection = false;
             this.tvwWorkspace.Location = new System.Drawing.Point(0, 0);
             this.tvwWorkspace.Name = "tvwWorkspace";
-            treeNode1.Name = "";
-            treeNode1.Tag = "NodeTVMS";
+            treeNode1.Name = "NodeTVMS";
+            treeNode1.Tag = "";
             treeNode1.Text = "TVMS";
-            treeNode2.Name = "项目住宅列表";
-            treeNode2.Tag = "NodeTenement";
+            treeNode2.Name = "NodeTenement";
+            treeNode2.Tag = "";
             treeNode2.Text = "项目1";
-            treeNode3.Name = "项目住宅列表";
-            treeNode3.Tag = "NodeTenement";
+            treeNode2.ToolTipText = "项目住宅列表";
+            treeNode3.Name = "NodeTenement";
+            treeNode3.Tag = "";
             treeNode3.Text = "项目2";
-            treeNode4.Name = "项目列表";
-            treeNode4.Tag = "NodeTenements";
+            treeNode3.ToolTipText = "项目住宅列表";
+            treeNode4.Name = "NodeTenements";
+            treeNode4.Tag = "";
             treeNode4.Text = "项目";
-            treeNode5.Name = "客户列表";
-            treeNode5.Tag = "NodeCustomers";
+            treeNode4.ToolTipText = "项目列表";
+            treeNode5.Name = "NodeCustomers";
+            treeNode5.Tag = "";
             treeNode5.Text = "客户";
-            treeNode6.Name = "合同列表";
-            treeNode6.Tag = "NodeContracts";
+            treeNode5.ToolTipText = "客户列表";
+            treeNode6.Name = "NodeContracts";
+            treeNode6.Tag = "";
             treeNode6.Text = "合同";
-            treeNode7.Name = "";
-            treeNode7.Tag = "NodeWeb";
+            treeNode6.ToolTipText = "合同列表";
+            treeNode7.Name = "NodeWeb";
+            treeNode7.Tag = "";
             treeNode7.Text = "访问网站";
             this.tvwWorkspace.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
@@ -222,6 +227,33 @@
             this.splitContainer2.SplitterDistance = 151;
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
+            // 
+            // pnlList
+            // 
+            this.pnlList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlList.Location = new System.Drawing.Point(0, 25);
+            this.pnlList.Name = "pnlList";
+            this.pnlList.Size = new System.Drawing.Size(448, 126);
+            this.pnlList.TabIndex = 1;
+            // 
+            // pnlNavagator
+            // 
+            this.pnlNavagator.Controls.Add(this.lblNavagator);
+            this.pnlNavagator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNavagator.Location = new System.Drawing.Point(0, 0);
+            this.pnlNavagator.Name = "pnlNavagator";
+            this.pnlNavagator.Size = new System.Drawing.Size(448, 25);
+            this.pnlNavagator.TabIndex = 0;
+            // 
+            // lblNavagator
+            // 
+            this.lblNavagator.AutoSize = true;
+            this.lblNavagator.BackColor = System.Drawing.SystemColors.Control;
+            this.lblNavagator.Location = new System.Drawing.Point(3, 5);
+            this.lblNavagator.Name = "lblNavagator";
+            this.lblNavagator.Size = new System.Drawing.Size(43, 14);
+            this.lblNavagator.TabIndex = 2;
+            this.lblNavagator.Text = "导航栏";
             // 
             // tabDetail
             // 
@@ -300,33 +332,6 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // pnlNavagator
-            // 
-            this.pnlNavagator.Controls.Add(this.lblNavagator);
-            this.pnlNavagator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlNavagator.Location = new System.Drawing.Point(0, 0);
-            this.pnlNavagator.Name = "pnlNavagator";
-            this.pnlNavagator.Size = new System.Drawing.Size(448, 25);
-            this.pnlNavagator.TabIndex = 0;
-            // 
-            // lblNavagator
-            // 
-            this.lblNavagator.AutoSize = true;
-            this.lblNavagator.BackColor = System.Drawing.SystemColors.Control;
-            this.lblNavagator.Location = new System.Drawing.Point(3, 5);
-            this.lblNavagator.Name = "lblNavagator";
-            this.lblNavagator.Size = new System.Drawing.Size(43, 14);
-            this.lblNavagator.TabIndex = 2;
-            this.lblNavagator.Text = "导航栏";
-            // 
-            // pnlList
-            // 
-            this.pnlList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlList.Location = new System.Drawing.Point(0, 25);
-            this.pnlList.Name = "pnlList";
-            this.pnlList.Size = new System.Drawing.Size(448, 126);
-            this.pnlList.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -355,13 +360,13 @@
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
+            this.pnlNavagator.ResumeLayout(false);
+            this.pnlNavagator.PerformLayout();
             this.tabDetail.ResumeLayout(false);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
-            this.pnlNavagator.ResumeLayout(false);
-            this.pnlNavagator.PerformLayout();
             this.ResumeLayout(false);
 
         }

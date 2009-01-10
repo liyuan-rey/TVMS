@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TVMS.SmartClient.Controls;
+using TVMS.Model;
 
 namespace TVMS.SmartClient
 {
@@ -16,9 +17,40 @@ namespace TVMS.SmartClient
 
         public MainForm()
         {
+            LoadObjectMapConfigration();
+
             InitializeComponent();
 
-            LoadObjectMapConfigration();
+            BuildTenementsTree();
+        }
+
+        private void BuildTenementsTree()
+        {
+            pnlWorkspace.SuspendLayout();
+            tvwWorkspace.SuspendLayout();
+
+            TreeNode tnTenements = tvwWorkspace.Nodes["NodeTenements"];
+            tnTenements.Collapse();
+            tnTenements.Nodes.Clear();
+
+            IList<TenementInfo> tens = new TVMS.BLL.Tenement().GetTenements();
+            foreach (TenementInfo ten in tens)
+            {
+                TreeNode node = new TreeNode();
+
+                node.Name = "NodeTenement";
+                node.Text = ten.Name;
+                node.ToolTipText = ten.Name + "的住宅列表";
+                node.Tag = ten;
+
+                tnTenements.Nodes.Add(node);
+            }
+
+            if (tnTenements.Nodes.Count > 0)
+                tnTenements.Expand();
+
+            tvwWorkspace.ResumeLayout(true);
+            pnlWorkspace.ResumeLayout(true);
         }
 
         private void LoadObjectMapConfigration()
@@ -43,7 +75,7 @@ namespace TVMS.SmartClient
             lblNavagator.Text = "";
 
             //
-            ListView lvw = GetTvmsListView(e.Node.Tag.ToString());
+            ListView lvw = GetTvmsListView(e.Node.Name);
             if (lvw != null)
             {
                 lvw.SuspendLayout();
@@ -54,7 +86,7 @@ namespace TVMS.SmartClient
                 lvw.Visible = true;
                 lvw.ResumeLayout(true);
 
-                lblNavagator.Text = e.Node.Name;
+                lblNavagator.Text = e.Node.ToolTipText;
 
                 ITvmsListView tlv = lvw as ITvmsListView;
                 if (tlv != null)

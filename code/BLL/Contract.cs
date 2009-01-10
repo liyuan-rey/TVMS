@@ -15,9 +15,11 @@ using TVMS.IDAL;
 namespace TVMS.BLL {
 	public class Contract {
 
-		public IList<ContractInfo> GetContracts(){
+        private static readonly IContract dal = TVMS.DALFactory.DataAccess.CreateContract();
 
-			return null;
+        public IList<ContractInfo> GetContracts(){
+
+			return dal.GetContracts();
 		}
 
 		/// 

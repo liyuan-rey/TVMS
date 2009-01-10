@@ -15,9 +15,11 @@ using TVMS.IDAL;
 namespace TVMS.BLL {
 	public class Customer {
 
-		public IList<CustomerInfo> GetCustomers(){
+        private static readonly ICustomer dal = TVMS.DALFactory.DataAccess.CreateCustomer();
 
-			return null;
+        public IList<CustomerInfo> GetCustomers(){
+
+			return dal.GetCustomers();
 		}
 
 		/// 

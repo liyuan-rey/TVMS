@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TVMS.BLL;
+using TVMS.Model;
 
 namespace TVMS.SmartClient.Controls
 {
@@ -17,7 +19,18 @@ namespace TVMS.SmartClient.Controls
 
         public void RefreshList()
         {
+            this.Items.Clear();
 
+            Quarters q = new Quarters();
+            IList<QuartersInfo> qis = null;// q.GetQuarters();
+
+            foreach (QuartersInfo qi in qis)
+            {
+                ListViewItem lvi = new ListViewItem(new string[] { qi.QuartersId.ToString(), qi.Model.ToString(), qi.BuiltUpArea.ToString(), qi.MarketPrice.ToString(), qi.Doorplate, qi.Property.ToString(), qi.Code, qi.Quantity.ToString() });
+                lvi.Tag = qi;
+
+                this.Items.Add(lvi);
+            }
         }
     }
 }
