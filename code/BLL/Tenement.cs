@@ -15,9 +15,12 @@ using TVMS.IDAL;
 namespace TVMS.BLL {
 	public class Tenement {
 
-		public IList<TenementInfo> GetTenements(){
+//        private static readonly ITenement dal = TVMS.DALFactory.DataAccess.CreateTenement();
 
-			return null;
+        public IList<TenementInfo> GetTenements()
+        {
+            ITenement dal = TVMS.DALFactory.DataAccess.CreateTenement();
+			return dal.GetTenements();
 		}
 
 		/// 

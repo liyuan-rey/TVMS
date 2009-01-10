@@ -130,9 +130,36 @@ namespace TVMS.Model {
         /// <param name="imprest5"></param>
         /// <param name="imprest5Date"></param>
         /// <param name="imprest5State"></param>
-        public SaleInfo(int saleId, decimal salePrice, decimal deposit, decimal depositDate, DateTime payingDate, decimal cjk, float cjmj, float cjyy, int cjts, string remark, int quartersId, int customerId, int contractId, decimal imprest1, DateTime imprest1Date, int imprest1State, decimal imprest2, DateTime imprest2Date, int imprest2State, decimal imprest3, DateTime imprest3Date, int imprest3State, decimal imprest4, DateTime imprest4Date, int imprest4State, decimal imprest5, DateTime imprest5Date, int imprest5State)
+        public SaleInfo(int saleId, decimal salePrice, decimal deposit, DateTime depositDate, DateTime payingDate, decimal cjk, float cjmj, float cjyy, int cjts, string remark, int quartersId, int customerId, int contractId, decimal imprest1, DateTime imprest1Date, int imprest1State, decimal imprest2, DateTime imprest2Date, int imprest2State, decimal imprest3, DateTime imprest3Date, int imprest3State, decimal imprest4, DateTime imprest4Date, int imprest4State, decimal imprest5, DateTime imprest5Date, int imprest5State)
         {
-
+            this.saleId = saleId;
+            this.salePrice = salePrice;
+            this.deposit = deposit;
+            this.depositDate = depositDate;
+            this.payingDate = payingDate;
+            this.cjk = cjk;
+            this.cjmj = cjmj;
+            this.cjyy = cjyy;
+            this.cjts = cjts;
+            this.remark = remark;
+            this.quartersId = quartersId;
+            this.customerId = customerId;
+            this.contractId = contractId;
+            this.imprest1 = imprest1;
+            this.imprest1Date = imprest1Date;
+            this.imprest1State = imprest1State;
+            this.imprest2 = imprest2;
+            this.imprest2Date = imprest2Date;
+            this.imprest2State = imprest2State;
+            this.imprest3 = imprest3;
+            this.imprest3Date = imprest3Date;
+            this.imprest3State = imprest3State;
+            this.imprest4 = imprest4;
+            this.imprest4Date = imprest4Date;
+            this.imprest4State = imprest4State;
+            this.imprest5 = imprest5;
+            this.imprest5Date = imprest5Date;
+            this.imprest5State = imprest5State;
         }
 
         /// <summary>

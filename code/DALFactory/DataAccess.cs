@@ -13,35 +13,36 @@ using System.Configuration;
 namespace TVMS.DALFactory {
 	public sealed class DataAccess {
 
-        private static readonly string path = TVMS.Properties.Settings.Default.CommonDAL;
+        private static readonly string dalAssembly = TVMS.Properties.Settings.Default.CommonDAL;
+        private static readonly string dalNamespace = "TVMS.OleDbDAL";
 
         private DataAccess(){
 
 		}
 
         public static TVMS.IDAL.IContract CreateContract() {
-            string className = path + ".Contract";
-            return (TVMS.IDAL.IContract)Assembly.Load(path).CreateInstance(className);
+            string className = dalNamespace + ".Contract";
+            return (TVMS.IDAL.IContract)Assembly.Load(dalAssembly).CreateInstance(className);
         }
 
         public static TVMS.IDAL.ICustomer CreateCustomer() {
-            string className = path + ".Customer";
-            return (TVMS.IDAL.ICustomer)Assembly.Load(path).CreateInstance(className);
+            string className = dalNamespace + ".Customer";
+            return (TVMS.IDAL.ICustomer)Assembly.Load(dalAssembly).CreateInstance(className);
         }
 
         public static TVMS.IDAL.IQuarters CreateQuarters() {
-            string className = path + ".Quarters";
-            return (TVMS.IDAL.IQuarters)Assembly.Load(path).CreateInstance(className);
+            string className = dalNamespace + ".Quarters";
+            return (TVMS.IDAL.IQuarters)Assembly.Load(dalAssembly).CreateInstance(className);
         }
 
         public static TVMS.IDAL.ISale CreateSale() {
-            string className = path + ".Sale";
-            return (TVMS.IDAL.ISale)Assembly.Load(path).CreateInstance(className);
+            string className = dalNamespace + ".Sale";
+            return (TVMS.IDAL.ISale)Assembly.Load(dalAssembly).CreateInstance(className);
         }
 
         public static TVMS.IDAL.ITenement CreateTenement() {
-            string className = path + ".Tenement";
-            return (TVMS.IDAL.ITenement)Assembly.Load(path).CreateInstance(className);
+            string className = dalNamespace + ".Tenement";
+            return (TVMS.IDAL.ITenement)Assembly.Load(dalAssembly).CreateInstance(className);
         }
 
     }//end DataAccess

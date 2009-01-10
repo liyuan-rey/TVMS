@@ -35,7 +35,7 @@ namespace TVMS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("TVMS.OleDbDAL")]
+        [global::System.Configuration.DefaultSettingValueAttribute("TVMS")]
         public string CommonDAL {
             get {
                 return ((string)(this["CommonDAL"]));

@@ -15,12 +15,9 @@ namespace TVMS.SmartClient.Controls
             InitializeComponent();
         }
 
-        protected override void OnPaint(PaintEventArgs pe)
+        public void RefreshList()
         {
-            // TODO: 在此处添加自定义绘制代码
 
-            // 调用基类 OnPaint
-            base.OnPaint(pe);
         }
     }
 }

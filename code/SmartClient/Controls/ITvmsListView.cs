@@ -6,5 +6,6 @@ namespace TVMS.SmartClient.Controls
 {
     public interface ITvmsListView
     {
+        void RefreshList();
     }
 }

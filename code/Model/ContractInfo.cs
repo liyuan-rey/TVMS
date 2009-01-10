@@ -50,7 +50,12 @@ namespace TVMS.Model {
         /// <param name="quartersId"></param>
         public ContractInfo(int contractId, string sn, int type, DateTime signingDate, int customerId, int quartersId)
         {
-
+            this.contractId = contractId;
+            this.sn = sn;
+            this.type = type;
+            this.signingDate = signingDate;
+            this.customerId = customerId;
+            this.quartersId = quartersId;
         }
 
         /// <summary>

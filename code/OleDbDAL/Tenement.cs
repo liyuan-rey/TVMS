@@ -18,9 +18,9 @@ using TVMS.DBUtility;
 namespace TVMS.OleDbDAL {
 	public class Tenement : ITenement {
 
-        private const string SQL_SELECT_TENEMENTS = "SELECT Id, Name FROM TVMS_Tenements";
+        private const string SQL_SELECT_TENEMENTS = "SELECT TenementId, Name FROM TVMS_Tenements";
         private const string SQL_SELECT_TENEMENT = "INSERT INTO TVMS_Tenements (TenementName) VALUES (@TenementName)";
-        private const string SQL_INSERT_TENEMENT = "SELECT Id, Name FROM TVMS_Tenements WHERE Id = @TenementId";
+        private const string SQL_INSERT_TENEMENT = "SELECT TenementId, Name FROM TVMS_Tenements WHERE Id = @TenementId";
         private const string SQL_UPDATE_TENEMENT = "UPDATE TVMS_Tenements SET TenementName = @TenementName WHERE TenementId = @TenementId";
         private const string SQL_DELETE_TENEMENT = "DELETE FROM TVMS_Tenements WHERE TenementId = @TenementId";
         private const string PARM_TENEMENT_ID = "@TenementId";

@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TVMS.BLL;
+using TVMS.Model;
 
 namespace TVMS.SmartClient.Controls
 {
@@ -15,5 +17,24 @@ namespace TVMS.SmartClient.Controls
             InitializeComponent();
         }
 
+        public void RefreshList()
+        {
+            this.SuspendLayout();
+
+            this.Items.Clear();
+
+            Tenement ten = new Tenement();
+            IList<TenementInfo> tens = ten.GetTenements();
+
+            foreach (TenementInfo ti in tens)
+            {
+                ListViewItem lvi = new ListViewItem(new string[] { ti.TenementId.ToString(), ti.Name });
+                lvi.Tag = ti;
+
+                this.Items.Add(lvi);
+            }
+
+            this.ResumeLayout(true);
+        }
     }
 }

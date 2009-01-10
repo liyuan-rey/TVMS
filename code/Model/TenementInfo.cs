@@ -30,7 +30,8 @@ namespace TVMS.Model {
         /// <param name="name"></param>
         public TenementInfo(int tenementId, string name)
         {
-
+            this.tenementId = tenementId;
+            this.name = name;
         }
 
         /// <summary>

@@ -40,7 +40,10 @@ namespace TVMS.Model {
         /// <param name="address"></param>
         public CustomerInfo(int customerId, string name, string tel, string address)
         {
-
+            this.customerId = customerId;
+            this.name = name;
+            this.tel = tel;
+            this.address = address;
         }
 
         /// <summary>

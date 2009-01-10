@@ -55,6 +55,10 @@ namespace TVMS.SmartClient
                 lvw.ResumeLayout(true);
 
                 lblNavagator.Text = e.Node.Name;
+
+                ITvmsListView tlv = lvw as ITvmsListView;
+                if (tlv != null)
+                    tlv.RefreshList();
             }
 
             pnlList.ResumeLayout(true);

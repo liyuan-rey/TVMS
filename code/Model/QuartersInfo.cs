@@ -65,7 +65,15 @@ namespace TVMS.Model {
 		/// <param name="quantity"></param>
         public QuartersInfo(int quartersId, int model, float builtUpArea, int property, string doorplate, decimal marketPrice, int tenementId, string code, int quantity)
         {
-
+            this.quartersId = quartersId;
+            this.model = model;
+            this.builtUpArea = builtUpArea;
+            this.property = property;
+            this.doorplate = doorplate;
+            this.marketPrice = marketPrice;
+            this.tenementId = tenementId;
+            this.code = code;
+            this.quantity = quantity;
         }
 
 		/// <summary>
