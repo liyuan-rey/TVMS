@@ -104,17 +104,13 @@ namespace TVMS.Model {
         /// 
         /// <param name="saleId"></param>
         /// <param name="salePrice"></param>
+        /// <param name="payingDate"></param>
         /// <param name="deposit"></param>
         /// <param name="depositDate"></param>
-        /// <param name="payingDate"></param>
         /// <param name="cjk"></param>
         /// <param name="cjmj"></param>
-        /// <param name="cjyy"></param>
         /// <param name="cjts"></param>
-        /// <param name="remark"></param>
-        /// <param name="quartersId"></param>
-        /// <param name="customerId"></param>
-        /// <param name="contractId"></param>
+        /// <param name="cjyy"></param>
         /// <param name="imprest1"></param>
         /// <param name="imprest1Date"></param>
         /// <param name="imprest1State"></param>
@@ -130,21 +126,21 @@ namespace TVMS.Model {
         /// <param name="imprest5"></param>
         /// <param name="imprest5Date"></param>
         /// <param name="imprest5State"></param>
-        public SaleInfo(int saleId, decimal salePrice, decimal deposit, DateTime depositDate, DateTime payingDate, decimal cjk, float cjmj, float cjyy, int cjts, string remark, int quartersId, int customerId, int contractId, decimal imprest1, DateTime imprest1Date, int imprest1State, decimal imprest2, DateTime imprest2Date, int imprest2State, decimal imprest3, DateTime imprest3Date, int imprest3State, decimal imprest4, DateTime imprest4Date, int imprest4State, decimal imprest5, DateTime imprest5Date, int imprest5State)
+        /// <param name="remark"></param>
+        /// <param name="quartersId"></param>
+        /// <param name="contractId"></param>
+        /// <param name="customerId"></param>
+        public SaleInfo(int saleId, decimal salePrice, DateTime payingDate, decimal deposit, DateTime depositDate, decimal cjk, float cjmj, int cjts, float cjyy, decimal imprest1, DateTime imprest1Date, int imprest1State, decimal imprest2, DateTime imprest2Date, int imprest2State, decimal imprest3, DateTime imprest3Date, int imprest3State, decimal imprest4, DateTime imprest4Date, int imprest4State, decimal imprest5, DateTime imprest5Date, int imprest5State, string remark, int quartersId, int contractId, int customerId)
         {
             this.saleId = saleId;
             this.salePrice = salePrice;
+            this.payingDate = payingDate;
             this.deposit = deposit;
             this.depositDate = depositDate;
-            this.payingDate = payingDate;
             this.cjk = cjk;
             this.cjmj = cjmj;
-            this.cjyy = cjyy;
             this.cjts = cjts;
-            this.remark = remark;
-            this.quartersId = quartersId;
-            this.customerId = customerId;
-            this.contractId = contractId;
+            this.cjyy = cjyy;
             this.imprest1 = imprest1;
             this.imprest1Date = imprest1Date;
             this.imprest1State = imprest1State;
@@ -160,6 +156,10 @@ namespace TVMS.Model {
             this.imprest5 = imprest5;
             this.imprest5Date = imprest5Date;
             this.imprest5State = imprest5State;
+            this.remark = remark;
+            this.quartersId = quartersId;
+            this.contractId = contractId;
+            this.customerId = customerId;
         }
 
         /// <summary>
