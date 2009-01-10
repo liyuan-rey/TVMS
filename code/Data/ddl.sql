@@ -38,7 +38,7 @@ DROP TABLE TVMS_Tenements;
 CREATE TABLE TVMS_Contracts ( 
 	ContractId int identity(300000,1)  NOT NULL,
 	Sn nvarchar(30),
-	Type int,
+	ContractType int,
 	SigningDate datetime,
 	CustomerId int,
 	QuartersId int

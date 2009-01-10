@@ -18,23 +18,69 @@ using TVMS.DBUtility;
 namespace TVMS.OleDbDAL {
 	public class Contract : IContract {
 
-		public IList<ContractInfo> GetContracts(){
+        private const string SQL_SELECT_CONTRACTS = "SELECT ContractId, Sn, ContractType, SigningDate, CustomerId, QuartersId FROM TVMS_Contracts";
+        private const string SQL_SELECT_CONTRACT = "SELECT ContractId, Sn, ContractType, SigningDate, CustomerId, QuartersId FROM TVMS_Contracts WHERE ContractId = @ContractId";
+        private const string SQL_INSERT_CONTRACT = "INSERT INTO TVMS_Contracts (Sn, ContractType, SigningDate, CustomerId, QuartersId) VALUES (@Sn, @ContractType, @SigningDate, @CustomerId, @QuartersId)";
+        private const string PARM_CONTRACT_ID = "@ContractId";
+        private const string PARM_SN = "@Sn";
+        private const string PARM_CONTRACT_TYPE = "@ContractType";
+        private const string PARM_SIGNING_DATE = "@SigningDate";
+        private const string PARM_CUSTOMER_ID = "@CustomerId";
+        private const string PARM_QUARTERS_ID = "@QuartersId";
 
-			return null;
-		}
+        public IList<ContractInfo> GetContracts()
+        {
+
+            IList<ContractInfo> contracts = new List<ContractInfo>();
+
+            using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_CONTRACTS, null))
+            {
+                while (rdr.Read())
+                {
+                    ContractInfo ten = new ContractInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), rdr.GetDateTime(3), rdr.GetInt32(4), rdr.GetInt32(5));
+                    contracts.Add(ten);
+                }
+            }
+            return contracts;
+        }
 
 		/// 
 		/// <param name="contractId"></param>
 		public ContractInfo GetContract(int contractId){
 
-			return null;
-		}
+            ContractInfo contract = null;
+
+            OleDbParameter parm = new OleDbParameter(PARM_CONTRACT_ID, OleDbType.Integer);
+            parm.Value = contractId;
+
+            using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_CONTRACT, parm))
+            {
+                if (rdr.Read())
+
+                    contract = new ContractInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), rdr.GetDateTime(3), rdr.GetInt32(4), rdr.GetInt32(5));
+                else
+                    contract = new ContractInfo();
+            }
+            return contract;
+        }
 
 		/// 
 		/// <param name="contract"></param>
 		public void Insert(ContractInfo contract){
 
-		}
+            OleDbParameter[] contractParms = GetContractParameters();
+
+            contractParms[0].Value = contract.ContractId;
+            contractParms[1].Value = contract.Sn;
+            contractParms[2].Value = contract.ContractType;
+            contractParms[3].Value = contract.SigningDate;
+            contractParms[4].Value = contract.CustomerId;
+            contractParms[5].Value = contract.QuartersId;
+
+            int numInserted = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_INSERT_CONTRACT, contractParms);
+            if (numInserted != 1)
+                throw new ApplicationException("DATA INTEGRITY ERROR ON CONTRACT INSERT");
+        }
 
 		/// 
 		/// <param name="contractId"></param>
@@ -48,6 +94,26 @@ namespace TVMS.OleDbDAL {
 
 		}
 
-	}//end Contract
+        private static OleDbParameter[] GetContractParameters()
+        {
+            OleDbParameter[] parms = OleDbHelper.GetCachedParameters(SQL_INSERT_CONTRACT);
+
+            if (parms == null)
+            {
+                parms = new OleDbParameter[] {
+					new OleDbParameter(PARM_CONTRACT_ID, OleDbType.Integer),
+					new OleDbParameter(PARM_SN, OleDbType.VarChar, 30),
+					new OleDbParameter(PARM_CONTRACT_TYPE, OleDbType.Integer),
+					new OleDbParameter(PARM_SIGNING_DATE, OleDbType.DBTimeStamp),
+					new OleDbParameter(PARM_CUSTOMER_ID, OleDbType.Integer),
+					new OleDbParameter(PARM_QUARTERS_ID, OleDbType.Integer),
+                };
+
+                OleDbHelper.CacheParameters(SQL_INSERT_CONTRACT, parms);
+            }
+
+            return parms;
+        }
+    }//end Contract
 
 }//end namespace OleDbDAL

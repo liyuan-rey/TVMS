@@ -23,7 +23,7 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 预/销售类型
 		/// </summary>
-		private int type;
+		private int contractType;
 		/// <summary>
 		/// 合同编号
 		/// </summary>
@@ -44,15 +44,15 @@ namespace TVMS.Model {
         /// 
         /// <param name="contractId"></param>
         /// <param name="sn"></param>
-        /// <param name="type"></param>
+        /// <param name="contractType"></param>
         /// <param name="signingDate"></param>
         /// <param name="customerId"></param>
         /// <param name="quartersId"></param>
-        public ContractInfo(int contractId, string sn, int type, DateTime signingDate, int customerId, int quartersId)
+        public ContractInfo(int contractId, string sn, int contractType, DateTime signingDate, int customerId, int quartersId)
         {
             this.contractId = contractId;
             this.sn = sn;
-            this.type = type;
+            this.contractType = contractType;
             this.signingDate = signingDate;
             this.customerId = customerId;
             this.quartersId = quartersId;
@@ -85,12 +85,12 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 预/销售类型
 		/// </summary>
-		public int Type{
+		public int ContractType{
 			get{
-				return type;
+				return contractType;
 			}
 			set{
-				type = value;
+				contractType = value;
 			}
 		}
 
