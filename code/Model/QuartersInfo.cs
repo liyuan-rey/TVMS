@@ -47,7 +47,7 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 建筑面积
 		/// </summary>
-		private float builtUpArea;
+		private double builtUpArea;
 
 		public QuartersInfo(){
 
@@ -63,7 +63,7 @@ namespace TVMS.Model {
 		/// <param name="code"></param>
 		/// <param name="quantity"></param>
 		/// <param name="tenementId"></param>
-        public QuartersInfo(int quartersId, int model, float builtUpArea, decimal marketPrice, string doorplate, int property, string code, int quantity, int tenementId)
+        public QuartersInfo(int quartersId, int model, double builtUpArea, decimal marketPrice, string doorplate, int property, string code, int quantity, int tenementId)
         {
             this.quartersId = quartersId;
             this.model = model;
@@ -175,7 +175,8 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 建筑面积
 		/// </summary>
-		public float BuiltUpArea{
+        public double BuiltUpArea
+        {
 			get{
 				return builtUpArea;
 			}

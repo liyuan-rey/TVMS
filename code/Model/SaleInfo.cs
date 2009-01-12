@@ -21,7 +21,7 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 参建面积
 		/// </summary>
-		private float cjmj;
+        private double cjmj;
 		/// <summary>
 		/// 参建面积_套数
 		/// </summary>
@@ -29,7 +29,7 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 参建已用
 		/// </summary>
-		private float cjyy;
+        private double cjyy;
 		/// <summary>
 		/// 合同编号
 		/// </summary>
@@ -130,7 +130,7 @@ namespace TVMS.Model {
         /// <param name="quartersId"></param>
         /// <param name="contractId"></param>
         /// <param name="customerId"></param>
-        public SaleInfo(int saleId, decimal salePrice, DateTime payingDate, decimal deposit, DateTime depositDate, decimal cjk, float cjmj, int cjts, float cjyy, decimal imprest1, DateTime imprest1Date, int imprest1State, decimal imprest2, DateTime imprest2Date, int imprest2State, decimal imprest3, DateTime imprest3Date, int imprest3State, decimal imprest4, DateTime imprest4Date, int imprest4State, decimal imprest5, DateTime imprest5Date, int imprest5State, string remark, int quartersId, int contractId, int customerId)
+        public SaleInfo(int saleId, decimal salePrice, DateTime payingDate, decimal deposit, DateTime depositDate, decimal cjk, double cjmj, int cjts, double cjyy, decimal imprest1, DateTime imprest1Date, int imprest1State, decimal imprest2, DateTime imprest2Date, int imprest2State, decimal imprest3, DateTime imprest3Date, int imprest3State, decimal imprest4, DateTime imprest4Date, int imprest4State, decimal imprest5, DateTime imprest5Date, int imprest5State, string remark, int quartersId, int contractId, int customerId)
         {
             this.saleId = saleId;
             this.salePrice = salePrice;
@@ -177,7 +177,8 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 参建面积
 		/// </summary>
-		public float Cjmj{
+        public double Cjmj
+        {
 			get{
 				return cjmj;
 			}
@@ -201,7 +202,8 @@ namespace TVMS.Model {
 		/// <summary>
 		/// 参建已用
 		/// </summary>
-		public float Cjyy{
+        public double Cjyy
+        {
 			get{
 				return cjyy;
 			}
