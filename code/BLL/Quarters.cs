@@ -15,14 +15,22 @@ using TVMS.IDAL;
 namespace TVMS.BLL {
 	public class Quarters {
 
-		/// 
+        private static readonly IQuarters dal = TVMS.DALFactory.DataAccess.CreateQuarters();
+        
+        /// 
 		/// <param name="tenementId"></param>
 		public IList<QuartersInfo> GetQuartersByTenement(int tenementId){
 
-			return null;
+            return dal.GetQuartersByTenement(tenementId);
 		}
 
-		/// 
+        public IList<QuartersInfo> GetQuarters()
+        {
+
+            return null;
+        }
+        
+        /// 
 		/// <param name="quartersId"></param>
 		public QuartersInfo GetQuarters(int quartersId){
 

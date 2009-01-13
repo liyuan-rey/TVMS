@@ -60,7 +60,7 @@ namespace TVMS.OleDbDAL {
             {
                 while (rdr.Read())
                 {
-                    SaleInfo sal = new SaleInfo(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetDateTime(2), rdr.GetDecimal(3), rdr.GetDateTime(4), rdr.GetDecimal(5), rdr.GetFloat(6), rdr.GetInt32(7), rdr.GetFloat(8), rdr.GetDecimal(9), rdr.GetDateTime(10), rdr.GetInt32(11), rdr.GetDecimal(12), rdr.GetDateTime(13), rdr.GetInt32(14), rdr.GetDecimal(15), rdr.GetDateTime(16), rdr.GetInt32(17), rdr.GetDecimal(18), rdr.GetDateTime(19), rdr.GetInt32(20), rdr.GetDecimal(21), rdr.GetDateTime(22), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
+                    SaleInfo sal = new SaleInfo(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetDateTime(2), rdr.GetDecimal(3), rdr.GetDateTime(4), rdr.GetDecimal(5), rdr.GetDouble(6), rdr.GetInt32(7), rdr.GetDouble(8), rdr.GetDecimal(9), rdr.GetDateTime(10), rdr.GetInt32(11), rdr.GetDecimal(12), rdr.GetDateTime(13), rdr.GetInt32(14), rdr.GetDecimal(15), rdr.GetDateTime(16), rdr.GetInt32(17), rdr.GetDecimal(18), rdr.GetDateTime(19), rdr.GetInt32(20), rdr.GetDecimal(21), rdr.GetDateTime(22), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
                     sales.Add(sal);
                 }
             }
@@ -80,7 +80,7 @@ namespace TVMS.OleDbDAL {
             {
                 if (rdr.Read())
 
-                    sale = new SaleInfo(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetDateTime(2), rdr.GetDecimal(3), rdr.GetDateTime(4), rdr.GetDecimal(5), rdr.GetFloat(6), rdr.GetInt32(7), rdr.GetFloat(8), rdr.GetDecimal(9), rdr.GetDateTime(10), rdr.GetInt32(11), rdr.GetDecimal(12), rdr.GetDateTime(13), rdr.GetInt32(14), rdr.GetDecimal(15), rdr.GetDateTime(16), rdr.GetInt32(17), rdr.GetDecimal(18), rdr.GetDateTime(19), rdr.GetInt32(20), rdr.GetDecimal(21), rdr.GetDateTime(22), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
+                    sale = new SaleInfo(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetDateTime(2), rdr.GetDecimal(3), rdr.GetDateTime(4), rdr.GetDecimal(5), rdr.GetDouble(6), rdr.GetInt32(7), rdr.GetDouble(8), rdr.GetDecimal(9), rdr.GetDateTime(10), rdr.GetInt32(11), rdr.GetDecimal(12), rdr.GetDateTime(13), rdr.GetInt32(14), rdr.GetDecimal(15), rdr.GetDateTime(16), rdr.GetInt32(17), rdr.GetDecimal(18), rdr.GetDateTime(19), rdr.GetInt32(20), rdr.GetDecimal(21), rdr.GetDateTime(22), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
                 else
                     sale = new SaleInfo();
             }
@@ -216,9 +216,9 @@ namespace TVMS.OleDbDAL {
 					new OleDbParameter(PARM_DEPOSIT, OleDbType.Currency),
 					new OleDbParameter(PARM_DEPOSIT_DATE, OleDbType.DBTimeStamp),
 					new OleDbParameter(PARM_CJK, OleDbType.Currency),
-					new OleDbParameter(PARM_CJMJ, OleDbType.Single),
+					new OleDbParameter(PARM_CJMJ, OleDbType.Double),
 					new OleDbParameter(PARM_CJTS, OleDbType.Integer),
-					new OleDbParameter(PARM_CJYY, OleDbType.Single),
+					new OleDbParameter(PARM_CJYY, OleDbType.Double),
 					new OleDbParameter(PARM_IMPREST1, OleDbType.Currency),
 					new OleDbParameter(PARM_IMPREST1_DATE, OleDbType.DBTimeStamp),
 					new OleDbParameter(PARM_IMPREST1_STATE, OleDbType.Integer),

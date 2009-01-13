@@ -18,11 +18,13 @@ namespace TVMS.IDAL {
 		/// <param name="quartersId"></param>
 		void Delete(int quartersId);
 
-		/// 
-		/// <param name="quartersId"></param>
-		QuartersInfo GetQuarters(int quartersId);
+		IList<QuartersInfo> GetQuarters();
 
-		/// 
+        /// 
+        /// <param name="quartersId"></param>
+        QuartersInfo GetQuarters(int quartersId);
+
+        /// 
 		/// <param name="keywords"></param>
 		IList<QuartersInfo> GetQuartersBySearch(string[] keywords);
 

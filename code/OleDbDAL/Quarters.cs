@@ -19,6 +19,7 @@ namespace TVMS.OleDbDAL {
 	public class Quarters : IQuarters {
 
         private const string SQL_SELECT_QUARTERS_BY_TENEMENT = "SELECT QuartersId, Model, BuiltUpArea, MarketPrice, Doorplate, Property, Code, Quantity, TenementId FROM TVMS_Quarters WHERE TenementId = @TenementId";
+        private const string SQL_SELECT_QUARTERS_LIST = "SELECT QuartersId, Model, BuiltUpArea, MarketPrice, Doorplate, Property, Code, Quantity, TenementId FROM TVMS_Quarters";
         private const string SQL_SELECT_QUARTERS = "SELECT QuartersId, Model, BuiltUpArea, MarketPrice, Doorplate, Property, Code, Quantity, TenementId FROM TVMS_Quarters WHERE QuartersId = @QuartersId";
         private const string SQL_INSERT_QUARTERS = "INSERT INTO TVMS_Quarters (Model, BuiltUpArea, MarketPrice, Doorplate, Property, Code, Quantity, TenementId) VALUES (@Model, @BuiltUpArea, @MarketPrice, @Doorplate, @Property, @Code, @Quantity, @TenementId)";
         private const string SQL_UPDATE_QUARTERS = "UPDATE TVMS_Quarters SET Model = @Model, BuiltUpArea = @BuiltUpArea, MarketPrice = @MarketPrice, Doorplate = @Doorplate, Property = @Property, Code = @Code, Quantity = @Quantity, TenementId = @TenementId WHERE QuartersId = @QuartersId";
@@ -46,14 +47,29 @@ namespace TVMS.OleDbDAL {
             {
                 while (rdr.Read())
                 {
-                    QuartersInfo qua = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetFloat(2), rdr.GetDecimal(3), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
+                    QuartersInfo qua = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetDouble(2), rdr.GetDecimal(3), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
                     quarters.Add(qua);
                 }
             }
             return quarters;
         }
 
-		/// 
+        public IList<QuartersInfo> GetQuarters()
+        {
+            IList<QuartersInfo> quarters = new List<QuartersInfo>();
+
+            using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_QUARTERS_LIST, null))
+            {
+                while (rdr.Read())
+                {
+                    QuartersInfo qua = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetDouble(2), rdr.GetDecimal(3), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
+                    quarters.Add(qua);
+                }
+            }
+            return quarters;
+        }
+
+        /// 
 		/// <param name="quartersId"></param>
 		public QuartersInfo GetQuarters(int quartersId){
 
@@ -66,7 +82,7 @@ namespace TVMS.OleDbDAL {
             {
                 if (rdr.Read())
 
-                    quarters = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetFloat(2), rdr.GetDecimal(3), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
+                    quarters = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetDouble(2), rdr.GetDecimal(3), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
                 else
                     quarters = new QuartersInfo();
             }
@@ -144,7 +160,7 @@ namespace TVMS.OleDbDAL {
                 parms = new OleDbParameter[] {
 					new OleDbParameter(PARM_QUARTERS_ID, OleDbType.Integer),
 					new OleDbParameter(PARM_MODEL, OleDbType.Integer),
-					new OleDbParameter(PARM_BUILT_UP_AREA, OleDbType.Single),
+					new OleDbParameter(PARM_BUILT_UP_AREA, OleDbType.Double),
 					new OleDbParameter(PARM_MARKET_PRICE, OleDbType.Currency),
 					new OleDbParameter(PARM_DOORPLATE, OleDbType.VarChar, 30),
 					new OleDbParameter(PARM_PROPERTY, OleDbType.Integer),
