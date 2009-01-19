@@ -36,7 +36,9 @@ namespace TVMS.OleDbDAL {
             {
                 while (rdr.Read())
                 {
-                    CustomerInfo cus = new CustomerInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2), rdr.GetString(3));
+                    CustomerInfo cus = new CustomerInfo();
+                    ORMHelper.RelationalToObject(cus, rdr);
+                    //CustomerInfo cus = new CustomerInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2), rdr.GetString(3));
                     customers.Add(cus);
                 }
             }
@@ -55,9 +57,13 @@ namespace TVMS.OleDbDAL {
             using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_CUSTOMER, parm))
             {
                 if (rdr.Read())
-                    customer = new CustomerInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2), rdr.GetString(3));
-                else
+                {
                     customer = new CustomerInfo();
+                    ORMHelper.RelationalToObject(customer, rdr);
+                }
+                //    customer = new CustomerInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2), rdr.GetString(3));
+                //else
+                //    customer = new CustomerInfo();
             }
             return customer;
         }

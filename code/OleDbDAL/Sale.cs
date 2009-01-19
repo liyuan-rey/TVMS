@@ -60,7 +60,10 @@ namespace TVMS.OleDbDAL {
             {
                 while (rdr.Read())
                 {
-                    SaleInfo sal = new SaleInfo(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetDateTime(2), rdr.GetDecimal(3), rdr.GetDateTime(4), rdr.GetDecimal(5), rdr.GetDouble(6), rdr.GetInt32(7), rdr.GetDouble(8), rdr.GetDecimal(9), rdr.GetDateTime(10), rdr.GetInt32(11), rdr.GetDecimal(12), rdr.GetDateTime(13), rdr.GetInt32(14), rdr.GetDecimal(15), rdr.GetDateTime(16), rdr.GetInt32(17), rdr.GetDecimal(18), rdr.GetDateTime(19), rdr.GetInt32(20), rdr.GetDecimal(21), rdr.GetDateTime(22), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
+                    SaleInfo sal = new SaleInfo();
+                    ORMHelper.RelationalToObject(sal, rdr);
+
+                    //SaleInfo sal = new SaleInfo(rdr.GetInt32(0), new DBNullAdapter(rdr.GetValue(1)), new DBNullAdapter(rdr.GetValue(2)), new DBNullAdapter(rdr.GetValue(3)), new DBNullAdapter(rdr.GetValue(4)), new DBNullAdapter(rdr.GetValue(5)), rdr.GetDouble(6), rdr.GetInt32(7), rdr.GetDouble(8), new DBNullAdapter(rdr.GetValue(9)), new DBNullAdapter(rdr.GetValue(10)), rdr.GetInt32(11), new DBNullAdapter(rdr.GetValue(12)), new DBNullAdapter(rdr.GetValue(13)), rdr.GetInt32(14), new DBNullAdapter(rdr.GetValue(15)), new DBNullAdapter(rdr.GetValue(16)), rdr.GetInt32(17), new DBNullAdapter(rdr.GetValue(18)), new DBNullAdapter(rdr.GetValue(19)), rdr.GetInt32(20), new DBNullAdapter(rdr.GetValue(21)), new DBNullAdapter(rdr.GetValue(22)), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
                     sales.Add(sal);
                 }
             }
@@ -79,10 +82,13 @@ namespace TVMS.OleDbDAL {
             using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_SALE, parm))
             {
                 if (rdr.Read())
-
-                    sale = new SaleInfo(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetDateTime(2), rdr.GetDecimal(3), rdr.GetDateTime(4), rdr.GetDecimal(5), rdr.GetDouble(6), rdr.GetInt32(7), rdr.GetDouble(8), rdr.GetDecimal(9), rdr.GetDateTime(10), rdr.GetInt32(11), rdr.GetDecimal(12), rdr.GetDateTime(13), rdr.GetInt32(14), rdr.GetDecimal(15), rdr.GetDateTime(16), rdr.GetInt32(17), rdr.GetDecimal(18), rdr.GetDateTime(19), rdr.GetInt32(20), rdr.GetDecimal(21), rdr.GetDateTime(22), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
-                else
+                {
                     sale = new SaleInfo();
+                    ORMHelper.RelationalToObject(sale, rdr);
+                }
+                //    sale = new SaleInfo(rdr.GetInt32(0), new DBNullAdapter(rdr.GetValue(1)), new DBNullAdapter(rdr.GetValue(2)), new DBNullAdapter(rdr.GetValue(3)), new DBNullAdapter(rdr.GetValue(4)), new DBNullAdapter(rdr.GetValue(5)), rdr.GetDouble(6), rdr.GetInt32(7), rdr.GetDouble(8), new DBNullAdapter(rdr.GetValue(9)), new DBNullAdapter(rdr.GetValue(10)), rdr.GetInt32(11), new DBNullAdapter(rdr.GetValue(12)), new DBNullAdapter(rdr.GetValue(13)), rdr.GetInt32(14), new DBNullAdapter(rdr.GetValue(15)), new DBNullAdapter(rdr.GetValue(16)), rdr.GetInt32(17), new DBNullAdapter(rdr.GetValue(18)), new DBNullAdapter(rdr.GetValue(19)), rdr.GetInt32(20), new DBNullAdapter(rdr.GetValue(21)), new DBNullAdapter(rdr.GetValue(22)), rdr.GetInt32(23), rdr.GetString(24), rdr.GetInt32(25), rdr.GetInt32(26), rdr.GetInt32(27));
+                //else
+                //    sale = new SaleInfo();
             }
             return sale;
         }

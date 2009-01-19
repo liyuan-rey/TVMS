@@ -19,10 +19,15 @@ namespace TVMS.SmartClient.Controls
 
         public void RefreshList()
         {
+            throw new ApplicationException("The method or operation is not implemented.");
+        }
+
+        public void RefreshList(int parentId)
+        {
             this.Items.Clear();
 
             Quarters q = new Quarters();
-            IList<QuartersInfo> qis = null;// q.GetQuarters();
+            IList<QuartersInfo> qis = q.GetQuartersByTenement(parentId);
 
             foreach (QuartersInfo qi in qis)
             {

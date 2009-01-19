@@ -47,7 +47,9 @@ namespace TVMS.OleDbDAL {
             {
                 while (rdr.Read())
                 {
-                    QuartersInfo qua = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetDouble(2), rdr.GetDecimal(3), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
+                    QuartersInfo qua = new QuartersInfo();
+                    ORMHelper.RelationalToObject(qua, rdr);
+                    //QuartersInfo qua = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetDouble(2), new DBNullAdapter(rdr.GetValue(3)), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
                     quarters.Add(qua);
                 }
             }
@@ -62,7 +64,9 @@ namespace TVMS.OleDbDAL {
             {
                 while (rdr.Read())
                 {
-                    QuartersInfo qua = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetDouble(2), rdr.GetDecimal(3), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
+                    QuartersInfo qua = new QuartersInfo();
+                    ORMHelper.RelationalToObject(qua, rdr);
+                    //QuartersInfo qua = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetDouble(2), new DBNullAdapter(rdr.GetValue(3)), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
                     quarters.Add(qua);
                 }
             }
@@ -81,10 +85,13 @@ namespace TVMS.OleDbDAL {
             using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_QUARTERS, parm))
             {
                 if (rdr.Read())
-
-                    quarters = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetDouble(2), rdr.GetDecimal(3), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
-                else
+                {
                     quarters = new QuartersInfo();
+                    ORMHelper.RelationalToObject(quarters, rdr);
+                }
+                //    quarters = new QuartersInfo(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetDouble(2), new DBNullAdapter(rdr.GetValue(3)), rdr.GetString(4), rdr.GetInt32(5), rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8));
+                //else
+                //    quarters = new QuartersInfo();
             }
             return quarters;
         }

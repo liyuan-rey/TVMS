@@ -34,7 +34,9 @@ namespace TVMS.OleDbDAL {
             {
                 while (rdr.Read())
                 {
-                    TenementInfo ten = new TenementInfo(rdr.GetInt32(0), rdr.GetString(1));
+                    TenementInfo ten = new TenementInfo();
+                    ORMHelper.RelationalToObject(ten, rdr);
+                    //TenementInfo ten = new TenementInfo(rdr.GetInt32(0), rdr.GetString(1));
                     tenements.Add(ten);
                 }
             }
@@ -53,10 +55,13 @@ namespace TVMS.OleDbDAL {
             using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_TENEMENT, parm))
             {
                 if (rdr.Read())
-
-                    tenement = new TenementInfo(rdr.GetInt32(0), rdr.GetString(1));
-                else
+                {
                     tenement = new TenementInfo();
+                    ORMHelper.RelationalToObject(tenement, rdr);
+                }
+                //    tenement = new TenementInfo(rdr.GetInt32(0), rdr.GetString(1));
+                //else
+                //    tenement = new TenementInfo();
             }
             return tenement;
         }

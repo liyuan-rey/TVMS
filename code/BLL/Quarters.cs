@@ -24,10 +24,9 @@ namespace TVMS.BLL {
             return dal.GetQuartersByTenement(tenementId);
 		}
 
-        public IList<QuartersInfo> GetQuarters()
-        {
+        public IList<QuartersInfo> GetQuarters(){
 
-            return null;
+            return dal.GetQuarters();
         }
         
         /// 

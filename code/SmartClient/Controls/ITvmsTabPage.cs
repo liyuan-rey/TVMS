@@ -4,9 +4,7 @@ using System.Text;
 
 namespace TVMS.SmartClient.Controls
 {
-    public interface ITvmsListView
+    public interface ITvmsTabPage
     {
-        void RefreshList();
-        void RefreshList(int parentId);
     }
 }

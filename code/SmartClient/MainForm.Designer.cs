@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("TVMS");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("项目1");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("项目2");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("项目", new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("客户");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("合同");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("访问网站");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("TVMS");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("客户");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("合同");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("住宅");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("销售单");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("访问网站");
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -46,36 +44,23 @@
             this.tvwWorkspace = new System.Windows.Forms.TreeView();
             this.pnlCaption = new System.Windows.Forms.Panel();
             this.lblCaption = new System.Windows.Forms.Label();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.pnlList = new System.Windows.Forms.Panel();
-            this.pnlNavagator = new System.Windows.Forms.Panel();
-            this.lblNavagator = new System.Windows.Forms.Label();
-            this.tabDetail = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.系统SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsMain = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tenementInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.ssMain.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.pnlWorkspace.SuspendLayout();
             this.pnlCaption.SuspendLayout();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.pnlNavagator.SuspendLayout();
-            this.tabDetail.SuspendLayout();
             this.mnuMain.SuspendLayout();
-            this.tsMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tenementInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -88,7 +73,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(613, 345);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(613, 370);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -99,7 +84,6 @@
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.mnuMain);
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.tsMain);
             // 
             // ssMain
             // 
@@ -120,21 +104,18 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.TabStop = false;
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.pnlWorkspace);
             this.splitContainer1.Panel1.Controls.Add(this.pnlCaption);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(613, 345);
+            this.splitContainer1.Size = new System.Drawing.Size(613, 370);
             this.splitContainer1.SplitterDistance = 161;
             this.splitContainer1.TabIndex = 0;
-            this.splitContainer1.TabStop = false;
             // 
             // pnlWorkspace
             // 
@@ -142,7 +123,7 @@
             this.pnlWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlWorkspace.Location = new System.Drawing.Point(0, 25);
             this.pnlWorkspace.Name = "pnlWorkspace";
-            this.pnlWorkspace.Size = new System.Drawing.Size(161, 320);
+            this.pnlWorkspace.Size = new System.Drawing.Size(161, 345);
             this.pnlWorkspace.TabIndex = 3;
             // 
             // tvwWorkspace
@@ -152,45 +133,46 @@
             this.tvwWorkspace.HideSelection = false;
             this.tvwWorkspace.Location = new System.Drawing.Point(0, 0);
             this.tvwWorkspace.Name = "tvwWorkspace";
-            treeNode1.Name = "NodeTVMS";
-            treeNode1.Tag = "";
-            treeNode1.Text = "TVMS";
-            treeNode2.Name = "NodeTenement";
-            treeNode2.Tag = "";
-            treeNode2.Text = "项目1";
-            treeNode2.ToolTipText = "项目住宅列表";
-            treeNode3.Name = "NodeTenement";
-            treeNode3.Tag = "";
-            treeNode3.Text = "项目2";
-            treeNode3.ToolTipText = "项目住宅列表";
-            treeNode4.Name = "NodeTenements";
-            treeNode4.Tag = "";
-            treeNode4.Text = "项目";
-            treeNode4.ToolTipText = "项目列表";
-            treeNode5.Name = "NodeCustomers";
-            treeNode5.Tag = "";
-            treeNode5.Text = "客户";
-            treeNode5.ToolTipText = "客户列表";
-            treeNode6.Name = "NodeContracts";
-            treeNode6.Tag = "";
-            treeNode6.Text = "合同";
-            treeNode6.ToolTipText = "合同列表";
-            treeNode7.Name = "NodeWeb";
-            treeNode7.Tag = "";
-            treeNode7.Text = "访问网站";
+            treeNode8.Name = "NodeTVMS";
+            treeNode8.Tag = "";
+            treeNode8.Text = "TVMS";
+            treeNode9.Name = "NodeTenements";
+            treeNode9.Tag = "";
+            treeNode9.Text = "项目";
+            treeNode9.ToolTipText = "项目列表";
+            treeNode10.Name = "NodeCustomers";
+            treeNode10.Tag = "";
+            treeNode10.Text = "客户";
+            treeNode10.ToolTipText = "客户列表";
+            treeNode11.Name = "NodeContracts";
+            treeNode11.Tag = "";
+            treeNode11.Text = "合同";
+            treeNode11.ToolTipText = "合同列表";
+            treeNode12.Name = "NodeQuarters";
+            treeNode12.Text = "住宅";
+            treeNode12.ToolTipText = "住宅列表";
+            treeNode13.Name = "NodeSales";
+            treeNode13.Text = "销售单";
+            treeNode13.ToolTipText = "销售单列表";
+            treeNode14.Name = "NodeWeb";
+            treeNode14.Tag = "";
+            treeNode14.Text = "访问网站";
             this.tvwWorkspace.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7});
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13,
+            treeNode14});
             this.tvwWorkspace.ShowNodeToolTips = true;
-            this.tvwWorkspace.Size = new System.Drawing.Size(161, 320);
+            this.tvwWorkspace.Size = new System.Drawing.Size(161, 345);
             this.tvwWorkspace.TabIndex = 0;
             this.tvwWorkspace.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwWorkspace_AfterSelect);
             // 
             // pnlCaption
             // 
+            this.pnlCaption.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pnlCaption.Controls.Add(this.lblCaption);
             this.pnlCaption.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCaption.Location = new System.Drawing.Point(0, 0);
@@ -201,79 +183,12 @@
             // lblCaption
             // 
             this.lblCaption.AutoSize = true;
-            this.lblCaption.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCaption.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblCaption.Location = new System.Drawing.Point(3, 5);
             this.lblCaption.Name = "lblCaption";
             this.lblCaption.Size = new System.Drawing.Size(43, 14);
             this.lblCaption.TabIndex = 1;
             this.lblCaption.Text = "工作区";
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.pnlList);
-            this.splitContainer2.Panel1.Controls.Add(this.pnlNavagator);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.tabDetail);
-            this.splitContainer2.Size = new System.Drawing.Size(448, 345);
-            this.splitContainer2.SplitterDistance = 151;
-            this.splitContainer2.TabIndex = 0;
-            this.splitContainer2.TabStop = false;
-            // 
-            // pnlList
-            // 
-            this.pnlList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlList.Location = new System.Drawing.Point(0, 25);
-            this.pnlList.Name = "pnlList";
-            this.pnlList.Size = new System.Drawing.Size(448, 126);
-            this.pnlList.TabIndex = 1;
-            // 
-            // pnlNavagator
-            // 
-            this.pnlNavagator.Controls.Add(this.lblNavagator);
-            this.pnlNavagator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlNavagator.Location = new System.Drawing.Point(0, 0);
-            this.pnlNavagator.Name = "pnlNavagator";
-            this.pnlNavagator.Size = new System.Drawing.Size(448, 25);
-            this.pnlNavagator.TabIndex = 0;
-            // 
-            // lblNavagator
-            // 
-            this.lblNavagator.AutoSize = true;
-            this.lblNavagator.BackColor = System.Drawing.SystemColors.Control;
-            this.lblNavagator.Location = new System.Drawing.Point(3, 5);
-            this.lblNavagator.Name = "lblNavagator";
-            this.lblNavagator.Size = new System.Drawing.Size(43, 14);
-            this.lblNavagator.TabIndex = 2;
-            this.lblNavagator.Text = "导航栏";
-            // 
-            // tabDetail
-            // 
-            this.tabDetail.Controls.Add(this.tabPage1);
-            this.tabDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabDetail.Location = new System.Drawing.Point(0, 0);
-            this.tabDetail.Name = "tabDetail";
-            this.tabDetail.SelectedIndex = 0;
-            this.tabDetail.Size = new System.Drawing.Size(448, 190);
-            this.tabDetail.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(440, 163);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "常规";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // mnuMain
             // 
@@ -313,24 +228,9 @@
             this.退出XToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.退出XToolStripMenuItem.Text = "退出(&X)";
             // 
-            // tsMain
+            // tenementInfoBindingSource
             // 
-            this.tsMain.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.tsMain.Location = new System.Drawing.Point(3, 24);
-            this.tsMain.Name = "tsMain";
-            this.tsMain.Size = new System.Drawing.Size(35, 25);
-            this.tsMain.TabIndex = 1;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.tenementInfoBindingSource.DataSource = typeof(TVMS.Model.TenementInfo);
             // 
             // MainForm
             // 
@@ -342,6 +242,7 @@
             this.MainMenuStrip = this.mnuMain;
             this.Name = "MainForm";
             this.Text = "房产销售管理系统";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
@@ -352,21 +253,13 @@
             this.ssMain.ResumeLayout(false);
             this.ssMain.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             this.pnlWorkspace.ResumeLayout(false);
             this.pnlCaption.ResumeLayout(false);
             this.pnlCaption.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            this.splitContainer2.ResumeLayout(false);
-            this.pnlNavagator.ResumeLayout(false);
-            this.pnlNavagator.PerformLayout();
-            this.tabDetail.ResumeLayout(false);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
-            this.tsMain.ResumeLayout(false);
-            this.tsMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tenementInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,17 +276,10 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView tvwWorkspace;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.ToolStrip tsMain;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.Label lblCaption;
         private System.Windows.Forms.Panel pnlWorkspace;
         private System.Windows.Forms.Panel pnlCaption;
-        private System.Windows.Forms.TabControl tabDetail;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Panel pnlNavagator;
-        private System.Windows.Forms.Label lblNavagator;
-        private System.Windows.Forms.Panel pnlList;
+        private System.Windows.Forms.BindingSource tenementInfoBindingSource;
     }
 }
 

@@ -38,7 +38,9 @@ namespace TVMS.OleDbDAL {
             {
                 while (rdr.Read())
                 {
-                    ContractInfo con = new ContractInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), rdr.GetDateTime(3), rdr.GetInt32(4), rdr.GetInt32(5));
+                    ContractInfo con = new ContractInfo();
+                    ORMHelper.RelationalToObject(con, rdr);
+                    //ContractInfo con = new ContractInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), new DBNullAdapter(rdr.GetValue(3)), rdr.GetInt32(4), rdr.GetInt32(5));
                     contracts.Add(con);
                 }
             }
@@ -57,9 +59,13 @@ namespace TVMS.OleDbDAL {
             using (OleDbDataReader rdr = OleDbHelper.ExecuteReader(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_SELECT_CONTRACT, parm))
             {
                 if (rdr.Read())
-                    contract = new ContractInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), rdr.GetDateTime(3), rdr.GetInt32(4), rdr.GetInt32(5));
-                else
+                {
                     contract = new ContractInfo();
+                    ORMHelper.RelationalToObject(contract, rdr);
+                }
+                //    contract = new ContractInfo(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), new DBNullAdapter(rdr.GetValue(3)), rdr.GetInt32(4), rdr.GetInt32(5));
+                //else
+                //    contract = new ContractInfo();
             }
             return contract;
         }

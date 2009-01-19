@@ -32,5 +32,10 @@ namespace TVMS.SmartClient.Controls
                 this.Items.Add(lvi);
             }
         }
+
+        public void RefreshList(int parentId)
+        {
+            throw new ApplicationException("The method or operation is not implemented.");
+        }
     }
 }

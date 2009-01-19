@@ -21,102 +21,195 @@ namespace TVMS.SmartClient
 
             InitializeComponent();
 
-            BuildTenementsTree();
+            //BuildTenementsTree();
         }
 
-        private void BuildTenementsTree()
-        {
-            pnlWorkspace.SuspendLayout();
-            tvwWorkspace.SuspendLayout();
+        //private void BuildTenementsTree()
+        //{
+        //    pnlWorkspace.SuspendLayout();
+        //    tvwWorkspace.SuspendLayout();
 
-            TreeNode tnTenements = tvwWorkspace.Nodes["NodeTenements"];
-            tnTenements.Collapse();
-            tnTenements.Nodes.Clear();
+        //    TreeNode tnTenements = tvwWorkspace.Nodes["NodeTenements"];
+        //    tnTenements.Collapse();
+        //    tnTenements.Nodes.Clear();
 
-            IList<TenementInfo> tens = new TVMS.BLL.Tenement().GetTenements();
-            foreach (TenementInfo ten in tens)
-            {
-                TreeNode node = new TreeNode();
+        //    IList<TenementInfo> tens = new TVMS.BLL.Tenement().GetTenements();
+        //    foreach (TenementInfo ten in tens)
+        //    {
+        //        TreeNode node = new TreeNode();
 
-                node.Name = "NodeTenement";
-                node.Text = ten.Name;
-                node.ToolTipText = ten.Name + "的住宅列表";
-                node.Tag = ten;
+        //        node.Name = "NodeTenement";
+        //        node.Text = ten.Name;
+        //        node.ToolTipText = ten.Name + "的住宅列表";
+        //        node.Tag = ten;
 
-                tnTenements.Nodes.Add(node);
-            }
+        //        tnTenements.Nodes.Add(node);
+        //    }
 
-            if (tnTenements.Nodes.Count > 0)
-                tnTenements.Expand();
+        //    if (tnTenements.Nodes.Count > 0)
+        //        tnTenements.Expand();
 
-            tvwWorkspace.ResumeLayout(true);
-            pnlWorkspace.ResumeLayout(true);
-        }
+        //    tvwWorkspace.ResumeLayout(true);
+        //    pnlWorkspace.ResumeLayout(true);
+        //}
 
         private void LoadObjectMapConfigration()
         {
-            nodeObjectMap["NodeTenements"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.TenementsListView", "");
-            nodeObjectMap["NodeTenement"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.QuartersListView", "");
-            nodeObjectMap["NodeContracts"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.ContractsListView", "");
-            nodeObjectMap["NodeCustomers"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.CustomersListView", "");
+            nodeObjectMap["NodeTenements"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.TenementsUserControl");
+            nodeObjectMap["NodeContracts"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.ContractsUserControl");
+            nodeObjectMap["NodeCustomers"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.CustomersUserControl");
+            nodeObjectMap["NodeQuarters"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.QuartersUserControl");
+            nodeObjectMap["NodeSales"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.SalesUserControl"); ;
         }
 
         private void tvwWorkspace_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            pnlList.SuspendLayout();
+            if (!nodeObjectMap.ContainsKey(e.Node.Name))
+                return;
 
-            //
-            foreach (Control ctrl in pnlList.Controls)
+            SplitterPanel parentPanel = splitContainer1.Panel2;
+
+            foreach (Control ctrl in parentPanel.Controls)
             {
-                if (ctrl.Visible == true && ctrl is ListView)
+                if (ctrl.Visible == true && ctrl is UserControl)
+                {
                     ctrl.Visible = false;
+                    ctrl.Dock = DockStyle.None;
+                }
             }
-
-            lblNavagator.Text = "";
 
             //
-            ListView lvw = GetTvmsListView(e.Node.Name);
-            if (lvw != null)
+            UserControl uc = GetTvmsUserControl(e.Node.Name);
+            if (uc != null)
             {
-                lvw.SuspendLayout();
+                //parentPanel.SuspendLayout();
 
-                if (!pnlList.Controls.Contains(lvw))
-                    pnlList.Controls.Add(lvw);
-                
-                lvw.Visible = true;
-                lvw.ResumeLayout(true);
+                if (!parentPanel.Controls.Contains(uc))
+                    parentPanel.Controls.Add(uc);
 
-                lblNavagator.Text = e.Node.ToolTipText;
+            //    ITvmsListView tlv = lvw as ITvmsListView;
+            //    if (tlv != null)
+            //    {
+            //        switch (e.Node.Name)
+            //        {
+            //            case "NodeTenement": //HACK:
+            //                tlv.RefreshList(((TenementInfo)e.Node.Tag).TenementId);
+            //                break;
+            //            default:
+            //                tlv.RefreshList();
+            //                break;
+            //        }
+            //    }
 
-                ITvmsListView tlv = lvw as ITvmsListView;
-                if (tlv != null)
-                    tlv.RefreshList();
+                uc.Dock = DockStyle.Fill;
+                uc.Visible = true;
             }
-
-            pnlList.ResumeLayout(true);
         }
 
-        private ListView GetTvmsListView(string nodeName)
+        private UserControl GetTvmsUserControl(string nodeName)
         {
-            ListView lvw = null;
+            UserControl uc = null;
 
             TvmsTypeInfo tti = null;
             if (nodeObjectMap.TryGetValue(nodeName, out tti))
             {
-                if (tti.listInstance == null)
+                if (tti.instance == null)
                 {
-                    lvw = (ListView)System.Reflection.Assembly.LoadFile(Application.ExecutablePath).CreateInstance(tti.listTypeName);
-                    if (lvw != null)
-                    {
-                        tti.listType = lvw.GetType();
-                        tti.listInstance = lvw;
-                    }
+                    uc = (UserControl)System.Reflection.Assembly.LoadFile(Application.ExecutablePath).CreateInstance(tti.typeName);
+                    if (uc != null)
+                        tti.instance = uc;
                 }
                 else
-                    lvw = tti.listInstance;
+                    uc = tti.instance;
             }
 
-            return lvw;
+            return uc;
+        }
+
+        //private ListView GetTvmsListView(string nodeName)
+        //{
+        //    ListView lvw = null;
+
+        //    TvmsTypeInfo tti = null;
+        //    if (nodeObjectMap.TryGetValue(nodeName, out tti))
+        //    {
+        //        if (tti.listInstance == null)
+        //        {
+        //            lvw = (ListView)System.Reflection.Assembly.LoadFile(Application.ExecutablePath).CreateInstance(tti.listTypeName);
+        //            if (lvw != null)
+        //            {
+        //                lvw.ItemSelectionChanged += this.TvmsListView_ItemSelectionChanged;
+
+        //                tti.listType = lvw.GetType();
+        //                tti.listInstance = lvw;
+        //            }
+        //        }
+        //        else
+        //            lvw = tti.listInstance;
+        //    }
+
+        //    return lvw;
+        //}
+
+        //private TabPage GetTvmsTabPage(string nodeName)
+        //{
+        //    TabPage page = null;
+
+        //    TvmsTypeInfo tti = null;
+        //    if (nodeObjectMap.TryGetValue(nodeName, out tti))
+        //    {
+        //        if (tti.pageInstance == null)
+        //        {
+        //            page = (TabPage)System.Reflection.Assembly.LoadFile(Application.ExecutablePath).CreateInstance(tti.pageTypeName);
+        //            if (page != null)
+        //            {
+        //                tti.pageType = page.GetType();
+        //                tti.pageInstance = page;
+        //            }
+        //        }
+        //        else
+        //            page = tti.pageInstance;
+        //    }
+
+        //    return page;
+        //}
+
+        //private void TvmsListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        //{
+        //    if (tvwWorkspace.SelectedNode == null)
+        //        return;
+
+        //    tabDetail.SuspendLayout();
+
+        //    tabDetail.TabPages.Clear();
+
+        //    if (e.IsSelected == true)
+        //    {
+        //        tabDetail.TabPages.Clear();
+
+        //        TabPage page = GetTvmsTabPage(tvwWorkspace.SelectedNode.Name);
+        //        if (page != null)
+        //        {
+        //            page.SuspendLayout();
+
+        //            tabDetail.TabPages.Add(page);
+
+        //            ITvmsTabPage ttp = page as ITvmsTabPage;
+        //            if (ttp != null)
+        //            {
+        //                //TODO:
+        //            }
+
+        //            page.ResumeLayout(true);
+        //        }
+        //    }
+
+        //    tabDetail.ResumeLayout(true);
+        //}
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

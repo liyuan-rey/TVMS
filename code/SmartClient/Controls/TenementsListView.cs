@@ -12,6 +12,19 @@ namespace TVMS.SmartClient.Controls
 {
     public partial class TenementsListView : ListView, ITvmsListView
     {
+        public event TvmsItemSelectionChangedEventHandler TvmsItemSelectionChanged;
+
+        protected override void OnItemSelectionChanged (ListViewItemSelectionChangedEventArgs e)
+        {
+            base.OnItemSelectionChanged(e);
+
+            if (TvmsItemSelectionChanged != null)
+            {
+                //TvmsItemSelectionChangedEventArgs te = new TvmsItemSelectionChangedEventArgs();
+                //TvmsItemSelectionChanged(this, te);
+            }
+        }
+
         public TenementsListView()
         {
             InitializeComponent();
@@ -31,6 +44,11 @@ namespace TVMS.SmartClient.Controls
 
                 this.Items.Add(lvi);
             }
+        }
+
+        public void RefreshList(int parentId)
+        {
+            throw new ApplicationException("The method or operation is not implemented.");
         }
     }
 }
