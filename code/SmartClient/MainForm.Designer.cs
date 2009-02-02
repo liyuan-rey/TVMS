@@ -29,13 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("TVMS");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("客户");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("合同");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("住宅");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("销售单");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("访问网站");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("客户");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("合同");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("住宅");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("销售单");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("欢迎使用", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("访问网站");
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -73,11 +78,12 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(613, 370);
+            this.toolStripContainer1.ContentPanel.Padding = new System.Windows.Forms.Padding(7);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(585, 375);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(613, 416);
+            this.toolStripContainer1.Size = new System.Drawing.Size(585, 421);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -92,7 +98,7 @@
             this.toolStripStatusLabel1});
             this.ssMain.Location = new System.Drawing.Point(0, 0);
             this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(613, 22);
+            this.ssMain.Size = new System.Drawing.Size(585, 22);
             this.ssMain.TabIndex = 0;
             // 
             // toolStripStatusLabel1
@@ -105,15 +111,14 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Location = new System.Drawing.Point(7, 7);
             this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.TabStop = false;
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.pnlWorkspace);
             this.splitContainer1.Panel1.Controls.Add(this.pnlCaption);
-            this.splitContainer1.Size = new System.Drawing.Size(613, 370);
+            this.splitContainer1.Size = new System.Drawing.Size(571, 361);
             this.splitContainer1.SplitterDistance = 161;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -123,7 +128,7 @@
             this.pnlWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlWorkspace.Location = new System.Drawing.Point(0, 25);
             this.pnlWorkspace.Name = "pnlWorkspace";
-            this.pnlWorkspace.Size = new System.Drawing.Size(161, 345);
+            this.pnlWorkspace.Size = new System.Drawing.Size(161, 336);
             this.pnlWorkspace.TabIndex = 3;
             // 
             // tvwWorkspace
@@ -133,40 +138,35 @@
             this.tvwWorkspace.HideSelection = false;
             this.tvwWorkspace.Location = new System.Drawing.Point(0, 0);
             this.tvwWorkspace.Name = "tvwWorkspace";
-            treeNode8.Name = "NodeTVMS";
-            treeNode8.Tag = "";
-            treeNode8.Text = "TVMS";
-            treeNode9.Name = "NodeTenements";
-            treeNode9.Tag = "";
-            treeNode9.Text = "项目";
-            treeNode9.ToolTipText = "项目列表";
-            treeNode10.Name = "NodeCustomers";
-            treeNode10.Tag = "";
-            treeNode10.Text = "客户";
-            treeNode10.ToolTipText = "客户列表";
-            treeNode11.Name = "NodeContracts";
-            treeNode11.Tag = "";
-            treeNode11.Text = "合同";
-            treeNode11.ToolTipText = "合同列表";
-            treeNode12.Name = "NodeQuarters";
-            treeNode12.Text = "住宅";
-            treeNode12.ToolTipText = "住宅列表";
-            treeNode13.Name = "NodeSales";
-            treeNode13.Text = "销售单";
-            treeNode13.ToolTipText = "销售单列表";
-            treeNode14.Name = "NodeWeb";
-            treeNode14.Tag = "";
-            treeNode14.Text = "访问网站";
+            treeNode1.Name = "NodeTenements";
+            treeNode1.Tag = "";
+            treeNode1.Text = "项目";
+            treeNode1.ToolTipText = "项目列表";
+            treeNode2.Name = "NodeCustomers";
+            treeNode2.Tag = "";
+            treeNode2.Text = "客户";
+            treeNode2.ToolTipText = "客户列表";
+            treeNode3.Name = "NodeContracts";
+            treeNode3.Tag = "";
+            treeNode3.Text = "合同";
+            treeNode3.ToolTipText = "合同列表";
+            treeNode4.Name = "NodeQuarters";
+            treeNode4.Text = "住宅";
+            treeNode4.ToolTipText = "住宅列表";
+            treeNode5.Name = "NodeSales";
+            treeNode5.Text = "销售单";
+            treeNode5.ToolTipText = "销售单列表";
+            treeNode6.Name = "NodeWelcome";
+            treeNode6.Tag = "";
+            treeNode6.Text = "欢迎使用";
+            treeNode7.Name = "NodeWeb";
+            treeNode7.Tag = "";
+            treeNode7.Text = "访问网站";
             this.tvwWorkspace.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14});
+            treeNode6,
+            treeNode7});
             this.tvwWorkspace.ShowNodeToolTips = true;
-            this.tvwWorkspace.Size = new System.Drawing.Size(161, 345);
+            this.tvwWorkspace.Size = new System.Drawing.Size(161, 336);
             this.tvwWorkspace.TabIndex = 0;
             this.tvwWorkspace.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwWorkspace_AfterSelect);
             // 
@@ -186,9 +186,9 @@
             this.lblCaption.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblCaption.Location = new System.Drawing.Point(3, 5);
             this.lblCaption.Name = "lblCaption";
-            this.lblCaption.Size = new System.Drawing.Size(43, 14);
+            this.lblCaption.Size = new System.Drawing.Size(61, 14);
             this.lblCaption.TabIndex = 1;
-            this.lblCaption.Text = "工作区";
+            this.lblCaption.Text = "TVMS 1.0";
             // 
             // mnuMain
             // 
@@ -197,7 +197,7 @@
             this.系统SToolStripMenuItem});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(613, 24);
+            this.mnuMain.Size = new System.Drawing.Size(585, 24);
             this.mnuMain.TabIndex = 0;
             this.mnuMain.Text = "menuStrip1";
             // 
@@ -236,7 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 416);
+            this.ClientSize = new System.Drawing.Size(585, 421);
             this.Controls.Add(this.toolStripContainer1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.mnuMain;

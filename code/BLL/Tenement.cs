@@ -26,25 +26,25 @@ namespace TVMS.BLL {
 		/// <param name="tenementId"></param>
 		public TenementInfo GetTenement(int tenementId){
 
-			return null;
+			return dal.GetTenement(tenementId);
 		}
 
 		/// 
 		/// <param name="tenement"></param>
 		public void Insert(TenementInfo tenement){
-
+            dal.Insert(tenement);
 		}
 
 		/// 
 		/// <param name="tenementId"></param>
 		public void Delete(int tenementId){
-
+            dal.Delete(tenementId);
 		}
 
 		/// 
 		/// <param name="tenement"></param>
 		public void Update(TenementInfo tenement){
-
+            dal.Update(tenement);
 		}
 
 	}//end Tenement

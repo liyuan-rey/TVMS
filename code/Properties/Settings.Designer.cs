@@ -25,8 +25,8 @@ namespace TVMS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.\\Data\\tvms.mdb;Persist Security Inf" +
-            "o=False;Jet OLEDB:Database Password=")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLOLEDB;Data Source=LIYUAN\\SQLEXPRESS;Integrated Security=SSPI;Initial " +
+            "Catalog=TVMS_02")]
         public string SQLConnString {
             get {
                 return ((string)(this["SQLConnString"]));
@@ -39,6 +39,16 @@ namespace TVMS.Properties {
         public string CommonDAL {
             get {
                 return ((string)(this["CommonDAL"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.\\Data\\tvms.mdb;Persist Security Inf" +
+            "o=False;Jet OLEDB:Database Password=")]
+        public string SQLConnString_Backup {
+            get {
+                return ((string)(this["SQLConnString_Backup"]));
             }
         }
     }

@@ -50,6 +50,11 @@
     <Compile Include="DBUtility\DBNullAdapter.cs" />
     <Compile Include="DBUtility\OleDbHelper.cs" />
     <Compile Include="DBUtility\ORMHelper.cs" />
+    <Compile Include="Model\IEventListener.cs" />
+    <Compile Include="Model\IEventPublisher.cs" />
+    <Compile Include="Model\ModelObject.cs" />
+    <Compile Include="Model\ObjectChangedListener.cs" />
+    <Compile Include="Model\Publisher.cs" />
     <Compile Include="OleDbDAL\Contract.cs" />
     <Compile Include="OleDbDAL\Customer.cs" />
     <Compile Include="OleDbDAL\Quarters.cs" />
@@ -215,6 +220,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SmartClient\TvmsTypeInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RefreshDocViewHS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

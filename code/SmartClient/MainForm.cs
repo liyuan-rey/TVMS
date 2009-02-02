@@ -67,7 +67,7 @@ namespace TVMS.SmartClient
             if (!nodeObjectMap.ContainsKey(e.Node.Name))
                 return;
 
-            SplitterPanel parentPanel = splitContainer1.Panel2;
+            Panel parentPanel = splitContainer1.Panel2;
 
             foreach (Control ctrl in parentPanel.Controls)
             {
@@ -110,17 +110,24 @@ namespace TVMS.SmartClient
         {
             UserControl uc = null;
 
-            TvmsTypeInfo tti = null;
-            if (nodeObjectMap.TryGetValue(nodeName, out tti))
+            try
             {
-                if (tti.instance == null)
+                TvmsTypeInfo tti = null;
+                if (nodeObjectMap.TryGetValue(nodeName, out tti))
                 {
-                    uc = (UserControl)System.Reflection.Assembly.LoadFile(Application.ExecutablePath).CreateInstance(tti.typeName);
-                    if (uc != null)
-                        tti.instance = uc;
+                    if (tti.instance == null)
+                    {
+                        uc = (UserControl)System.Reflection.Assembly.LoadFile(Application.ExecutablePath).CreateInstance(tti.typeName);
+                        if (uc != null)
+                            tti.instance = uc;
+                    }
+                    else
+                        uc = tti.instance;
                 }
-                else
-                    uc = tti.instance;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载用户界面失败。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             return uc;

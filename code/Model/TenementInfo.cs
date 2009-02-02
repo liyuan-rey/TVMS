@@ -10,8 +10,8 @@ using System;
 
 
 namespace TVMS.Model {
-	public class TenementInfo {
-
+    public class TenementInfo : ModelObject
+    {
 		/// <summary>
 		/// ÏîÄ¿±àºÅ
 		/// </summary>
@@ -43,7 +43,8 @@ namespace TVMS.Model {
 			}
 			set{
 				tenementId = value;
-			}
+                NotifyListeners();
+            }
 		}
 
 		/// <summary>
@@ -55,7 +56,8 @@ namespace TVMS.Model {
 			}
 			set{
 				name = value;
-			}
+                NotifyListeners();
+            }
 		}
 
 	}//end TenementInfo

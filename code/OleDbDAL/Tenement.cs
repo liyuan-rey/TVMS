@@ -36,7 +36,8 @@ namespace TVMS.OleDbDAL {
                 {
                     TenementInfo ten = new TenementInfo();
                     ORMHelper.RelationalToObject(ten, rdr);
-                    //TenementInfo ten = new TenementInfo(rdr.GetInt32(0), rdr.GetString(1));
+                    ten.Initializing = false;
+
                     tenements.Add(ten);
                 }
             }
@@ -58,10 +59,8 @@ namespace TVMS.OleDbDAL {
                 {
                     tenement = new TenementInfo();
                     ORMHelper.RelationalToObject(tenement, rdr);
+                    tenement.Initializing = false;
                 }
-                //    tenement = new TenementInfo(rdr.GetInt32(0), rdr.GetString(1));
-                //else
-                //    tenement = new TenementInfo();
             }
             return tenement;
         }
@@ -70,10 +69,12 @@ namespace TVMS.OleDbDAL {
 		/// <param name="tenement"></param>
 		public void Insert(TenementInfo tenement){
 
-            OleDbParameter parm = new OleDbParameter(PARM_NAME, OleDbType.VarChar, 20);
-            parm.Value = tenement.Name;
+            OleDbParameter[] tenementParms = GetTenementParameters();
 
-            int numInserted = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_INSERT_TENEMENT, parm);
+//            tenementParms[0].Value = tenement.TenementId;
+            tenementParms[0].Value = tenement.Name;
+
+            int numInserted = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_INSERT_TENEMENT, tenementParms);
             if (numInserted != 1)
                 throw new ApplicationException("DATA INTEGRITY ERROR ON TENEMENT INSERT");
 		}
@@ -94,14 +95,34 @@ namespace TVMS.OleDbDAL {
 		/// <param name="tenement"></param>
 		public void Update(TenementInfo tenement){
 
-            OleDbParameter parm = new OleDbParameter(PARM_NAME, OleDbType.VarChar, 20);
-            parm.Value = tenement.Name;
+            OleDbParameter[] tenementParms = GetTenementParameters();
 
-            int numUpdated = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_UPDATE_TENEMENT, parm);
+            tenementParms[0].Value = tenement.TenementId;
+            tenementParms[1].Value = tenement.Name;
+
+            int numUpdated = OleDbHelper.ExecuteNonQuery(OleDbHelper.ConnectionStringLocalTransaction, CommandType.Text, SQL_UPDATE_TENEMENT, tenementParms);
             if (numUpdated != 1)
                 throw new ApplicationException("DATA INTEGRITY ERROR ON TENEMENT UPDATE");
         }
 
-	}//end Tenement
+        private static OleDbParameter[] GetTenementParameters()
+        {
+            OleDbParameter[] parms = OleDbHelper.GetCachedParameters(SQL_INSERT_TENEMENT);
+
+            if (parms == null)
+            {
+                parms = new OleDbParameter[] { //an Access DB must have the parameters added to the
+                                                //OleDBCommand's Parameters collection in the exact same sequence as they are
+                                                //specified in the SQL statement
+//                    new OleDbParameter(PARM_TENEMENT_ID, OleDbType.Integer),
+                    new OleDbParameter(PARM_NAME, OleDbType.VarChar, 20),
+                };
+
+                OleDbHelper.CacheParameters(SQL_INSERT_TENEMENT, parms);
+            }
+
+            return parms;
+        }
+    }//end Tenement
 
 }//end namespace OleDbDAL
