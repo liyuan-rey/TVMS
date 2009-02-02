@@ -1,54 +1,60 @@
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('FK_Contracts_Customers') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1)
-ALTER TABLE TVMS_Contracts DROP CONSTRAINT FK_Contracts_Customers;
-
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('FK_Contracts_Quarters') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1)
-ALTER TABLE TVMS_Contracts DROP CONSTRAINT FK_Contracts_Quarters;
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('FK_Glossary_Glossary') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1)
+ALTER TABLE TVMS_Glossary DROP CONSTRAINT FK_Glossary_Glossary;
 
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('FK_Quarters_Tenements') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1)
 ALTER TABLE TVMS_Quarters DROP CONSTRAINT FK_Quarters_Tenements;
 
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('FK_Sales_Contracts') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1)
-ALTER TABLE TVMS_Sales DROP CONSTRAINT FK_Sales_Contracts;
-
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('FK_Sales_Customers') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1)
 ALTER TABLE TVMS_Sales DROP CONSTRAINT FK_Sales_Customers;
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('FK_Sales_Employees') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1)
+ALTER TABLE TVMS_Sales DROP CONSTRAINT FK_Sales_Employees;
 
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('FK_Sales_Quarters') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1)
 ALTER TABLE TVMS_Sales DROP CONSTRAINT FK_Sales_Quarters;
 
 
-IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('TVMS_Contracts') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
-DROP TABLE TVMS_Contracts;
-
-IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('TVMS_Customers') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
+IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('Customers') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
 DROP TABLE TVMS_Customers;
 
-IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('TVMS_Quarters') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
+IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('Employees') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
+DROP TABLE TVMS_Employees;
+
+IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('Glossary') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
+DROP TABLE TVMS_Glossary;
+
+IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('Quarters') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
 DROP TABLE TVMS_Quarters;
 
-IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('TVMS_Sales') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
+IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('Sales') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
 DROP TABLE TVMS_Sales;
 
-IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('TVMS_Tenements') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
+IF EXISTS (SELECT * FROM dbo.SYSOBJECTS WHERE id = object_id('Tenements') AND  OBJECTPROPERTY(id, 'IsUserTable') = 1)
 DROP TABLE TVMS_Tenements;
 
 
 
-
-CREATE TABLE TVMS_Contracts ( 
-	ContractId int identity(300000,1)  NOT NULL,
-	Sn nvarchar(30),
-	ContractType int,
-	SigningDate datetime,
-	CustomerId int,
-	QuartersId int
-);
 
 CREATE TABLE TVMS_Customers ( 
 	CustomerId int identity(200000,1)  NOT NULL,
 	Name nvarchar(20) NOT NULL,
 	Address nvarchar(60),
 	Tel nvarchar(20)
+);
+
+CREATE TABLE TVMS_Employees ( 
+	EmployeeId int identity(300000,1)  NOT NULL,
+	Name nvarchar(20),
+	HireDate datetime,
+	Tel nvarchar(20),
+	Address nvarchar(60)
+);
+
+CREATE TABLE TVMS_Glossary ( 
+	TermId int identity(900000,1)  NOT NULL,
+	TermKey nvarchar(20),
+	TermValue nvarchar(50),
+	ParentTermId int
 );
 
 CREATE TABLE TVMS_Quarters ( 
@@ -65,6 +71,9 @@ CREATE TABLE TVMS_Quarters (
 
 CREATE TABLE TVMS_Sales ( 
 	SaleId int identity(400000,1)  NOT NULL,
+	ContractSn nvarchar(30),
+	ContractType int,
+	ContractSigningDate datetime,
 	SalePrice money,
 	PayingDate datetime,
 	Deposit money,
@@ -90,8 +99,8 @@ CREATE TABLE TVMS_Sales (
 	Imprest5State int,
 	Remark nvarchar(100),
 	QuartersId int,
-	ContractId int,
-	CustomerId int
+	CustomerId int,
+	EmployeeId int
 );
 
 CREATE TABLE TVMS_Tenements ( 
@@ -100,11 +109,14 @@ CREATE TABLE TVMS_Tenements (
 );
 
 
-ALTER TABLE TVMS_Contracts ADD CONSTRAINT PK_Contracts 
-	PRIMARY KEY CLUSTERED (ContractId);
-
 ALTER TABLE TVMS_Customers ADD CONSTRAINT PK_Customers 
 	PRIMARY KEY CLUSTERED (CustomerId);
+
+ALTER TABLE TVMS_Employees ADD CONSTRAINT PK_Employees 
+	PRIMARY KEY CLUSTERED (EmployeeId);
+
+ALTER TABLE TVMS_Glossary ADD CONSTRAINT PK_Glossary 
+	PRIMARY KEY CLUSTERED (TermId);
 
 ALTER TABLE TVMS_Quarters ADD CONSTRAINT PK_Quarters 
 	PRIMARY KEY CLUSTERED (QuartersId);
@@ -118,20 +130,17 @@ ALTER TABLE TVMS_Tenements ADD CONSTRAINT PK_Tenements
 
 
 
-ALTER TABLE TVMS_Contracts ADD CONSTRAINT FK_Contracts_Customers 
-	FOREIGN KEY (CustomerId) REFERENCES TVMS_Customers (CustomerId);
-
-ALTER TABLE TVMS_Contracts ADD CONSTRAINT FK_Contracts_Quarters 
-	FOREIGN KEY (QuartersId) REFERENCES TVMS_Quarters (QuartersId);
+ALTER TABLE TVMS_Glossary ADD CONSTRAINT FK_Glossary_Glossary 
+	FOREIGN KEY (ParentTermId) REFERENCES TVMS_Glossary (TermId);
 
 ALTER TABLE TVMS_Quarters ADD CONSTRAINT FK_Quarters_Tenements 
 	FOREIGN KEY (TenementId) REFERENCES TVMS_Tenements (TenementId);
 
-ALTER TABLE TVMS_Sales ADD CONSTRAINT FK_Sales_Contracts 
-	FOREIGN KEY (ContractId) REFERENCES TVMS_Contracts (ContractId);
-
 ALTER TABLE TVMS_Sales ADD CONSTRAINT FK_Sales_Customers 
 	FOREIGN KEY (CustomerId) REFERENCES TVMS_Customers (CustomerId);
+
+ALTER TABLE TVMS_Sales ADD CONSTRAINT FK_Sales_Employees 
+	FOREIGN KEY (EmployeeId) REFERENCES TVMS_Employees (EmployeeId);
 
 ALTER TABLE TVMS_Sales ADD CONSTRAINT FK_Sales_Quarters 
 	FOREIGN KEY (QuartersId) REFERENCES TVMS_Quarters (QuartersId);
