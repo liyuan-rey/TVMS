@@ -569,24 +569,6 @@
             quantityLabel.TabIndex = 35;
             quantityLabel.Text = "Quantity:";
             // 
-            // tenementIdLabel
-            // 
-            this.tenementIdLabel.AutoSize = true;
-            this.tenementIdLabel.Location = new System.Drawing.Point(3, 0);
-            this.tenementIdLabel.Name = "tenementIdLabel";
-            this.tenementIdLabel.Size = new System.Drawing.Size(84, 14);
-            this.tenementIdLabel.TabIndex = 0;
-            this.tenementIdLabel.Text = "Tenement Id:";
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(338, 0);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(42, 14);
-            this.nameLabel.TabIndex = 2;
-            this.nameLabel.Text = "Name:";
-            // 
             // addressLabel
             // 
             addressLabel.AutoSize = true;
@@ -667,6 +649,24 @@
             employeeIdLabel.Size = new System.Drawing.Size(79, 14);
             employeeIdLabel.TabIndex = 14;
             employeeIdLabel.Text = "Employee Id:";
+            // 
+            // tenementIdLabel
+            // 
+            this.tenementIdLabel.AutoSize = true;
+            this.tenementIdLabel.Location = new System.Drawing.Point(3, 0);
+            this.tenementIdLabel.Name = "tenementIdLabel";
+            this.tenementIdLabel.Size = new System.Drawing.Size(84, 14);
+            this.tenementIdLabel.TabIndex = 0;
+            this.tenementIdLabel.Text = "Tenement Id:";
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(338, 0);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(42, 14);
+            this.nameLabel.TabIndex = 2;
+            this.nameLabel.Text = "Name:";
             // 
             // quartersBindingSource
             // 
@@ -912,9 +912,9 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 23);
+            this.tabPage4.Location = new System.Drawing.Point(4, 21);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(629, 368);
+            this.tabPage4.Size = new System.Drawing.Size(629, 370);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "销售单信息";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1002,7 +1002,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(629, 368);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(629, 370);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // remarkTextBox
@@ -1261,11 +1261,11 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tableLayoutPanel5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 23);
+            this.tabPage2.Location = new System.Drawing.Point(4, 21);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(629, 368);
+            this.tabPage2.Size = new System.Drawing.Size(629, 370);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "客户信息";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1294,7 +1294,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(621, 362);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(621, 364);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // addressTextBox
@@ -1337,9 +1337,9 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.tableLayoutPanel6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 23);
+            this.tabPage3.Location = new System.Drawing.Point(4, 21);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(629, 368);
+            this.tabPage3.Size = new System.Drawing.Size(629, 370);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "销售员信息";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1371,7 +1371,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(629, 368);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(629, 370);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
             // hireDateDateTimePicker
@@ -1422,9 +1422,9 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.tableLayoutPanel4);
-            this.tabPage5.Location = new System.Drawing.Point(4, 23);
+            this.tabPage5.Location = new System.Drawing.Point(4, 21);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(629, 368);
+            this.tabPage5.Size = new System.Drawing.Size(629, 370);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "项目信息";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1447,7 +1447,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(629, 368);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(629, 370);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
             // tenementIdTextBox
