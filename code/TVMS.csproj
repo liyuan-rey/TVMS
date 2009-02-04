@@ -41,110 +41,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Contract.cs" />
-    <Compile Include="BLL\Customer.cs" />
-    <Compile Include="BLL\Quarters.cs" />
-    <Compile Include="BLL\Sale.cs" />
-    <Compile Include="BLL\Tenement.cs" />
-    <Compile Include="DALFactory\DataAccess.cs" />
-    <Compile Include="DBUtility\DBNullAdapter.cs" />
-    <Compile Include="DBUtility\OleDbHelper.cs" />
-    <Compile Include="DBUtility\ORMHelper.cs" />
-    <Compile Include="Model\IEventListener.cs" />
-    <Compile Include="Model\IEventPublisher.cs" />
-    <Compile Include="Model\ModelObject.cs" />
-    <Compile Include="Model\ObjectChangedListener.cs" />
-    <Compile Include="Model\Publisher.cs" />
-    <Compile Include="OleDbDAL\Contract.cs" />
-    <Compile Include="OleDbDAL\Customer.cs" />
-    <Compile Include="OleDbDAL\Quarters.cs" />
-    <Compile Include="OleDbDAL\Sale.cs" />
-    <Compile Include="OleDbDAL\Tenement.cs" />
-    <Compile Include="SmartClient\Controls\ContractsListView.cs">
+    <Compile Include="DataService\DataContainerTDS.cs">
+      <DependentUpon>DataContainerTDS.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SmartClient\Controls\ContractsListView.Designer.cs">
-      <DependentUpon>ContractsListView.cs</DependentUpon>
+    <Compile Include="DataService\DataContainerTDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataContainerTDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SmartClient\Controls\CustomersListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SmartClient\Controls\CustomersListView.Designer.cs">
-      <DependentUpon>CustomersListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SmartClient\Controls\ITvmsListView.cs" />
-    <Compile Include="SmartClient\Controls\ITvmsTabPage.cs" />
-    <Compile Include="SmartClient\Controls\QuartersListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SmartClient\Controls\QuartersListView.Designer.cs">
-      <DependentUpon>QuartersListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SmartClient\Controls\QuartersUserControl.cs">
+    <Compile Include="Controls\QuartersUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SmartClient\Controls\QuartersUserControl.Designer.cs">
+    <Compile Include="Controls\QuartersUserControl.Designer.cs">
       <DependentUpon>QuartersUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SmartClient\Controls\SalesListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SmartClient\Controls\SalesListView.Designer.cs">
-      <DependentUpon>SalesListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SmartClient\Controls\TenementsListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SmartClient\Controls\TenementsListView.Designer.cs">
-      <DependentUpon>TenementsListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SmartClient\Controls\TenementTabPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SmartClient\Controls\TenementTabPage.Designer.cs">
-      <DependentUpon>TenementTabPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SmartClient\Controls\TvmsItemSelectionChangedEventArgs.cs" />
-    <Compile Include="SmartClient\Controls\TenementsUserControl.cs">
+    <Compile Include="Controls\TenementsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SmartClient\Controls\TenementsUserControl.Designer.cs">
+    <Compile Include="Controls\TenementsUserControl.Designer.cs">
       <DependentUpon>TenementsUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SmartClient\Controls\CustomersUserControl.cs">
+    <Compile Include="Controls\CustomersUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SmartClient\Controls\CustomersUserControl.Designer.cs">
+    <Compile Include="Controls\CustomersUserControl.Designer.cs">
       <DependentUpon>CustomersUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SmartClient\Controls\ContractsUserControl.cs">
+    <Compile Include="Controls\EmployeesUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SmartClient\Controls\ContractsUserControl.Designer.cs">
-      <DependentUpon>ContractsUserControl.cs</DependentUpon>
+    <Compile Include="Controls\EmployeesUserControl.Designer.cs">
+      <DependentUpon>EmployeesUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SmartClient\Controls\SalesUserControl.cs">
+    <Compile Include="Controls\SalesUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SmartClient\Controls\SalesUserControl.Designer.cs">
+    <Compile Include="Controls\SalesUserControl.Designer.cs">
       <DependentUpon>SalesUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SmartClient\MainForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SmartClient\MainForm.Designer.cs">
+    <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IDAL\IContract.cs" />
-    <Compile Include="IDAL\ICustomer.cs" />
-    <Compile Include="IDAL\IQuarters.cs" />
-    <Compile Include="IDAL\ISale.cs" />
-    <Compile Include="IDAL\ITenement.cs" />
-    <Compile Include="Model\ContractInfo.cs" />
-    <Compile Include="Model\CustomerInfo.cs" />
-    <Compile Include="Model\QuartersInfo.cs" />
-    <Compile Include="Model\SaleInfo.cs" />
-    <Compile Include="Model\TenementInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -152,64 +93,47 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\ContractsListView.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ContractsListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\CustomersListView.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>CustomersListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\QuartersListView.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>QuartersListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\QuartersUserControl.resx">
+    <EmbeddedResource Include="Controls\QuartersUserControl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>QuartersUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\SalesListView.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>SalesListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\TenementsListView.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>TenementsListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\TenementTabPage.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>TenementTabPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\TenementsUserControl.resx">
+    <EmbeddedResource Include="Controls\TenementsUserControl.resx">
       <DependentUpon>TenementsUserControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\CustomersUserControl.resx">
+    <EmbeddedResource Include="Controls\CustomersUserControl.resx">
       <DependentUpon>CustomersUserControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\ContractsUserControl.resx">
-      <DependentUpon>ContractsUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\EmployeesUserControl.resx">
+      <DependentUpon>EmployeesUserControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\Controls\SalesUserControl.resx">
+    <EmbeddedResource Include="Controls\SalesUserControl.resx">
       <DependentUpon>SalesUserControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SmartClient\MainForm.resx">
+    <EmbeddedResource Include="MainForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
-    <None Include="Properties\DataSources\TVMS.Model.ContractInfo.datasource" />
-    <None Include="Properties\DataSources\TVMS.Model.CustomerInfo.datasource" />
-    <None Include="Properties\DataSources\TVMS.Model.QuartersInfo.datasource" />
-    <None Include="Properties\DataSources\TVMS.Model.SaleInfo.datasource" />
-    <None Include="Properties\DataSources\TVMS.Model.TenementInfo.datasource" />
+    <None Include="DataService\DataContainerTDS.xsc">
+      <DependentUpon>DataContainerTDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataService\DataContainerTDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataContainerTDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataService\DataContainerTDS.xss">
+      <DependentUpon>DataContainerTDS.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -219,10 +143,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SmartClient\TvmsTypeInfo.cs" />
+    <Compile Include="TvmsTypeInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\RefreshDocViewHS.png" />
+    <Content Include="tvms.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
