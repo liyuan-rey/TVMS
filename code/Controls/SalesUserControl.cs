@@ -27,7 +27,7 @@ namespace TVMS.SmartClient.Controls
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("销售单信息保存失败。/r/n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("销售单信息保存失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -43,7 +43,7 @@ namespace TVMS.SmartClient.Controls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("读取销售单列表失败。/r/n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("读取销售单列表失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

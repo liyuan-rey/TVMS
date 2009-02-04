@@ -4362,7 +4362,7 @@ namespace TVMS.DataService.DataContainerTDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.tvmsConnectionString;
+            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4676,7 +4676,7 @@ namespace TVMS.DataService.DataContainerTDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.tvmsConnectionString;
+            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5509,7 +5509,7 @@ WHERE   (TVMS_Sales.EmployeeId = ?)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.tvmsConnectionString;
+            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6728,7 +6728,7 @@ WHERE   (TVMS_Sales.EmployeeId = ?)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.tvmsConnectionString;
+            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7102,7 +7102,7 @@ WHERE   (TVMS_Sales.QuartersId = ?)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.tvmsConnectionString;
+            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7512,7 +7512,7 @@ WHERE   (TVMS_Sales.QuartersId = ?)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.tvmsConnectionString;
+            this._connection.ConnectionString = global::TVMS.Properties.Settings.Default.SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

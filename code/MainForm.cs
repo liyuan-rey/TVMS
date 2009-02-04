@@ -116,7 +116,7 @@ namespace TVMS.SmartClient
             catch (Exception ex)
             {
                 StringBuilder str = new StringBuilder();
-                str.Append("加载用户界面失败。/r/n");
+                str.Append("加载用户界面失败。\r\n");
                 str.Append(ex.Message);
                 str.Append("，");
                 str.Append(tti.typeName);
@@ -124,6 +124,17 @@ namespace TVMS.SmartClient
             }
 
             return uc;
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsForm frm = new SettingsForm();
+            frm.ShowDialog(this);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

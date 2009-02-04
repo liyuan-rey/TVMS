@@ -79,7 +79,7 @@ namespace TVMS.SmartClient.Controls
                     {
                         trans.Rollback();
                     }
-                    MessageBox.Show("住宅信息保存时出现冲突，请刷新数据后重试。/r/n" + dbce.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("住宅信息保存时出现冲突，请刷新数据后重试。\r\n" + dbce.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 catch (Exception ex)
                 {
@@ -87,7 +87,7 @@ namespace TVMS.SmartClient.Controls
                     {
                         trans.Rollback();
                     }
-                    MessageBox.Show("住宅信息保存失败。/r/n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("住宅信息保存失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 finally
                 {
@@ -118,7 +118,7 @@ namespace TVMS.SmartClient.Controls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("读取住宅信息失败。/r/n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("读取住宅信息失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -140,7 +140,7 @@ namespace TVMS.SmartClient.Controls
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("读取关联数据失败。/r/n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("读取关联数据失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

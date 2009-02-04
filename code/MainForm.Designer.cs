@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("住宅");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("客户");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("销售员");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("销售单");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("欢迎使用", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("访问网站");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("住宅");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("客户");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("销售员");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("销售单");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("欢迎使用", new System.Windows.Forms.TreeNode[] {
+            treeNode22,
+            treeNode23,
+            treeNode24,
+            treeNode25,
+            treeNode26});
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("访问网站");
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -50,9 +50,9 @@
             this.lblCaption = new System.Windows.Forms.Label();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.系统SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.设置PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -135,33 +135,33 @@
             this.tvwWorkspace.HideSelection = false;
             this.tvwWorkspace.Location = new System.Drawing.Point(0, 0);
             this.tvwWorkspace.Name = "tvwWorkspace";
-            treeNode1.Name = "NodeTenements";
-            treeNode1.Tag = "";
-            treeNode1.Text = "项目";
-            treeNode1.ToolTipText = "项目列表";
-            treeNode2.Name = "NodeQuarters";
-            treeNode2.Text = "住宅";
-            treeNode2.ToolTipText = "住宅列表";
-            treeNode3.Name = "NodeCustomers";
-            treeNode3.Tag = "";
-            treeNode3.Text = "客户";
-            treeNode3.ToolTipText = "客户列表";
-            treeNode4.Name = "NodeEmployees";
-            treeNode4.Tag = "";
-            treeNode4.Text = "销售员";
-            treeNode4.ToolTipText = "销售员列表";
-            treeNode5.Name = "NodeSales";
-            treeNode5.Text = "销售单";
-            treeNode5.ToolTipText = "销售单列表";
-            treeNode6.Name = "NodeWelcome";
-            treeNode6.Tag = "";
-            treeNode6.Text = "欢迎使用";
-            treeNode7.Name = "NodeWeb";
-            treeNode7.Tag = "";
-            treeNode7.Text = "访问网站";
+            treeNode22.Name = "NodeTenements";
+            treeNode22.Tag = "";
+            treeNode22.Text = "项目";
+            treeNode22.ToolTipText = "项目列表";
+            treeNode23.Name = "NodeQuarters";
+            treeNode23.Text = "住宅";
+            treeNode23.ToolTipText = "住宅列表";
+            treeNode24.Name = "NodeCustomers";
+            treeNode24.Tag = "";
+            treeNode24.Text = "客户";
+            treeNode24.ToolTipText = "客户列表";
+            treeNode25.Name = "NodeEmployees";
+            treeNode25.Tag = "";
+            treeNode25.Text = "销售员";
+            treeNode25.ToolTipText = "销售员列表";
+            treeNode26.Name = "NodeSales";
+            treeNode26.Text = "销售单";
+            treeNode26.ToolTipText = "销售单列表";
+            treeNode27.Name = "NodeWelcome";
+            treeNode27.Tag = "";
+            treeNode27.Text = "欢迎使用";
+            treeNode28.Name = "NodeWeb";
+            treeNode28.Tag = "";
+            treeNode28.Text = "访问网站";
             this.tvwWorkspace.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7});
+            treeNode27,
+            treeNode28});
             this.tvwWorkspace.ShowNodeToolTips = true;
             this.tvwWorkspace.Size = new System.Drawing.Size(161, 335);
             this.tvwWorkspace.TabIndex = 0;
@@ -201,29 +201,32 @@
             // 系统SToolStripMenuItem
             // 
             this.系统SToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.设置PToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.退出XToolStripMenuItem});
+            this.exitToolStripMenuItem});
             this.系统SToolStripMenuItem.Name = "系统SToolStripMenuItem";
             this.系统SToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
             this.系统SToolStripMenuItem.Text = "系统(&S)";
             // 
-            // 设置PToolStripMenuItem
+            // settingsToolStripMenuItem
             // 
-            this.设置PToolStripMenuItem.Name = "设置PToolStripMenuItem";
-            this.设置PToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.设置PToolStripMenuItem.Text = "设置(&P)...";
+            this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Text = "设置(&S)...";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
-            // 退出XToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem";
-            this.退出XToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.退出XToolStripMenuItem.Text = "退出(&X)";
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "退出(&X)";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -234,6 +237,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.mnuMain;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "房产销售管理系统";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
@@ -261,9 +265,9 @@
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.MenuStrip mnuMain;
         private System.Windows.Forms.ToolStripMenuItem 系统SToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 设置PToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 退出XToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.StatusStrip ssMain;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
