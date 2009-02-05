@@ -29,36 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("字典");
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.connStringTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.glossaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataContainerTDS = new TVMS.DataService.DataContainerTDS();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataContainerTDS = new TVMS.DataService.DataContainerTDS();
-            this.glossaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.glossaryTableAdapter = new TVMS.DataService.DataContainerTDSTableAdapters.GlossaryTableAdapter();
-            this.glossaryDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.glossaryUserControl1 = new TVMS.Controls.GlossaryUserControl();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glossaryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glossaryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glossaryDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -95,7 +84,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.splitContainer1);
+            this.tabPage2.Controls.Add(this.glossaryUserControl1);
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
@@ -104,36 +93,15 @@
             this.tabPage2.Text = "字典";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // splitContainer1
+            // glossaryBindingSource
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(5, 5);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.glossaryBindingSource.DataMember = "Glossary";
+            this.glossaryBindingSource.DataSource = this.dataContainerTDS;
             // 
-            // splitContainer1.Panel1
+            // dataContainerTDS
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.glossaryDataGridView);
-            this.splitContainer1.Size = new System.Drawing.Size(386, 164);
-            this.splitContainer1.SplitterDistance = 146;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            treeNode3.Name = "NodeRoot";
-            treeNode3.Text = "字典";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
-            this.treeView1.Size = new System.Drawing.Size(146, 164);
-            this.treeView1.TabIndex = 0;
+            this.dataContainerTDS.DataSetName = "DataContainerTDS";
+            this.dataContainerTDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -176,62 +144,17 @@
             this.panel2.Size = new System.Drawing.Size(404, 201);
             this.panel2.TabIndex = 2;
             // 
-            // dataContainerTDS
-            // 
-            this.dataContainerTDS.DataSetName = "DataContainerTDS";
-            this.dataContainerTDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // glossaryBindingSource
-            // 
-            this.glossaryBindingSource.DataMember = "Glossary";
-            this.glossaryBindingSource.DataSource = this.dataContainerTDS;
-            // 
             // glossaryTableAdapter
             // 
             this.glossaryTableAdapter.ClearBeforeFill = true;
             // 
-            // glossaryDataGridView
+            // glossaryUserControl1
             // 
-            this.glossaryDataGridView.AllowUserToOrderColumns = true;
-            this.glossaryDataGridView.AutoGenerateColumns = false;
-            this.glossaryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.glossaryDataGridView.DataSource = this.glossaryBindingSource;
-            this.glossaryDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.glossaryDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.glossaryDataGridView.Name = "glossaryDataGridView";
-            this.glossaryDataGridView.RowTemplate.Height = 23;
-            this.glossaryDataGridView.Size = new System.Drawing.Size(236, 164);
-            this.glossaryDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "TermId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "TermId";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TermKey";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TermKey";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "TermValue";
-            this.dataGridViewTextBoxColumn3.HeaderText = "TermValue";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ParentTermId";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ParentTermId";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.glossaryUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.glossaryUserControl1.Location = new System.Drawing.Point(5, 5);
+            this.glossaryUserControl1.Name = "glossaryUserControl1";
+            this.glossaryUserControl1.Size = new System.Drawing.Size(386, 164);
+            this.glossaryUserControl1.TabIndex = 0;
             // 
             // SettingsForm
             // 
@@ -256,14 +179,10 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.glossaryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glossaryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glossaryDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,15 +197,9 @@
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox connStringTextBox;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView treeView1;
         private TVMS.DataService.DataContainerTDS dataContainerTDS;
         private System.Windows.Forms.BindingSource glossaryBindingSource;
         private TVMS.DataService.DataContainerTDSTableAdapters.GlossaryTableAdapter glossaryTableAdapter;
-        private System.Windows.Forms.DataGridView glossaryDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private TVMS.Controls.GlossaryUserControl glossaryUserControl1;
     }
 }

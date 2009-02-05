@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\GlossaryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GlossaryUserControl.Designer.cs">
+      <DependentUpon>GlossaryUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataService\DataContainerTDS.cs">
       <DependentUpon>DataContainerTDS.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -88,6 +94,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\GlossaryUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GlossaryUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

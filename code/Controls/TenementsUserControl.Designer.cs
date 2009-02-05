@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenementsUserControl));
-            System.Windows.Forms.Label tenementIdLabel1;
+            System.Windows.Forms.Label tenementIdLabel;
             System.Windows.Forms.Label nameLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenementsUserControl));
             this.pnlNavagator = new System.Windows.Forms.Panel();
             this.lblNavagator = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -43,6 +43,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.nameTextBox1 = new System.Windows.Forms.TextBox();
+            this.tenementIdTextBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.quartersIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,9 +74,7 @@
             this.bindingNavigatorRefreshItem = new System.Windows.Forms.ToolStripButton();
             this.tenementsTableAdapter = new TVMS.DataService.DataContainerTDSTableAdapters.TenementsTableAdapter();
             this.quartersTableAdapter = new TVMS.DataService.DataContainerTDSTableAdapters.QuartersTableAdapter();
-            this.tenementIdTextBox1 = new System.Windows.Forms.TextBox();
-            this.nameTextBox1 = new System.Windows.Forms.TextBox();
-            tenementIdLabel1 = new System.Windows.Forms.Label();
+            tenementIdLabel = new System.Windows.Forms.Label();
             nameLabel1 = new System.Windows.Forms.Label();
             this.pnlNavagator.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -93,6 +93,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.tenementsBindingNavigator)).BeginInit();
             this.tenementsBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tenementIdLabel
+            // 
+            tenementIdLabel.AutoSize = true;
+            tenementIdLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            tenementIdLabel.Location = new System.Drawing.Point(3, 0);
+            tenementIdLabel.Name = "tenementIdLabel";
+            tenementIdLabel.Size = new System.Drawing.Size(47, 28);
+            tenementIdLabel.TabIndex = 12;
+            tenementIdLabel.Text = "项目号:";
+            tenementIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // nameLabel1
+            // 
+            nameLabel1.AutoSize = true;
+            nameLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            nameLabel1.Location = new System.Drawing.Point(179, 0);
+            nameLabel1.Name = "nameLabel1";
+            nameLabel1.Size = new System.Drawing.Size(59, 28);
+            nameLabel1.TabIndex = 13;
+            nameLabel1.Text = "项目名称:";
+            nameLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pnlNavagator
             // 
@@ -139,6 +161,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -152,19 +176,21 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(382, 92);
             this.dataGridView1.TabIndex = 3;
             // 
             // tenementIdDataGridViewTextBoxColumn
             // 
             this.tenementIdDataGridViewTextBoxColumn.DataPropertyName = "TenementId";
-            this.tenementIdDataGridViewTextBoxColumn.HeaderText = "TenementId";
+            this.tenementIdDataGridViewTextBoxColumn.HeaderText = "项目号";
             this.tenementIdDataGridViewTextBoxColumn.Name = "tenementIdDataGridViewTextBoxColumn";
+            this.tenementIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "项目名称";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // tenementsBindingSource
@@ -196,7 +222,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage1.Size = new System.Drawing.Size(374, 105);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "项目信息";
@@ -211,10 +237,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(nameLabel1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.nameTextBox1, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(tenementIdLabel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(tenementIdLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tenementIdTextBox1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -224,18 +250,37 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(366, 99);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(364, 95);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // nameTextBox1
+            // 
+            this.nameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tenementsBindingSource, "Name", true));
+            this.nameTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameTextBox1.Location = new System.Drawing.Point(244, 3);
+            this.nameTextBox1.Name = "nameTextBox1";
+            this.nameTextBox1.Size = new System.Drawing.Size(117, 22);
+            this.nameTextBox1.TabIndex = 14;
+            // 
+            // tenementIdTextBox1
+            // 
+            this.tenementIdTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tenementsBindingSource, "TenementId", true));
+            this.tenementIdTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tenementIdTextBox1.Location = new System.Drawing.Point(56, 3);
+            this.tenementIdTextBox1.Name = "tenementIdTextBox1";
+            this.tenementIdTextBox1.ReadOnly = true;
+            this.tenementIdTextBox1.Size = new System.Drawing.Size(117, 22);
+            this.tenementIdTextBox1.TabIndex = 13;
             // 
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 21);
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(462, 172);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
+            this.tabPage2.Size = new System.Drawing.Size(374, 105);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "住宅列表";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -259,73 +304,74 @@
             this.tenementIdDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.quartersBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 3);
+            this.dataGridView2.Location = new System.Drawing.Point(5, 5);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(454, 166);
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(364, 95);
             this.dataGridView2.TabIndex = 0;
             // 
             // quartersIdDataGridViewTextBoxColumn
             // 
             this.quartersIdDataGridViewTextBoxColumn.DataPropertyName = "QuartersId";
-            this.quartersIdDataGridViewTextBoxColumn.HeaderText = "QuartersId";
+            this.quartersIdDataGridViewTextBoxColumn.HeaderText = "住宅号";
             this.quartersIdDataGridViewTextBoxColumn.Name = "quartersIdDataGridViewTextBoxColumn";
             this.quartersIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // modelDataGridViewTextBoxColumn
             // 
             this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "户型";
             this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
             this.modelDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // builtUpAreaDataGridViewTextBoxColumn
             // 
             this.builtUpAreaDataGridViewTextBoxColumn.DataPropertyName = "BuiltUpArea";
-            this.builtUpAreaDataGridViewTextBoxColumn.HeaderText = "BuiltUpArea";
+            this.builtUpAreaDataGridViewTextBoxColumn.HeaderText = "建筑面积";
             this.builtUpAreaDataGridViewTextBoxColumn.Name = "builtUpAreaDataGridViewTextBoxColumn";
             this.builtUpAreaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // marketPriceDataGridViewTextBoxColumn
             // 
             this.marketPriceDataGridViewTextBoxColumn.DataPropertyName = "MarketPrice";
-            this.marketPriceDataGridViewTextBoxColumn.HeaderText = "MarketPrice";
+            this.marketPriceDataGridViewTextBoxColumn.HeaderText = "市场价";
             this.marketPriceDataGridViewTextBoxColumn.Name = "marketPriceDataGridViewTextBoxColumn";
             this.marketPriceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // doorplateDataGridViewTextBoxColumn
             // 
             this.doorplateDataGridViewTextBoxColumn.DataPropertyName = "Doorplate";
-            this.doorplateDataGridViewTextBoxColumn.HeaderText = "Doorplate";
+            this.doorplateDataGridViewTextBoxColumn.HeaderText = "门牌";
             this.doorplateDataGridViewTextBoxColumn.Name = "doorplateDataGridViewTextBoxColumn";
             this.doorplateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // propertyDataGridViewTextBoxColumn
             // 
             this.propertyDataGridViewTextBoxColumn.DataPropertyName = "Property";
-            this.propertyDataGridViewTextBoxColumn.HeaderText = "Property";
+            this.propertyDataGridViewTextBoxColumn.HeaderText = "权属";
             this.propertyDataGridViewTextBoxColumn.Name = "propertyDataGridViewTextBoxColumn";
             this.propertyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // codeDataGridViewTextBoxColumn
             // 
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "代码";
             this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             this.codeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // quantityDataGridViewTextBoxColumn
             // 
             this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "数量";
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tenementIdDataGridViewTextBoxColumn1
             // 
             this.tenementIdDataGridViewTextBoxColumn1.DataPropertyName = "TenementId";
-            this.tenementIdDataGridViewTextBoxColumn1.HeaderText = "TenementId";
+            this.tenementIdDataGridViewTextBoxColumn1.HeaderText = "所属项目号";
             this.tenementIdDataGridViewTextBoxColumn1.Name = "tenementIdDataGridViewTextBoxColumn1";
             this.tenementIdDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -498,40 +544,6 @@
             // 
             this.quartersTableAdapter.ClearBeforeFill = true;
             // 
-            // tenementIdLabel1
-            // 
-            tenementIdLabel1.AutoSize = true;
-            tenementIdLabel1.Location = new System.Drawing.Point(3, 0);
-            tenementIdLabel1.Name = "tenementIdLabel1";
-            tenementIdLabel1.Size = new System.Drawing.Size(84, 14);
-            tenementIdLabel1.TabIndex = 12;
-            tenementIdLabel1.Text = "Tenement Id:";
-            // 
-            // tenementIdTextBox1
-            // 
-            this.tenementIdTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tenementsBindingSource, "TenementId", true));
-            this.tenementIdTextBox1.Location = new System.Drawing.Point(93, 3);
-            this.tenementIdTextBox1.Name = "tenementIdTextBox1";
-            this.tenementIdTextBox1.Size = new System.Drawing.Size(100, 22);
-            this.tenementIdTextBox1.TabIndex = 13;
-            // 
-            // nameLabel1
-            // 
-            nameLabel1.AutoSize = true;
-            nameLabel1.Location = new System.Drawing.Point(207, 0);
-            nameLabel1.Name = "nameLabel1";
-            nameLabel1.Size = new System.Drawing.Size(42, 14);
-            nameLabel1.TabIndex = 13;
-            nameLabel1.Text = "Name:";
-            // 
-            // nameTextBox1
-            // 
-            this.nameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tenementsBindingSource, "Name", true));
-            this.nameTextBox1.Location = new System.Drawing.Point(255, 3);
-            this.nameTextBox1.Name = "nameTextBox1";
-            this.nameTextBox1.Size = new System.Drawing.Size(100, 22);
-            this.nameTextBox1.TabIndex = 14;
-            // 
             // TenementsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -577,8 +589,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenementIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource tenementsBindingSource;
         private TVMS.DataService.DataContainerTDS dataContainerTDS;
         private System.Windows.Forms.BindingSource quartersBindingSource;
@@ -598,6 +608,10 @@
         private TVMS.DataService.DataContainerTDSTableAdapters.TenementsTableAdapter tenementsTableAdapter;
         private TVMS.DataService.DataContainerTDSTableAdapters.QuartersTableAdapter quartersTableAdapter;
         private System.Windows.Forms.ToolStripButton bindingNavigatorRefreshItem;
+        private System.Windows.Forms.TextBox nameTextBox1;
+        private System.Windows.Forms.TextBox tenementIdTextBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenementIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quartersIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn builtUpAreaDataGridViewTextBoxColumn;
@@ -607,7 +621,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenementIdDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.TextBox nameTextBox1;
-        private System.Windows.Forms.TextBox tenementIdTextBox1;
     }
 }

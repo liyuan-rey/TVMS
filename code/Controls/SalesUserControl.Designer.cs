@@ -211,6 +211,7 @@
             this.salesDataGridView.Location = new System.Drawing.Point(0, 0);
             this.salesDataGridView.Name = "salesDataGridView";
             this.salesDataGridView.RowTemplate.Height = 23;
+            this.salesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.salesDataGridView.Size = new System.Drawing.Size(637, 126);
             this.salesDataGridView.TabIndex = 3;
             // 
@@ -751,29 +752,29 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 21);
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(629, 292);
+            this.tabPage2.Size = new System.Drawing.Size(629, 290);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "住宅信息";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 21);
+            this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(629, 292);
+            this.tabPage3.Size = new System.Drawing.Size(629, 290);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "客户信息";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 21);
+            this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(629, 292);
+            this.tabPage4.Size = new System.Drawing.Size(629, 290);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "销售员信息";
             this.tabPage4.UseVisualStyleBackColor = true;

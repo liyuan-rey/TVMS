@@ -19,6 +19,7 @@ namespace TVMS
 
         private void okButton_Click(object sender, EventArgs e)
         {
+            // save connection string 
             try
             {
                 if (0 != String.Compare(Properties.Settings.Default.SQLConnectionString, connStringTextBox.Text, true))
@@ -41,7 +42,11 @@ namespace TVMS
                 return;
             }
 
-            this.Close();
+            // save glossary data
+            bool bSuccess = glossaryUserControl1.Save(true);
+            
+            if (bSuccess)
+                this.Close();
         }
 
         private void glossaryBindingNavigatorSaveItem_Click(object sender, EventArgs e)

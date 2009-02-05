@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeesUserControl));
             System.Windows.Forms.Label employeeIdLabel;
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label telLabel;
             System.Windows.Forms.Label addressLabel;
             System.Windows.Forms.Label hireDateLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeesUserControl));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.employeesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +47,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.hireDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.addressTextBox = new System.Windows.Forms.TextBox();
+            this.telTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.employeeIdTextBox = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.quartersDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,11 +83,6 @@
             this.lblNavagator = new System.Windows.Forms.Label();
             this.employeesTableAdapter = new TVMS.DataService.DataContainerTDSTableAdapters.EmployeesTableAdapter();
             this.quartersTableAdapter = new TVMS.DataService.DataContainerTDSTableAdapters.QuartersTableAdapter();
-            this.employeeIdTextBox = new System.Windows.Forms.TextBox();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.telTextBox = new System.Windows.Forms.TextBox();
-            this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.hireDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             employeeIdLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             telLabel = new System.Windows.Forms.Label();
@@ -105,6 +105,61 @@
             this.employeesBindingNavigator.SuspendLayout();
             this.pnlNavagator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // employeeIdLabel
+            // 
+            employeeIdLabel.AutoSize = true;
+            employeeIdLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            employeeIdLabel.Location = new System.Drawing.Point(3, 0);
+            employeeIdLabel.Name = "employeeIdLabel";
+            employeeIdLabel.Size = new System.Drawing.Size(59, 28);
+            employeeIdLabel.TabIndex = 14;
+            employeeIdLabel.Text = "销售员号:";
+            employeeIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            nameLabel.Location = new System.Drawing.Point(227, 0);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(35, 28);
+            nameLabel.TabIndex = 15;
+            nameLabel.Text = "姓名:";
+            nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // telLabel
+            // 
+            telLabel.AutoSize = true;
+            telLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            telLabel.Location = new System.Drawing.Point(3, 28);
+            telLabel.Name = "telLabel";
+            telLabel.Size = new System.Drawing.Size(59, 28);
+            telLabel.TabIndex = 16;
+            telLabel.Text = "电话:";
+            telLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // addressLabel
+            // 
+            addressLabel.AutoSize = true;
+            addressLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            addressLabel.Location = new System.Drawing.Point(227, 28);
+            addressLabel.Name = "addressLabel";
+            addressLabel.Size = new System.Drawing.Size(35, 28);
+            addressLabel.TabIndex = 17;
+            addressLabel.Text = "住址:";
+            addressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // hireDateLabel
+            // 
+            hireDateLabel.AutoSize = true;
+            hireDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            hireDateLabel.Location = new System.Drawing.Point(3, 56);
+            hireDateLabel.Name = "hireDateLabel";
+            hireDateLabel.Size = new System.Drawing.Size(59, 28);
+            hireDateLabel.TabIndex = 18;
+            hireDateLabel.Text = "雇佣日期:";
+            hireDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // splitContainer1
             // 
@@ -145,37 +200,39 @@
             this.employeesDataGridView.Location = new System.Drawing.Point(0, 0);
             this.employeesDataGridView.Name = "employeesDataGridView";
             this.employeesDataGridView.RowTemplate.Height = 23;
+            this.employeesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeesDataGridView.Size = new System.Drawing.Size(443, 126);
             this.employeesDataGridView.TabIndex = 14;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "EmployeeId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "EmployeeId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "销售员号";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "姓名";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "HireDate";
-            this.dataGridViewTextBoxColumn3.HeaderText = "HireDate";
+            this.dataGridViewTextBoxColumn3.HeaderText = "雇佣日期";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Tel";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tel";
+            this.dataGridViewTextBoxColumn4.HeaderText = "电话";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Address";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn5.HeaderText = "住址";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // employeesBindingSource
@@ -207,7 +264,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage1.Size = new System.Drawing.Size(435, 137);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "销售员信息";
@@ -232,7 +289,7 @@
             this.tableLayoutPanel1.Controls.Add(employeeIdLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.employeeIdTextBox, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -240,8 +297,54 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(427, 131);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(425, 127);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // hireDateDateTimePicker
+            // 
+            this.hireDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.employeesBindingSource, "HireDate", true));
+            this.hireDateDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hireDateDateTimePicker.Location = new System.Drawing.Point(68, 59);
+            this.hireDateDateTimePicker.Name = "hireDateDateTimePicker";
+            this.hireDateDateTimePicker.Size = new System.Drawing.Size(153, 22);
+            this.hireDateDateTimePicker.TabIndex = 19;
+            // 
+            // addressTextBox
+            // 
+            this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Address", true));
+            this.addressTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addressTextBox.Location = new System.Drawing.Point(268, 31);
+            this.addressTextBox.Name = "addressTextBox";
+            this.addressTextBox.Size = new System.Drawing.Size(154, 22);
+            this.addressTextBox.TabIndex = 18;
+            // 
+            // telTextBox
+            // 
+            this.telTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Tel", true));
+            this.telTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.telTextBox.Location = new System.Drawing.Point(68, 31);
+            this.telTextBox.Name = "telTextBox";
+            this.telTextBox.Size = new System.Drawing.Size(153, 22);
+            this.telTextBox.TabIndex = 17;
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Name", true));
+            this.nameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameTextBox.Location = new System.Drawing.Point(268, 3);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(154, 22);
+            this.nameTextBox.TabIndex = 16;
+            // 
+            // employeeIdTextBox
+            // 
+            this.employeeIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "EmployeeId", true));
+            this.employeeIdTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeIdTextBox.Location = new System.Drawing.Point(68, 3);
+            this.employeeIdTextBox.Name = "employeeIdTextBox";
+            this.employeeIdTextBox.ReadOnly = true;
+            this.employeeIdTextBox.Size = new System.Drawing.Size(153, 22);
+            this.employeeIdTextBox.TabIndex = 15;
             // 
             // tabPage3
             // 
@@ -249,6 +352,7 @@
             this.tabPage3.Controls.Add(this.quartersDataGridView);
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage3.Size = new System.Drawing.Size(435, 137);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "相关住宅";
@@ -272,65 +376,76 @@
             this.dataGridViewTextBoxColumn14});
             this.quartersDataGridView.DataSource = this.quartersBindingSource;
             this.quartersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quartersDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.quartersDataGridView.Location = new System.Drawing.Point(5, 5);
             this.quartersDataGridView.Name = "quartersDataGridView";
+            this.quartersDataGridView.ReadOnly = true;
             this.quartersDataGridView.RowTemplate.Height = 23;
-            this.quartersDataGridView.Size = new System.Drawing.Size(435, 137);
+            this.quartersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.quartersDataGridView.Size = new System.Drawing.Size(425, 127);
             this.quartersDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "QuartersId";
-            this.dataGridViewTextBoxColumn6.HeaderText = "QuartersId";
+            this.dataGridViewTextBoxColumn6.HeaderText = "住宅号";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Model";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Model";
+            this.dataGridViewTextBoxColumn7.HeaderText = "户型";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "BuiltUpArea";
-            this.dataGridViewTextBoxColumn8.HeaderText = "BuiltUpArea";
+            this.dataGridViewTextBoxColumn8.HeaderText = "建筑面积";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "MarketPrice";
-            this.dataGridViewTextBoxColumn9.HeaderText = "MarketPrice";
+            this.dataGridViewTextBoxColumn9.HeaderText = "市场价格";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Doorplate";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Doorplate";
+            this.dataGridViewTextBoxColumn10.HeaderText = "门牌";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Property";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Property";
+            this.dataGridViewTextBoxColumn11.HeaderText = "权属";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "Code";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Code";
+            this.dataGridViewTextBoxColumn12.HeaderText = "代码";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "Quantity";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn13.HeaderText = "数量";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "TenementId";
-            this.dataGridViewTextBoxColumn14.HeaderText = "TenementId";
+            this.dataGridViewTextBoxColumn14.HeaderText = "所属项目号";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // quartersBindingSource
             // 
@@ -524,91 +639,6 @@
             // 
             this.quartersTableAdapter.ClearBeforeFill = true;
             // 
-            // employeeIdLabel
-            // 
-            employeeIdLabel.AutoSize = true;
-            employeeIdLabel.Location = new System.Drawing.Point(3, 0);
-            employeeIdLabel.Name = "employeeIdLabel";
-            employeeIdLabel.Size = new System.Drawing.Size(79, 14);
-            employeeIdLabel.TabIndex = 14;
-            employeeIdLabel.Text = "Employee Id:";
-            // 
-            // employeeIdTextBox
-            // 
-            this.employeeIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "EmployeeId", true));
-            this.employeeIdTextBox.Location = new System.Drawing.Point(88, 3);
-            this.employeeIdTextBox.Name = "employeeIdTextBox";
-            this.employeeIdTextBox.Size = new System.Drawing.Size(100, 22);
-            this.employeeIdTextBox.TabIndex = 15;
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(229, 0);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(42, 14);
-            nameLabel.TabIndex = 15;
-            nameLabel.Text = "Name:";
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(289, 3);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 22);
-            this.nameTextBox.TabIndex = 16;
-            // 
-            // telLabel
-            // 
-            telLabel.AutoSize = true;
-            telLabel.Location = new System.Drawing.Point(3, 28);
-            telLabel.Name = "telLabel";
-            telLabel.Size = new System.Drawing.Size(28, 14);
-            telLabel.TabIndex = 16;
-            telLabel.Text = "Tel:";
-            // 
-            // telTextBox
-            // 
-            this.telTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Tel", true));
-            this.telTextBox.Location = new System.Drawing.Point(88, 31);
-            this.telTextBox.Name = "telTextBox";
-            this.telTextBox.Size = new System.Drawing.Size(100, 22);
-            this.telTextBox.TabIndex = 17;
-            // 
-            // addressLabel
-            // 
-            addressLabel.AutoSize = true;
-            addressLabel.Location = new System.Drawing.Point(229, 28);
-            addressLabel.Name = "addressLabel";
-            addressLabel.Size = new System.Drawing.Size(54, 14);
-            addressLabel.TabIndex = 17;
-            addressLabel.Text = "Address:";
-            // 
-            // addressTextBox
-            // 
-            this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Address", true));
-            this.addressTextBox.Location = new System.Drawing.Point(289, 31);
-            this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(100, 22);
-            this.addressTextBox.TabIndex = 18;
-            // 
-            // hireDateLabel
-            // 
-            hireDateLabel.AutoSize = true;
-            hireDateLabel.Location = new System.Drawing.Point(3, 56);
-            hireDateLabel.Name = "hireDateLabel";
-            hireDateLabel.Size = new System.Drawing.Size(62, 14);
-            hireDateLabel.TabIndex = 18;
-            hireDateLabel.Text = "Hire Date:";
-            // 
-            // hireDateDateTimePicker
-            // 
-            this.hireDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.employeesBindingSource, "HireDate", true));
-            this.hireDateDateTimePicker.Location = new System.Drawing.Point(88, 59);
-            this.hireDateDateTimePicker.Name = "hireDateDateTimePicker";
-            this.hireDateDateTimePicker.Size = new System.Drawing.Size(135, 22);
-            this.hireDateDateTimePicker.TabIndex = 19;
-            // 
             // EmployeesUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -656,11 +686,6 @@
         private System.Windows.Forms.BindingSource employeesBindingSource;
         private TVMS.DataService.DataContainerTDSTableAdapters.EmployeesTableAdapter employeesTableAdapter;
         private System.Windows.Forms.DataGridView employeesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.BindingNavigator employeesBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -676,6 +701,18 @@
         private System.Windows.Forms.ToolStripButton employeesBindingNavigatorSaveItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorRefreshItem;
         private System.Windows.Forms.DataGridView quartersDataGridView;
+        private System.Windows.Forms.BindingSource quartersBindingSource;
+        private TVMS.DataService.DataContainerTDSTableAdapters.QuartersTableAdapter quartersTableAdapter;
+        private System.Windows.Forms.DateTimePicker hireDateDateTimePicker;
+        private System.Windows.Forms.TextBox addressTextBox;
+        private System.Windows.Forms.TextBox telTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox employeeIdTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
@@ -685,12 +722,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.BindingSource quartersBindingSource;
-        private TVMS.DataService.DataContainerTDSTableAdapters.QuartersTableAdapter quartersTableAdapter;
-        private System.Windows.Forms.DateTimePicker hireDateDateTimePicker;
-        private System.Windows.Forms.TextBox addressTextBox;
-        private System.Windows.Forms.TextBox telTextBox;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox employeeIdTextBox;
     }
 }

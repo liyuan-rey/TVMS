@@ -42,29 +42,12 @@
             System.Windows.Forms.Label cjtsLabel;
             System.Windows.Forms.Label cjyyLabel;
             System.Windows.Forms.Label imprest1Label;
-            System.Windows.Forms.Label imprest1DateLabel;
-            System.Windows.Forms.Label imprest1StateLabel;
-            System.Windows.Forms.Label imprest2Label;
-            System.Windows.Forms.Label imprest2DateLabel;
-            System.Windows.Forms.Label imprest2StateLabel;
-            System.Windows.Forms.Label imprest3Label;
-            System.Windows.Forms.Label imprest3DateLabel;
-            System.Windows.Forms.Label imprest3StateLabel;
-            System.Windows.Forms.Label imprest4Label;
-            System.Windows.Forms.Label imprest4DateLabel;
-            System.Windows.Forms.Label imprest4StateLabel;
-            System.Windows.Forms.Label imprest5Label;
-            System.Windows.Forms.Label imprest5DateLabel;
-            System.Windows.Forms.Label imprest5StateLabel;
-            System.Windows.Forms.Label remarkLabel;
             System.Windows.Forms.Label quartersIdLabel;
             System.Windows.Forms.Label doorplateLabel;
             System.Windows.Forms.Label modelLabel;
             System.Windows.Forms.Label propertyLabel;
             System.Windows.Forms.Label builtUpAreaLabel;
             System.Windows.Forms.Label marketPriceLabel;
-            System.Windows.Forms.Label codeLabel;
-            System.Windows.Forms.Label quantityLabel;
             System.Windows.Forms.Label addressLabel;
             System.Windows.Forms.Label telLabel1;
             System.Windows.Forms.Label label1;
@@ -74,12 +57,21 @@
             System.Windows.Forms.Label telLabel;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label employeeIdLabel;
+            System.Windows.Forms.Label codeLabel;
+            System.Windows.Forms.Label quantityLabel;
+            System.Windows.Forms.Label tenementIdLabel1;
+            System.Windows.Forms.Label imprest2Label;
+            System.Windows.Forms.Label imprest3Label;
+            System.Windows.Forms.Label imprest4Label;
+            System.Windows.Forms.Label imprest5Label;
+            System.Windows.Forms.Label remarkLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuartersUserControl));
             this.tenementIdLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.quartersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataContainerTDS = new TVMS.DataService.DataContainerTDS();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tenementIdTextBox1 = new System.Windows.Forms.TextBox();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.codeTextBox = new System.Windows.Forms.TextBox();
             this.marketPriceTextBox = new System.Windows.Forms.TextBox();
@@ -105,20 +97,19 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.remarkTextBox = new System.Windows.Forms.TextBox();
             this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.imprest5StateComboBox = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.imprest5DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.imprest5StateComboBox = new System.Windows.Forms.ComboBox();
             this.imprest5TextBox = new System.Windows.Forms.TextBox();
-            this.imprest4StateComboBox = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.imprest4DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.imprest4StateComboBox = new System.Windows.Forms.ComboBox();
             this.imprest4TextBox = new System.Windows.Forms.TextBox();
-            this.imprest3StateComboBox = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.imprest3DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.imprest3StateComboBox = new System.Windows.Forms.ComboBox();
             this.imprest3TextBox = new System.Windows.Forms.TextBox();
-            this.imprest2StateComboBox = new System.Windows.Forms.ComboBox();
-            this.imprest2DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imprest2TextBox = new System.Windows.Forms.TextBox();
-            this.imprest1StateComboBox = new System.Windows.Forms.ComboBox();
-            this.imprest1DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imprest1TextBox = new System.Windows.Forms.TextBox();
             this.cjyyTextBox = new System.Windows.Forms.TextBox();
             this.cjtsTextBox = new System.Windows.Forms.TextBox();
@@ -132,6 +123,16 @@
             this.contractSigningDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.contractSnTextBox = new System.Windows.Forms.TextBox();
             this.saleIdTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.imprest1DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.imprest1StateComboBox = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.imprest2DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.imprest2StateComboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.addressTextBox = new System.Windows.Forms.TextBox();
@@ -186,29 +187,12 @@
             cjtsLabel = new System.Windows.Forms.Label();
             cjyyLabel = new System.Windows.Forms.Label();
             imprest1Label = new System.Windows.Forms.Label();
-            imprest1DateLabel = new System.Windows.Forms.Label();
-            imprest1StateLabel = new System.Windows.Forms.Label();
-            imprest2Label = new System.Windows.Forms.Label();
-            imprest2DateLabel = new System.Windows.Forms.Label();
-            imprest2StateLabel = new System.Windows.Forms.Label();
-            imprest3Label = new System.Windows.Forms.Label();
-            imprest3DateLabel = new System.Windows.Forms.Label();
-            imprest3StateLabel = new System.Windows.Forms.Label();
-            imprest4Label = new System.Windows.Forms.Label();
-            imprest4DateLabel = new System.Windows.Forms.Label();
-            imprest4StateLabel = new System.Windows.Forms.Label();
-            imprest5Label = new System.Windows.Forms.Label();
-            imprest5DateLabel = new System.Windows.Forms.Label();
-            imprest5StateLabel = new System.Windows.Forms.Label();
-            remarkLabel = new System.Windows.Forms.Label();
             quartersIdLabel = new System.Windows.Forms.Label();
             doorplateLabel = new System.Windows.Forms.Label();
             modelLabel = new System.Windows.Forms.Label();
             propertyLabel = new System.Windows.Forms.Label();
             builtUpAreaLabel = new System.Windows.Forms.Label();
             marketPriceLabel = new System.Windows.Forms.Label();
-            codeLabel = new System.Windows.Forms.Label();
-            quantityLabel = new System.Windows.Forms.Label();
             addressLabel = new System.Windows.Forms.Label();
             telLabel1 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -218,6 +202,14 @@
             telLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             employeeIdLabel = new System.Windows.Forms.Label();
+            codeLabel = new System.Windows.Forms.Label();
+            quantityLabel = new System.Windows.Forms.Label();
+            tenementIdLabel1 = new System.Windows.Forms.Label();
+            imprest2Label = new System.Windows.Forms.Label();
+            imprest3Label = new System.Windows.Forms.Label();
+            imprest4Label = new System.Windows.Forms.Label();
+            imprest5Label = new System.Windows.Forms.Label();
+            remarkLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.quartersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -230,6 +222,11 @@
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
@@ -248,425 +245,420 @@
             // saleIdLabel
             // 
             saleIdLabel.AutoSize = true;
+            saleIdLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             saleIdLabel.Location = new System.Drawing.Point(3, 0);
             saleIdLabel.Name = "saleIdLabel";
-            saleIdLabel.Size = new System.Drawing.Size(48, 14);
+            saleIdLabel.Size = new System.Drawing.Size(67, 28);
             saleIdLabel.TabIndex = 35;
-            saleIdLabel.Text = "Sale Id:";
+            saleIdLabel.Text = "销售单号:";
+            saleIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // contractSnLabel
             // 
             contractSnLabel.AutoSize = true;
-            contractSnLabel.Location = new System.Drawing.Point(297, 0);
+            contractSnLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            contractSnLabel.Location = new System.Drawing.Point(333, 0);
             contractSnLabel.Name = "contractSnLabel";
-            contractSnLabel.Size = new System.Drawing.Size(76, 14);
+            contractSnLabel.Size = new System.Drawing.Size(59, 28);
             contractSnLabel.TabIndex = 36;
-            contractSnLabel.Text = "Contract Sn:";
+            contractSnLabel.Text = "合同编号:";
+            contractSnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // contractSigningDateLabel
             // 
             contractSigningDateLabel.AutoSize = true;
-            contractSigningDateLabel.Location = new System.Drawing.Point(297, 28);
+            contractSigningDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            contractSigningDateLabel.Location = new System.Drawing.Point(333, 28);
             contractSigningDateLabel.Name = "contractSigningDateLabel";
-            contractSigningDateLabel.Size = new System.Drawing.Size(131, 14);
+            contractSigningDateLabel.Size = new System.Drawing.Size(59, 28);
             contractSigningDateLabel.TabIndex = 38;
-            contractSigningDateLabel.Text = "Contract Signing Date:";
+            contractSigningDateLabel.Text = "签订日期:";
+            contractSigningDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // contractTypeLabel
             // 
             contractTypeLabel.AutoSize = true;
+            contractTypeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             contractTypeLabel.Location = new System.Drawing.Point(3, 28);
             contractTypeLabel.Name = "contractTypeLabel";
-            contractTypeLabel.Size = new System.Drawing.Size(90, 14);
+            contractTypeLabel.Size = new System.Drawing.Size(67, 28);
             contractTypeLabel.TabIndex = 39;
-            contractTypeLabel.Text = "Contract Type:";
+            contractTypeLabel.Text = "合同类型:";
+            contractTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // salePriceLabel
             // 
             salePriceLabel.AutoSize = true;
+            salePriceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             salePriceLabel.Location = new System.Drawing.Point(3, 56);
             salePriceLabel.Name = "salePriceLabel";
-            salePriceLabel.Size = new System.Drawing.Size(63, 14);
+            salePriceLabel.Size = new System.Drawing.Size(67, 28);
             salePriceLabel.TabIndex = 40;
-            salePriceLabel.Text = "Sale Price:";
+            salePriceLabel.Text = "销售价格:";
+            salePriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // payingDateLabel
             // 
             payingDateLabel.AutoSize = true;
-            payingDateLabel.Location = new System.Drawing.Point(297, 56);
+            payingDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            payingDateLabel.Location = new System.Drawing.Point(333, 56);
             payingDateLabel.Name = "payingDateLabel";
-            payingDateLabel.Size = new System.Drawing.Size(76, 14);
+            payingDateLabel.Size = new System.Drawing.Size(59, 28);
             payingDateLabel.TabIndex = 41;
-            payingDateLabel.Text = "Paying Date:";
+            payingDateLabel.Text = "付款日期:";
+            payingDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // depositLabel
             // 
             depositLabel.AutoSize = true;
+            depositLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             depositLabel.Location = new System.Drawing.Point(3, 84);
             depositLabel.Name = "depositLabel";
-            depositLabel.Size = new System.Drawing.Size(52, 14);
+            depositLabel.Size = new System.Drawing.Size(67, 28);
             depositLabel.TabIndex = 42;
-            depositLabel.Text = "Deposit:";
+            depositLabel.Text = "定金:";
+            depositLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // depositDateLabel
             // 
             depositDateLabel.AutoSize = true;
-            depositDateLabel.Location = new System.Drawing.Point(297, 84);
+            depositDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            depositDateLabel.Location = new System.Drawing.Point(333, 84);
             depositDateLabel.Name = "depositDateLabel";
-            depositDateLabel.Size = new System.Drawing.Size(82, 14);
+            depositDateLabel.Size = new System.Drawing.Size(59, 28);
             depositDateLabel.TabIndex = 43;
-            depositDateLabel.Text = "Deposit Date:";
+            depositDateLabel.Text = "定金日期:";
+            depositDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cjkLabel
             // 
             cjkLabel.AutoSize = true;
+            cjkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             cjkLabel.Location = new System.Drawing.Point(3, 112);
             cjkLabel.Name = "cjkLabel";
-            cjkLabel.Size = new System.Drawing.Size(27, 14);
+            cjkLabel.Size = new System.Drawing.Size(67, 28);
             cjkLabel.TabIndex = 44;
-            cjkLabel.Text = "Cjk:";
+            cjkLabel.Text = "参建款:";
+            cjkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cjmjLabel
             // 
             cjmjLabel.AutoSize = true;
-            cjmjLabel.Location = new System.Drawing.Point(297, 112);
+            cjmjLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            cjmjLabel.Location = new System.Drawing.Point(333, 112);
             cjmjLabel.Name = "cjmjLabel";
-            cjmjLabel.Size = new System.Drawing.Size(34, 14);
+            cjmjLabel.Size = new System.Drawing.Size(59, 28);
             cjmjLabel.TabIndex = 45;
-            cjmjLabel.Text = "Cjmj:";
+            cjmjLabel.Text = "参建面积:";
+            cjmjLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cjtsLabel
             // 
             cjtsLabel.AutoSize = true;
+            cjtsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             cjtsLabel.Location = new System.Drawing.Point(3, 140);
             cjtsLabel.Name = "cjtsLabel";
-            cjtsLabel.Size = new System.Drawing.Size(31, 14);
+            cjtsLabel.Size = new System.Drawing.Size(67, 28);
             cjtsLabel.TabIndex = 46;
-            cjtsLabel.Text = "Cjts:";
+            cjtsLabel.Text = "参建套数:";
+            cjtsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cjyyLabel
             // 
             cjyyLabel.AutoSize = true;
-            cjyyLabel.Location = new System.Drawing.Point(297, 140);
+            cjyyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            cjyyLabel.Location = new System.Drawing.Point(333, 140);
             cjyyLabel.Name = "cjyyLabel";
-            cjyyLabel.Size = new System.Drawing.Size(33, 14);
+            cjyyLabel.Size = new System.Drawing.Size(59, 28);
             cjyyLabel.TabIndex = 47;
-            cjyyLabel.Text = "Cjyy:";
+            cjyyLabel.Text = "参建已用:";
+            cjyyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // imprest1Label
             // 
             imprest1Label.AutoSize = true;
+            imprest1Label.Dock = System.Windows.Forms.DockStyle.Fill;
             imprest1Label.Location = new System.Drawing.Point(3, 168);
             imprest1Label.Name = "imprest1Label";
-            imprest1Label.Size = new System.Drawing.Size(60, 14);
+            imprest1Label.Size = new System.Drawing.Size(67, 28);
             imprest1Label.TabIndex = 48;
-            imprest1Label.Text = "Imprest1:";
-            // 
-            // imprest1DateLabel
-            // 
-            imprest1DateLabel.AutoSize = true;
-            imprest1DateLabel.Location = new System.Drawing.Point(297, 168);
-            imprest1DateLabel.Name = "imprest1DateLabel";
-            imprest1DateLabel.Size = new System.Drawing.Size(86, 14);
-            imprest1DateLabel.TabIndex = 49;
-            imprest1DateLabel.Text = "Imprest1Date:";
-            // 
-            // imprest1StateLabel
-            // 
-            imprest1StateLabel.AutoSize = true;
-            imprest1StateLabel.Location = new System.Drawing.Point(3, 196);
-            imprest1StateLabel.Name = "imprest1StateLabel";
-            imprest1StateLabel.Size = new System.Drawing.Size(90, 14);
-            imprest1StateLabel.TabIndex = 50;
-            imprest1StateLabel.Text = "Imprest1State:";
-            // 
-            // imprest2Label
-            // 
-            imprest2Label.AutoSize = true;
-            imprest2Label.Location = new System.Drawing.Point(297, 196);
-            imprest2Label.Name = "imprest2Label";
-            imprest2Label.Size = new System.Drawing.Size(60, 14);
-            imprest2Label.TabIndex = 51;
-            imprest2Label.Text = "Imprest2:";
-            // 
-            // imprest2DateLabel
-            // 
-            imprest2DateLabel.AutoSize = true;
-            imprest2DateLabel.Location = new System.Drawing.Point(3, 224);
-            imprest2DateLabel.Name = "imprest2DateLabel";
-            imprest2DateLabel.Size = new System.Drawing.Size(86, 14);
-            imprest2DateLabel.TabIndex = 52;
-            imprest2DateLabel.Text = "Imprest2Date:";
-            // 
-            // imprest2StateLabel
-            // 
-            imprest2StateLabel.AutoSize = true;
-            imprest2StateLabel.Location = new System.Drawing.Point(297, 224);
-            imprest2StateLabel.Name = "imprest2StateLabel";
-            imprest2StateLabel.Size = new System.Drawing.Size(90, 14);
-            imprest2StateLabel.TabIndex = 53;
-            imprest2StateLabel.Text = "Imprest2State:";
-            // 
-            // imprest3Label
-            // 
-            imprest3Label.AutoSize = true;
-            imprest3Label.Location = new System.Drawing.Point(3, 252);
-            imprest3Label.Name = "imprest3Label";
-            imprest3Label.Size = new System.Drawing.Size(60, 14);
-            imprest3Label.TabIndex = 54;
-            imprest3Label.Text = "Imprest3:";
-            // 
-            // imprest3DateLabel
-            // 
-            imprest3DateLabel.AutoSize = true;
-            imprest3DateLabel.Location = new System.Drawing.Point(297, 252);
-            imprest3DateLabel.Name = "imprest3DateLabel";
-            imprest3DateLabel.Size = new System.Drawing.Size(86, 14);
-            imprest3DateLabel.TabIndex = 55;
-            imprest3DateLabel.Text = "Imprest3Date:";
-            // 
-            // imprest3StateLabel
-            // 
-            imprest3StateLabel.AutoSize = true;
-            imprest3StateLabel.Location = new System.Drawing.Point(3, 280);
-            imprest3StateLabel.Name = "imprest3StateLabel";
-            imprest3StateLabel.Size = new System.Drawing.Size(90, 14);
-            imprest3StateLabel.TabIndex = 56;
-            imprest3StateLabel.Text = "Imprest3State:";
-            // 
-            // imprest4Label
-            // 
-            imprest4Label.AutoSize = true;
-            imprest4Label.Location = new System.Drawing.Point(297, 280);
-            imprest4Label.Name = "imprest4Label";
-            imprest4Label.Size = new System.Drawing.Size(60, 14);
-            imprest4Label.TabIndex = 57;
-            imprest4Label.Text = "Imprest4:";
-            // 
-            // imprest4DateLabel
-            // 
-            imprest4DateLabel.AutoSize = true;
-            imprest4DateLabel.Location = new System.Drawing.Point(3, 308);
-            imprest4DateLabel.Name = "imprest4DateLabel";
-            imprest4DateLabel.Size = new System.Drawing.Size(86, 14);
-            imprest4DateLabel.TabIndex = 58;
-            imprest4DateLabel.Text = "Imprest4Date:";
-            // 
-            // imprest4StateLabel
-            // 
-            imprest4StateLabel.AutoSize = true;
-            imprest4StateLabel.Location = new System.Drawing.Point(297, 308);
-            imprest4StateLabel.Name = "imprest4StateLabel";
-            imprest4StateLabel.Size = new System.Drawing.Size(90, 14);
-            imprest4StateLabel.TabIndex = 59;
-            imprest4StateLabel.Text = "Imprest4State:";
-            // 
-            // imprest5Label
-            // 
-            imprest5Label.AutoSize = true;
-            imprest5Label.Location = new System.Drawing.Point(3, 336);
-            imprest5Label.Name = "imprest5Label";
-            imprest5Label.Size = new System.Drawing.Size(60, 14);
-            imprest5Label.TabIndex = 60;
-            imprest5Label.Text = "Imprest5:";
-            // 
-            // imprest5DateLabel
-            // 
-            imprest5DateLabel.AutoSize = true;
-            imprest5DateLabel.Location = new System.Drawing.Point(297, 336);
-            imprest5DateLabel.Name = "imprest5DateLabel";
-            imprest5DateLabel.Size = new System.Drawing.Size(86, 14);
-            imprest5DateLabel.TabIndex = 61;
-            imprest5DateLabel.Text = "Imprest5Date:";
-            // 
-            // imprest5StateLabel
-            // 
-            imprest5StateLabel.AutoSize = true;
-            imprest5StateLabel.Location = new System.Drawing.Point(3, 364);
-            imprest5StateLabel.Name = "imprest5StateLabel";
-            imprest5StateLabel.Size = new System.Drawing.Size(90, 14);
-            imprest5StateLabel.TabIndex = 62;
-            imprest5StateLabel.Text = "Imprest5State:";
-            // 
-            // remarkLabel
-            // 
-            remarkLabel.AutoSize = true;
-            remarkLabel.Location = new System.Drawing.Point(297, 364);
-            remarkLabel.Name = "remarkLabel";
-            remarkLabel.Size = new System.Drawing.Size(51, 14);
-            remarkLabel.TabIndex = 63;
-            remarkLabel.Text = "Remark:";
+            imprest1Label.Text = "预付款 1:";
+            imprest1Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // quartersIdLabel
             // 
             quartersIdLabel.AutoSize = true;
+            quartersIdLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             quartersIdLabel.Location = new System.Drawing.Point(3, 0);
             quartersIdLabel.Name = "quartersIdLabel";
-            quartersIdLabel.Size = new System.Drawing.Size(73, 14);
+            quartersIdLabel.Size = new System.Drawing.Size(71, 28);
             quartersIdLabel.TabIndex = 28;
-            quartersIdLabel.Text = "Quarters Id:";
+            quartersIdLabel.Text = "住宅号:";
+            quartersIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // doorplateLabel
             // 
             doorplateLabel.AutoSize = true;
-            doorplateLabel.Location = new System.Drawing.Point(315, 0);
+            doorplateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            doorplateLabel.Location = new System.Drawing.Point(335, 0);
             doorplateLabel.Name = "doorplateLabel";
-            doorplateLabel.Size = new System.Drawing.Size(64, 14);
+            doorplateLabel.Size = new System.Drawing.Size(59, 28);
             doorplateLabel.TabIndex = 29;
-            doorplateLabel.Text = "Doorplate:";
+            doorplateLabel.Text = "门牌:";
+            doorplateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // modelLabel
             // 
             modelLabel.AutoSize = true;
+            modelLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             modelLabel.Location = new System.Drawing.Point(3, 28);
             modelLabel.Name = "modelLabel";
-            modelLabel.Size = new System.Drawing.Size(43, 14);
+            modelLabel.Size = new System.Drawing.Size(71, 28);
             modelLabel.TabIndex = 30;
-            modelLabel.Text = "Model:";
+            modelLabel.Text = "户型:";
+            modelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // propertyLabel
             // 
             propertyLabel.AutoSize = true;
-            propertyLabel.Location = new System.Drawing.Point(315, 28);
+            propertyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            propertyLabel.Location = new System.Drawing.Point(335, 28);
             propertyLabel.Name = "propertyLabel";
-            propertyLabel.Size = new System.Drawing.Size(58, 14);
+            propertyLabel.Size = new System.Drawing.Size(59, 28);
             propertyLabel.TabIndex = 31;
-            propertyLabel.Text = "Property:";
+            propertyLabel.Text = "权属:";
+            propertyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // builtUpAreaLabel
             // 
             builtUpAreaLabel.AutoSize = true;
+            builtUpAreaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             builtUpAreaLabel.Location = new System.Drawing.Point(3, 56);
             builtUpAreaLabel.Name = "builtUpAreaLabel";
-            builtUpAreaLabel.Size = new System.Drawing.Size(82, 14);
+            builtUpAreaLabel.Size = new System.Drawing.Size(71, 28);
             builtUpAreaLabel.TabIndex = 32;
-            builtUpAreaLabel.Text = "Built Up Area:";
+            builtUpAreaLabel.Text = "建筑面积:";
+            builtUpAreaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // marketPriceLabel
             // 
             marketPriceLabel.AutoSize = true;
-            marketPriceLabel.Location = new System.Drawing.Point(315, 56);
+            marketPriceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            marketPriceLabel.Location = new System.Drawing.Point(335, 56);
             marketPriceLabel.Name = "marketPriceLabel";
-            marketPriceLabel.Size = new System.Drawing.Size(78, 14);
+            marketPriceLabel.Size = new System.Drawing.Size(59, 28);
             marketPriceLabel.TabIndex = 33;
-            marketPriceLabel.Text = "Market Price:";
-            // 
-            // codeLabel
-            // 
-            codeLabel.AutoSize = true;
-            codeLabel.Location = new System.Drawing.Point(3, 84);
-            codeLabel.Name = "codeLabel";
-            codeLabel.Size = new System.Drawing.Size(39, 14);
-            codeLabel.TabIndex = 34;
-            codeLabel.Text = "Code:";
-            // 
-            // quantityLabel
-            // 
-            quantityLabel.AutoSize = true;
-            quantityLabel.Location = new System.Drawing.Point(315, 84);
-            quantityLabel.Name = "quantityLabel";
-            quantityLabel.Size = new System.Drawing.Size(58, 14);
-            quantityLabel.TabIndex = 35;
-            quantityLabel.Text = "Quantity:";
+            marketPriceLabel.Text = "市场价格:";
+            marketPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // addressLabel
             // 
             addressLabel.AutoSize = true;
-            addressLabel.Location = new System.Drawing.Point(325, 28);
+            addressLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            addressLabel.Location = new System.Drawing.Point(335, 28);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new System.Drawing.Size(54, 14);
+            addressLabel.Size = new System.Drawing.Size(35, 28);
             addressLabel.TabIndex = 25;
-            addressLabel.Text = "Address:";
+            addressLabel.Text = "住址:";
+            addressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // telLabel1
             // 
             telLabel1.AutoSize = true;
+            telLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
             telLabel1.Location = new System.Drawing.Point(3, 28);
             telLabel1.Name = "telLabel1";
-            telLabel1.Size = new System.Drawing.Size(28, 14);
+            telLabel1.Size = new System.Drawing.Size(47, 28);
             telLabel1.TabIndex = 24;
-            telLabel1.Text = "Tel:";
+            telLabel1.Text = "电话:";
+            telLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(325, 0);
+            label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            label1.Location = new System.Drawing.Point(335, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(42, 14);
+            label1.Size = new System.Drawing.Size(35, 28);
             label1.TabIndex = 23;
-            label1.Text = "Name:";
+            label1.Text = "姓名:";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // customerIdLabel
             // 
             customerIdLabel.AutoSize = true;
+            customerIdLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             customerIdLabel.Location = new System.Drawing.Point(3, 0);
             customerIdLabel.Name = "customerIdLabel";
-            customerIdLabel.Size = new System.Drawing.Size(78, 14);
+            customerIdLabel.Size = new System.Drawing.Size(47, 28);
             customerIdLabel.TabIndex = 22;
-            customerIdLabel.Text = "Customer Id:";
+            customerIdLabel.Text = "客户号:";
+            customerIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // hireDateLabel
             // 
             hireDateLabel.AutoSize = true;
+            hireDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             hireDateLabel.Location = new System.Drawing.Point(3, 56);
             hireDateLabel.Name = "hireDateLabel";
-            hireDateLabel.Size = new System.Drawing.Size(62, 14);
+            hireDateLabel.Size = new System.Drawing.Size(59, 28);
             hireDateLabel.TabIndex = 18;
-            hireDateLabel.Text = "Hire Date:";
+            hireDateLabel.Text = "雇佣日期:";
+            hireDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(330, 28);
+            label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            label2.Location = new System.Drawing.Point(341, 28);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(54, 14);
+            label2.Size = new System.Drawing.Size(35, 28);
             label2.TabIndex = 17;
-            label2.Text = "Address:";
+            label2.Text = "住址:";
+            label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // telLabel
             // 
             telLabel.AutoSize = true;
+            telLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             telLabel.Location = new System.Drawing.Point(3, 28);
             telLabel.Name = "telLabel";
-            telLabel.Size = new System.Drawing.Size(28, 14);
+            telLabel.Size = new System.Drawing.Size(59, 28);
             telLabel.TabIndex = 16;
-            telLabel.Text = "Tel:";
+            telLabel.Text = "电话:";
+            telLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(330, 0);
+            label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            label3.Location = new System.Drawing.Point(341, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(42, 14);
+            label3.Size = new System.Drawing.Size(35, 28);
             label3.TabIndex = 15;
-            label3.Text = "Name:";
+            label3.Text = "姓名:";
+            label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // employeeIdLabel
             // 
             employeeIdLabel.AutoSize = true;
+            employeeIdLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             employeeIdLabel.Location = new System.Drawing.Point(3, 0);
             employeeIdLabel.Name = "employeeIdLabel";
-            employeeIdLabel.Size = new System.Drawing.Size(79, 14);
+            employeeIdLabel.Size = new System.Drawing.Size(59, 28);
             employeeIdLabel.TabIndex = 14;
-            employeeIdLabel.Text = "Employee Id:";
+            employeeIdLabel.Text = "销售员号:";
+            employeeIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // codeLabel
+            // 
+            codeLabel.AutoSize = true;
+            codeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            codeLabel.Location = new System.Drawing.Point(3, 84);
+            codeLabel.Name = "codeLabel";
+            codeLabel.Size = new System.Drawing.Size(71, 28);
+            codeLabel.TabIndex = 34;
+            codeLabel.Text = "代码:";
+            codeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // quantityLabel
+            // 
+            quantityLabel.AutoSize = true;
+            quantityLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            quantityLabel.Location = new System.Drawing.Point(335, 84);
+            quantityLabel.Name = "quantityLabel";
+            quantityLabel.Size = new System.Drawing.Size(59, 28);
+            quantityLabel.TabIndex = 35;
+            quantityLabel.Text = "数量:";
+            quantityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tenementIdLabel1
+            // 
+            tenementIdLabel1.AutoSize = true;
+            tenementIdLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            tenementIdLabel1.Location = new System.Drawing.Point(3, 112);
+            tenementIdLabel1.Name = "tenementIdLabel1";
+            tenementIdLabel1.Size = new System.Drawing.Size(71, 28);
+            tenementIdLabel1.TabIndex = 36;
+            tenementIdLabel1.Text = "所属项目号:";
+            tenementIdLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // imprest2Label
+            // 
+            imprest2Label.AutoSize = true;
+            imprest2Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            imprest2Label.Location = new System.Drawing.Point(3, 196);
+            imprest2Label.Name = "imprest2Label";
+            imprest2Label.Size = new System.Drawing.Size(67, 28);
+            imprest2Label.TabIndex = 66;
+            imprest2Label.Text = "预付款 2:";
+            imprest2Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // imprest3Label
+            // 
+            imprest3Label.AutoSize = true;
+            imprest3Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            imprest3Label.Location = new System.Drawing.Point(3, 224);
+            imprest3Label.Name = "imprest3Label";
+            imprest3Label.Size = new System.Drawing.Size(67, 28);
+            imprest3Label.TabIndex = 72;
+            imprest3Label.Text = "预付款 3:";
+            imprest3Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // imprest4Label
+            // 
+            imprest4Label.AutoSize = true;
+            imprest4Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            imprest4Label.Location = new System.Drawing.Point(3, 252);
+            imprest4Label.Name = "imprest4Label";
+            imprest4Label.Size = new System.Drawing.Size(67, 28);
+            imprest4Label.TabIndex = 73;
+            imprest4Label.Text = "预付款 4:";
+            imprest4Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // imprest5Label
+            // 
+            imprest5Label.AutoSize = true;
+            imprest5Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            imprest5Label.Location = new System.Drawing.Point(3, 280);
+            imprest5Label.Name = "imprest5Label";
+            imprest5Label.Size = new System.Drawing.Size(67, 28);
+            imprest5Label.TabIndex = 79;
+            imprest5Label.Text = "预付款 5:";
+            imprest5Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // remarkLabel
+            // 
+            remarkLabel.AutoSize = true;
+            remarkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            remarkLabel.Location = new System.Drawing.Point(3, 308);
+            remarkLabel.Name = "remarkLabel";
+            remarkLabel.Size = new System.Drawing.Size(67, 14);
+            remarkLabel.TabIndex = 82;
+            remarkLabel.Text = "备注:";
+            remarkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tenementIdLabel
             // 
             this.tenementIdLabel.AutoSize = true;
+            this.tenementIdLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tenementIdLabel.Location = new System.Drawing.Point(3, 0);
             this.tenementIdLabel.Name = "tenementIdLabel";
-            this.tenementIdLabel.Size = new System.Drawing.Size(84, 14);
+            this.tenementIdLabel.Size = new System.Drawing.Size(47, 28);
             this.tenementIdLabel.TabIndex = 0;
-            this.tenementIdLabel.Text = "Tenement Id:";
+            this.tenementIdLabel.Text = "项目号:";
+            this.tenementIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(338, 0);
+            this.nameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameLabel.Location = new System.Drawing.Point(323, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(42, 14);
+            this.nameLabel.Size = new System.Drawing.Size(59, 28);
             this.nameLabel.TabIndex = 2;
-            this.nameLabel.Text = "Name:";
+            this.nameLabel.Text = "项目名称:";
+            this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // quartersBindingSource
             // 
@@ -686,24 +678,26 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(quantityLabel, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.quantityTextBox, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(codeLabel, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.codeTextBox, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(marketPriceLabel, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.marketPriceTextBox, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(builtUpAreaLabel, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.builtUpAreaTextBox, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(propertyLabel, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.propertyComboBox, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(modelLabel, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.modelComboBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(doorplateLabel, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.doorplateTextBox, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(quartersIdLabel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.quartersIdTextBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(tenementIdLabel1, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tenementIdTextBox1, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(quantityLabel, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.quantityTextBox, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(codeLabel, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.codeTextBox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(marketPriceLabel, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.marketPriceTextBox, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(builtUpAreaLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.builtUpAreaTextBox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(propertyLabel, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.propertyComboBox, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(modelLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.modelComboBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(doorplateLabel, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.doorplateTextBox, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(quartersIdLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.quartersIdTextBox, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -713,73 +707,94 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(621, 362);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(653, 346);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // tenementIdTextBox1
+            // 
+            this.tenementIdTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "TenementId", true));
+            this.tenementIdTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tenementIdTextBox1.Location = new System.Drawing.Point(80, 115);
+            this.tenementIdTextBox1.Name = "tenementIdTextBox1";
+            this.tenementIdTextBox1.ReadOnly = true;
+            this.tenementIdTextBox1.Size = new System.Drawing.Size(249, 22);
+            this.tenementIdTextBox1.TabIndex = 37;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "Quantity", true));
-            this.quantityTextBox.Location = new System.Drawing.Point(399, 87);
+            this.quantityTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quantityTextBox.Location = new System.Drawing.Point(400, 87);
             this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(100, 22);
+            this.quantityTextBox.Size = new System.Drawing.Size(250, 22);
             this.quantityTextBox.TabIndex = 36;
             // 
             // codeTextBox
             // 
             this.codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "Code", true));
-            this.codeTextBox.Location = new System.Drawing.Point(91, 87);
+            this.codeTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.codeTextBox.Location = new System.Drawing.Point(80, 87);
             this.codeTextBox.Name = "codeTextBox";
-            this.codeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.codeTextBox.Size = new System.Drawing.Size(249, 22);
             this.codeTextBox.TabIndex = 35;
             // 
             // marketPriceTextBox
             // 
             this.marketPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "MarketPrice", true));
-            this.marketPriceTextBox.Location = new System.Drawing.Point(399, 59);
+            this.marketPriceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.marketPriceTextBox.Location = new System.Drawing.Point(400, 59);
             this.marketPriceTextBox.Name = "marketPriceTextBox";
-            this.marketPriceTextBox.Size = new System.Drawing.Size(100, 22);
+            this.marketPriceTextBox.Size = new System.Drawing.Size(250, 22);
             this.marketPriceTextBox.TabIndex = 34;
             // 
             // builtUpAreaTextBox
             // 
             this.builtUpAreaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "BuiltUpArea", true));
-            this.builtUpAreaTextBox.Location = new System.Drawing.Point(91, 59);
+            this.builtUpAreaTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.builtUpAreaTextBox.Location = new System.Drawing.Point(80, 59);
             this.builtUpAreaTextBox.Name = "builtUpAreaTextBox";
-            this.builtUpAreaTextBox.Size = new System.Drawing.Size(100, 22);
+            this.builtUpAreaTextBox.Size = new System.Drawing.Size(249, 22);
             this.builtUpAreaTextBox.TabIndex = 33;
             // 
             // propertyComboBox
             // 
             this.propertyComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "Property", true));
+            this.propertyComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.propertyComboBox.FormattingEnabled = true;
-            this.propertyComboBox.Location = new System.Drawing.Point(399, 31);
+            this.propertyComboBox.Location = new System.Drawing.Point(400, 31);
             this.propertyComboBox.Name = "propertyComboBox";
-            this.propertyComboBox.Size = new System.Drawing.Size(121, 22);
+            this.propertyComboBox.Size = new System.Drawing.Size(250, 22);
             this.propertyComboBox.TabIndex = 32;
             // 
             // modelComboBox
             // 
             this.modelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "Model", true));
+            this.modelComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.modelComboBox.FormattingEnabled = true;
-            this.modelComboBox.Location = new System.Drawing.Point(91, 31);
+            this.modelComboBox.Location = new System.Drawing.Point(80, 31);
             this.modelComboBox.Name = "modelComboBox";
-            this.modelComboBox.Size = new System.Drawing.Size(121, 22);
+            this.modelComboBox.Size = new System.Drawing.Size(249, 22);
             this.modelComboBox.TabIndex = 31;
             // 
             // doorplateTextBox
             // 
             this.doorplateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "Doorplate", true));
-            this.doorplateTextBox.Location = new System.Drawing.Point(399, 3);
+            this.doorplateTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.doorplateTextBox.Location = new System.Drawing.Point(400, 3);
             this.doorplateTextBox.Name = "doorplateTextBox";
-            this.doorplateTextBox.Size = new System.Drawing.Size(100, 22);
+            this.doorplateTextBox.Size = new System.Drawing.Size(250, 22);
             this.doorplateTextBox.TabIndex = 30;
             // 
             // quartersIdTextBox
             // 
             this.quartersIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "QuartersId", true));
-            this.quartersIdTextBox.Location = new System.Drawing.Point(91, 3);
+            this.quartersIdTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quartersIdTextBox.Location = new System.Drawing.Point(80, 3);
             this.quartersIdTextBox.Name = "quartersIdTextBox";
-            this.quartersIdTextBox.Size = new System.Drawing.Size(100, 22);
+            this.quartersIdTextBox.ReadOnly = true;
+            this.quartersIdTextBox.Size = new System.Drawing.Size(249, 22);
             this.quartersIdTextBox.TabIndex = 29;
             // 
             // splitContainer1
@@ -799,8 +814,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(637, 526);
-            this.splitContainer1.SplitterDistance = 126;
+            this.splitContainer1.Size = new System.Drawing.Size(671, 518);
+            this.splitContainer1.SplitterDistance = 130;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 6;
             this.splitContainer1.TabStop = false;
@@ -808,6 +823,7 @@
             // quartersDataGridView
             // 
             this.quartersDataGridView.AllowUserToAddRows = false;
+            this.quartersDataGridView.AllowUserToDeleteRows = false;
             this.quartersDataGridView.AllowUserToOrderColumns = true;
             this.quartersDataGridView.AutoGenerateColumns = false;
             this.quartersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -825,62 +841,65 @@
             this.quartersDataGridView.Location = new System.Drawing.Point(0, 0);
             this.quartersDataGridView.Name = "quartersDataGridView";
             this.quartersDataGridView.RowTemplate.Height = 23;
-            this.quartersDataGridView.Size = new System.Drawing.Size(637, 126);
+            this.quartersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.quartersDataGridView.Size = new System.Drawing.Size(671, 130);
             this.quartersDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "QuartersId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "QuartersId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "住宅号";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Model";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Model";
+            this.dataGridViewTextBoxColumn2.HeaderText = "户型";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "BuiltUpArea";
-            this.dataGridViewTextBoxColumn3.HeaderText = "BuiltUpArea";
+            this.dataGridViewTextBoxColumn3.HeaderText = "建筑面积";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "MarketPrice";
-            this.dataGridViewTextBoxColumn4.HeaderText = "MarketPrice";
+            this.dataGridViewTextBoxColumn4.HeaderText = "市场价格";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Doorplate";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Doorplate";
+            this.dataGridViewTextBoxColumn5.HeaderText = "门牌";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Property";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Property";
+            this.dataGridViewTextBoxColumn6.HeaderText = "权属";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Code";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Code";
+            this.dataGridViewTextBoxColumn7.HeaderText = "代码";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Quantity";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn8.HeaderText = "数量";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "TenementId";
-            this.dataGridViewTextBoxColumn9.HeaderText = "TenementId";
+            this.dataGridViewTextBoxColumn9.HeaderText = "所属项目号";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // tabControl1
             // 
@@ -894,7 +913,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(637, 395);
+            this.tabControl1.Size = new System.Drawing.Size(671, 383);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -903,8 +922,8 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage1.Size = new System.Drawing.Size(629, 368);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
+            this.tabPage1.Size = new System.Drawing.Size(663, 356);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "住宅信息";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -914,7 +933,8 @@
             this.tabPage4.Controls.Add(this.tableLayoutPanel3);
             this.tabPage4.Location = new System.Drawing.Point(4, 21);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(629, 370);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(5);
+            this.tabPage4.Size = new System.Drawing.Size(663, 358);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "销售单信息";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -927,36 +947,19 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(remarkLabel, 2, 13);
-            this.tableLayoutPanel3.Controls.Add(this.remarkTextBox, 3, 13);
-            this.tableLayoutPanel3.Controls.Add(imprest5StateLabel, 0, 13);
-            this.tableLayoutPanel3.Controls.Add(this.imprest5StateComboBox, 1, 13);
-            this.tableLayoutPanel3.Controls.Add(imprest5DateLabel, 2, 12);
-            this.tableLayoutPanel3.Controls.Add(this.imprest5DateDateTimePicker, 3, 12);
-            this.tableLayoutPanel3.Controls.Add(imprest5Label, 0, 12);
-            this.tableLayoutPanel3.Controls.Add(this.imprest5TextBox, 1, 12);
-            this.tableLayoutPanel3.Controls.Add(imprest4StateLabel, 2, 11);
-            this.tableLayoutPanel3.Controls.Add(this.imprest4StateComboBox, 3, 11);
-            this.tableLayoutPanel3.Controls.Add(imprest4DateLabel, 0, 11);
-            this.tableLayoutPanel3.Controls.Add(this.imprest4DateDateTimePicker, 1, 11);
-            this.tableLayoutPanel3.Controls.Add(imprest4Label, 2, 10);
-            this.tableLayoutPanel3.Controls.Add(this.imprest4TextBox, 3, 10);
-            this.tableLayoutPanel3.Controls.Add(imprest3StateLabel, 0, 10);
-            this.tableLayoutPanel3.Controls.Add(this.imprest3StateComboBox, 1, 10);
-            this.tableLayoutPanel3.Controls.Add(imprest3DateLabel, 2, 9);
-            this.tableLayoutPanel3.Controls.Add(this.imprest3DateDateTimePicker, 3, 9);
-            this.tableLayoutPanel3.Controls.Add(imprest3Label, 0, 9);
-            this.tableLayoutPanel3.Controls.Add(this.imprest3TextBox, 1, 9);
-            this.tableLayoutPanel3.Controls.Add(imprest2StateLabel, 2, 8);
-            this.tableLayoutPanel3.Controls.Add(this.imprest2StateComboBox, 3, 8);
-            this.tableLayoutPanel3.Controls.Add(imprest2DateLabel, 0, 8);
-            this.tableLayoutPanel3.Controls.Add(this.imprest2DateDateTimePicker, 1, 8);
-            this.tableLayoutPanel3.Controls.Add(imprest2Label, 2, 7);
-            this.tableLayoutPanel3.Controls.Add(this.imprest2TextBox, 3, 7);
-            this.tableLayoutPanel3.Controls.Add(imprest1StateLabel, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.imprest1StateComboBox, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(imprest1DateLabel, 2, 6);
-            this.tableLayoutPanel3.Controls.Add(this.imprest1DateDateTimePicker, 3, 6);
+            this.tableLayoutPanel3.Controls.Add(remarkLabel, 0, 11);
+            this.tableLayoutPanel3.Controls.Add(this.remarkTextBox, 1, 11);
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel6, 2, 10);
+            this.tableLayoutPanel3.Controls.Add(imprest5Label, 0, 10);
+            this.tableLayoutPanel3.Controls.Add(this.imprest5TextBox, 1, 10);
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel5, 2, 9);
+            this.tableLayoutPanel3.Controls.Add(this.imprest4TextBox, 1, 9);
+            this.tableLayoutPanel3.Controls.Add(imprest4Label, 0, 9);
+            this.tableLayoutPanel3.Controls.Add(imprest3Label, 0, 8);
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel4, 2, 8);
+            this.tableLayoutPanel3.Controls.Add(this.imprest3TextBox, 1, 8);
+            this.tableLayoutPanel3.Controls.Add(this.imprest2TextBox, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(imprest2Label, 0, 7);
             this.tableLayoutPanel3.Controls.Add(imprest1Label, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.imprest1TextBox, 1, 6);
             this.tableLayoutPanel3.Controls.Add(cjyyLabel, 2, 5);
@@ -983,11 +986,17 @@
             this.tableLayoutPanel3.Controls.Add(this.contractSnTextBox, 3, 0);
             this.tableLayoutPanel3.Controls.Add(saleIdLabel, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.saleIdTextBox, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 2, 6);
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel2, 2, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 14);
+            this.tableLayoutPanel3.Controls.Add(this.label5, 2, 14);
+            this.tableLayoutPanel3.Controls.Add(this.textBox4, 1, 14);
+            this.tableLayoutPanel3.Controls.Add(this.textBox5, 3, 14);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 14;
+            this.tableLayoutPanel3.RowCount = 16;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1001,262 +1010,404 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(629, 370);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(653, 348);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // remarkTextBox
             // 
+            this.tableLayoutPanel3.SetColumnSpan(this.remarkTextBox, 3);
             this.remarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Remark", true));
-            this.remarkTextBox.Location = new System.Drawing.Point(434, 367);
+            this.remarkTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.remarkTextBox.Location = new System.Drawing.Point(76, 311);
+            this.remarkTextBox.Multiline = true;
             this.remarkTextBox.Name = "remarkTextBox";
-            this.remarkTextBox.Size = new System.Drawing.Size(100, 22);
-            this.remarkTextBox.TabIndex = 64;
+            this.tableLayoutPanel3.SetRowSpan(this.remarkTextBox, 2);
+            this.remarkTextBox.Size = new System.Drawing.Size(574, 56);
+            this.remarkTextBox.TabIndex = 81;
             // 
             // salesBindingSource
             // 
             this.salesBindingSource.DataMember = "FK_Sales_Quarters";
             this.salesBindingSource.DataSource = this.quartersBindingSource;
             // 
-            // imprest5StateComboBox
+            // flowLayoutPanel6
             // 
-            this.imprest5StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest5State", true));
-            this.imprest5StateComboBox.FormattingEnabled = true;
-            this.imprest5StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
-            this.imprest5StateComboBox.Location = new System.Drawing.Point(99, 367);
-            this.imprest5StateComboBox.Name = "imprest5StateComboBox";
-            this.imprest5StateComboBox.Size = new System.Drawing.Size(121, 22);
-            this.imprest5StateComboBox.TabIndex = 63;
+            this.flowLayoutPanel6.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.flowLayoutPanel6, 2);
+            this.flowLayoutPanel6.Controls.Add(this.imprest5DateDateTimePicker);
+            this.flowLayoutPanel6.Controls.Add(this.imprest5StateComboBox);
+            this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(330, 280);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(323, 28);
+            this.flowLayoutPanel6.TabIndex = 80;
+            this.flowLayoutPanel6.WrapContents = false;
             // 
             // imprest5DateDateTimePicker
             // 
             this.imprest5DateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "Imprest5Date", true));
-            this.imprest5DateDateTimePicker.Location = new System.Drawing.Point(434, 339);
+            this.imprest5DateDateTimePicker.Location = new System.Drawing.Point(3, 3);
             this.imprest5DateDateTimePicker.Name = "imprest5DateDateTimePicker";
-            this.imprest5DateDateTimePicker.Size = new System.Drawing.Size(192, 22);
-            this.imprest5DateDateTimePicker.TabIndex = 62;
+            this.imprest5DateDateTimePicker.Size = new System.Drawing.Size(140, 22);
+            this.imprest5DateDateTimePicker.TabIndex = 63;
+            // 
+            // imprest5StateComboBox
+            // 
+            this.imprest5StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest5State", true));
+            this.imprest5StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.imprest5StateComboBox.FormattingEnabled = true;
+            this.imprest5StateComboBox.Items.AddRange(new object[] {
+            "已付",
+            "未付"});
+            this.imprest5StateComboBox.Location = new System.Drawing.Point(149, 3);
+            this.imprest5StateComboBox.Name = "imprest5StateComboBox";
+            this.imprest5StateComboBox.Size = new System.Drawing.Size(60, 22);
+            this.imprest5StateComboBox.TabIndex = 64;
             // 
             // imprest5TextBox
             // 
             this.imprest5TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Imprest5", true));
-            this.imprest5TextBox.Location = new System.Drawing.Point(99, 339);
+            this.imprest5TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imprest5TextBox.Location = new System.Drawing.Point(76, 283);
             this.imprest5TextBox.Name = "imprest5TextBox";
-            this.imprest5TextBox.Size = new System.Drawing.Size(100, 22);
-            this.imprest5TextBox.TabIndex = 61;
+            this.imprest5TextBox.Size = new System.Drawing.Size(251, 22);
+            this.imprest5TextBox.TabIndex = 78;
             // 
-            // imprest4StateComboBox
+            // flowLayoutPanel5
             // 
-            this.imprest4StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest4State", true));
-            this.imprest4StateComboBox.FormattingEnabled = true;
-            this.imprest4StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
-            this.imprest4StateComboBox.Location = new System.Drawing.Point(434, 311);
-            this.imprest4StateComboBox.Name = "imprest4StateComboBox";
-            this.imprest4StateComboBox.Size = new System.Drawing.Size(121, 22);
-            this.imprest4StateComboBox.TabIndex = 60;
+            this.flowLayoutPanel5.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.flowLayoutPanel5, 2);
+            this.flowLayoutPanel5.Controls.Add(this.imprest4DateDateTimePicker);
+            this.flowLayoutPanel5.Controls.Add(this.imprest4StateComboBox);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(330, 252);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(323, 28);
+            this.flowLayoutPanel5.TabIndex = 77;
+            this.flowLayoutPanel5.WrapContents = false;
             // 
             // imprest4DateDateTimePicker
             // 
             this.imprest4DateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "Imprest4Date", true));
-            this.imprest4DateDateTimePicker.Location = new System.Drawing.Point(99, 311);
+            this.imprest4DateDateTimePicker.Location = new System.Drawing.Point(3, 3);
             this.imprest4DateDateTimePicker.Name = "imprest4DateDateTimePicker";
-            this.imprest4DateDateTimePicker.Size = new System.Drawing.Size(192, 22);
-            this.imprest4DateDateTimePicker.TabIndex = 59;
+            this.imprest4DateDateTimePicker.Size = new System.Drawing.Size(140, 22);
+            this.imprest4DateDateTimePicker.TabIndex = 61;
+            // 
+            // imprest4StateComboBox
+            // 
+            this.imprest4StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest4State", true));
+            this.imprest4StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.imprest4StateComboBox.FormattingEnabled = true;
+            this.imprest4StateComboBox.Items.AddRange(new object[] {
+            "已付",
+            "未付"});
+            this.imprest4StateComboBox.Location = new System.Drawing.Point(149, 3);
+            this.imprest4StateComboBox.Name = "imprest4StateComboBox";
+            this.imprest4StateComboBox.Size = new System.Drawing.Size(60, 22);
+            this.imprest4StateComboBox.TabIndex = 63;
             // 
             // imprest4TextBox
             // 
             this.imprest4TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Imprest4", true));
-            this.imprest4TextBox.Location = new System.Drawing.Point(434, 283);
+            this.imprest4TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imprest4TextBox.Location = new System.Drawing.Point(76, 255);
             this.imprest4TextBox.Name = "imprest4TextBox";
-            this.imprest4TextBox.Size = new System.Drawing.Size(100, 22);
-            this.imprest4TextBox.TabIndex = 58;
+            this.imprest4TextBox.Size = new System.Drawing.Size(251, 22);
+            this.imprest4TextBox.TabIndex = 76;
             // 
-            // imprest3StateComboBox
+            // flowLayoutPanel4
             // 
-            this.imprest3StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest3State", true));
-            this.imprest3StateComboBox.FormattingEnabled = true;
-            this.imprest3StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
-            this.imprest3StateComboBox.Location = new System.Drawing.Point(99, 283);
-            this.imprest3StateComboBox.Name = "imprest3StateComboBox";
-            this.imprest3StateComboBox.Size = new System.Drawing.Size(121, 22);
-            this.imprest3StateComboBox.TabIndex = 57;
+            this.flowLayoutPanel4.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.flowLayoutPanel4, 2);
+            this.flowLayoutPanel4.Controls.Add(this.imprest3DateDateTimePicker);
+            this.flowLayoutPanel4.Controls.Add(this.imprest3StateComboBox);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(330, 224);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(323, 28);
+            this.flowLayoutPanel4.TabIndex = 71;
+            this.flowLayoutPanel4.WrapContents = false;
             // 
             // imprest3DateDateTimePicker
             // 
             this.imprest3DateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "Imprest3Date", true));
-            this.imprest3DateDateTimePicker.Location = new System.Drawing.Point(434, 255);
+            this.imprest3DateDateTimePicker.Location = new System.Drawing.Point(3, 3);
             this.imprest3DateDateTimePicker.Name = "imprest3DateDateTimePicker";
-            this.imprest3DateDateTimePicker.Size = new System.Drawing.Size(192, 22);
-            this.imprest3DateDateTimePicker.TabIndex = 56;
+            this.imprest3DateDateTimePicker.Size = new System.Drawing.Size(140, 22);
+            this.imprest3DateDateTimePicker.TabIndex = 57;
+            // 
+            // imprest3StateComboBox
+            // 
+            this.imprest3StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest3State", true));
+            this.imprest3StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.imprest3StateComboBox.FormattingEnabled = true;
+            this.imprest3StateComboBox.Items.AddRange(new object[] {
+            "已付",
+            "未付"});
+            this.imprest3StateComboBox.Location = new System.Drawing.Point(149, 3);
+            this.imprest3StateComboBox.Name = "imprest3StateComboBox";
+            this.imprest3StateComboBox.Size = new System.Drawing.Size(60, 22);
+            this.imprest3StateComboBox.TabIndex = 58;
             // 
             // imprest3TextBox
             // 
             this.imprest3TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Imprest3", true));
-            this.imprest3TextBox.Location = new System.Drawing.Point(99, 255);
+            this.imprest3TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imprest3TextBox.Location = new System.Drawing.Point(76, 227);
             this.imprest3TextBox.Name = "imprest3TextBox";
-            this.imprest3TextBox.Size = new System.Drawing.Size(100, 22);
-            this.imprest3TextBox.TabIndex = 55;
-            // 
-            // imprest2StateComboBox
-            // 
-            this.imprest2StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest2State", true));
-            this.imprest2StateComboBox.FormattingEnabled = true;
-            this.imprest2StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
-            this.imprest2StateComboBox.Location = new System.Drawing.Point(434, 227);
-            this.imprest2StateComboBox.Name = "imprest2StateComboBox";
-            this.imprest2StateComboBox.Size = new System.Drawing.Size(121, 22);
-            this.imprest2StateComboBox.TabIndex = 54;
-            // 
-            // imprest2DateDateTimePicker
-            // 
-            this.imprest2DateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "Imprest2Date", true));
-            this.imprest2DateDateTimePicker.Location = new System.Drawing.Point(99, 227);
-            this.imprest2DateDateTimePicker.Name = "imprest2DateDateTimePicker";
-            this.imprest2DateDateTimePicker.Size = new System.Drawing.Size(192, 22);
-            this.imprest2DateDateTimePicker.TabIndex = 53;
+            this.imprest3TextBox.Size = new System.Drawing.Size(251, 22);
+            this.imprest3TextBox.TabIndex = 70;
             // 
             // imprest2TextBox
             // 
             this.imprest2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Imprest2", true));
-            this.imprest2TextBox.Location = new System.Drawing.Point(434, 199);
+            this.imprest2TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imprest2TextBox.Location = new System.Drawing.Point(76, 199);
             this.imprest2TextBox.Name = "imprest2TextBox";
-            this.imprest2TextBox.Size = new System.Drawing.Size(100, 22);
-            this.imprest2TextBox.TabIndex = 52;
-            // 
-            // imprest1StateComboBox
-            // 
-            this.imprest1StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest1State", true));
-            this.imprest1StateComboBox.FormattingEnabled = true;
-            this.imprest1StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
-            this.imprest1StateComboBox.Location = new System.Drawing.Point(99, 199);
-            this.imprest1StateComboBox.Name = "imprest1StateComboBox";
-            this.imprest1StateComboBox.Size = new System.Drawing.Size(121, 22);
-            this.imprest1StateComboBox.TabIndex = 51;
-            // 
-            // imprest1DateDateTimePicker
-            // 
-            this.imprest1DateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "Imprest1Date", true));
-            this.imprest1DateDateTimePicker.Location = new System.Drawing.Point(434, 171);
-            this.imprest1DateDateTimePicker.Name = "imprest1DateDateTimePicker";
-            this.imprest1DateDateTimePicker.Size = new System.Drawing.Size(192, 22);
-            this.imprest1DateDateTimePicker.TabIndex = 50;
+            this.imprest2TextBox.Size = new System.Drawing.Size(251, 22);
+            this.imprest2TextBox.TabIndex = 67;
             // 
             // imprest1TextBox
             // 
             this.imprest1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Imprest1", true));
-            this.imprest1TextBox.Location = new System.Drawing.Point(99, 171);
+            this.imprest1TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imprest1TextBox.Location = new System.Drawing.Point(76, 171);
             this.imprest1TextBox.Name = "imprest1TextBox";
-            this.imprest1TextBox.Size = new System.Drawing.Size(100, 22);
+            this.imprest1TextBox.Size = new System.Drawing.Size(251, 22);
             this.imprest1TextBox.TabIndex = 49;
             // 
             // cjyyTextBox
             // 
             this.cjyyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Cjyy", true));
-            this.cjyyTextBox.Location = new System.Drawing.Point(434, 143);
+            this.cjyyTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cjyyTextBox.Location = new System.Drawing.Point(398, 143);
             this.cjyyTextBox.Name = "cjyyTextBox";
-            this.cjyyTextBox.Size = new System.Drawing.Size(100, 22);
+            this.cjyyTextBox.Size = new System.Drawing.Size(252, 22);
             this.cjyyTextBox.TabIndex = 48;
             // 
             // cjtsTextBox
             // 
             this.cjtsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Cjts", true));
-            this.cjtsTextBox.Location = new System.Drawing.Point(99, 143);
+            this.cjtsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cjtsTextBox.Location = new System.Drawing.Point(76, 143);
             this.cjtsTextBox.Name = "cjtsTextBox";
-            this.cjtsTextBox.Size = new System.Drawing.Size(100, 22);
+            this.cjtsTextBox.Size = new System.Drawing.Size(251, 22);
             this.cjtsTextBox.TabIndex = 47;
             // 
             // cjmjTextBox
             // 
             this.cjmjTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Cjmj", true));
-            this.cjmjTextBox.Location = new System.Drawing.Point(434, 115);
+            this.cjmjTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cjmjTextBox.Location = new System.Drawing.Point(398, 115);
             this.cjmjTextBox.Name = "cjmjTextBox";
-            this.cjmjTextBox.Size = new System.Drawing.Size(100, 22);
+            this.cjmjTextBox.Size = new System.Drawing.Size(252, 22);
             this.cjmjTextBox.TabIndex = 46;
             // 
             // cjkTextBox
             // 
             this.cjkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Cjk", true));
-            this.cjkTextBox.Location = new System.Drawing.Point(99, 115);
+            this.cjkTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cjkTextBox.Location = new System.Drawing.Point(76, 115);
             this.cjkTextBox.Name = "cjkTextBox";
-            this.cjkTextBox.Size = new System.Drawing.Size(100, 22);
+            this.cjkTextBox.Size = new System.Drawing.Size(251, 22);
             this.cjkTextBox.TabIndex = 45;
             // 
             // depositDateDateTimePicker
             // 
             this.depositDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "DepositDate", true));
-            this.depositDateDateTimePicker.Location = new System.Drawing.Point(434, 87);
+            this.depositDateDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depositDateDateTimePicker.Location = new System.Drawing.Point(398, 87);
             this.depositDateDateTimePicker.Name = "depositDateDateTimePicker";
-            this.depositDateDateTimePicker.Size = new System.Drawing.Size(192, 22);
+            this.depositDateDateTimePicker.Size = new System.Drawing.Size(252, 22);
             this.depositDateDateTimePicker.TabIndex = 44;
             // 
             // depositTextBox
             // 
             this.depositTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Deposit", true));
-            this.depositTextBox.Location = new System.Drawing.Point(99, 87);
+            this.depositTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depositTextBox.Location = new System.Drawing.Point(76, 87);
             this.depositTextBox.Name = "depositTextBox";
-            this.depositTextBox.Size = new System.Drawing.Size(100, 22);
+            this.depositTextBox.Size = new System.Drawing.Size(251, 22);
             this.depositTextBox.TabIndex = 43;
             // 
             // payingDateDateTimePicker
             // 
             this.payingDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "PayingDate", true));
-            this.payingDateDateTimePicker.Location = new System.Drawing.Point(434, 59);
+            this.payingDateDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.payingDateDateTimePicker.Location = new System.Drawing.Point(398, 59);
             this.payingDateDateTimePicker.Name = "payingDateDateTimePicker";
-            this.payingDateDateTimePicker.Size = new System.Drawing.Size(192, 22);
+            this.payingDateDateTimePicker.Size = new System.Drawing.Size(252, 22);
             this.payingDateDateTimePicker.TabIndex = 42;
             // 
             // salePriceTextBox
             // 
             this.salePriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "SalePrice", true));
-            this.salePriceTextBox.Location = new System.Drawing.Point(99, 59);
+            this.salePriceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.salePriceTextBox.Location = new System.Drawing.Point(76, 59);
             this.salePriceTextBox.Name = "salePriceTextBox";
-            this.salePriceTextBox.Size = new System.Drawing.Size(100, 22);
+            this.salePriceTextBox.Size = new System.Drawing.Size(251, 22);
             this.salePriceTextBox.TabIndex = 41;
             // 
             // contractTypeComboBox
             // 
             this.contractTypeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "ContractType", true));
+            this.contractTypeComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contractTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contractTypeComboBox.FormattingEnabled = true;
             this.contractTypeComboBox.Items.AddRange(new object[] {
             "预售",
             "销售"});
-            this.contractTypeComboBox.Location = new System.Drawing.Point(99, 31);
+            this.contractTypeComboBox.Location = new System.Drawing.Point(76, 31);
             this.contractTypeComboBox.Name = "contractTypeComboBox";
-            this.contractTypeComboBox.Size = new System.Drawing.Size(121, 22);
+            this.contractTypeComboBox.Size = new System.Drawing.Size(251, 22);
             this.contractTypeComboBox.TabIndex = 40;
             // 
             // contractSigningDateDateTimePicker
             // 
             this.contractSigningDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "ContractSigningDate", true));
-            this.contractSigningDateDateTimePicker.Location = new System.Drawing.Point(434, 31);
+            this.contractSigningDateDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contractSigningDateDateTimePicker.Location = new System.Drawing.Point(398, 31);
             this.contractSigningDateDateTimePicker.Name = "contractSigningDateDateTimePicker";
-            this.contractSigningDateDateTimePicker.Size = new System.Drawing.Size(192, 22);
+            this.contractSigningDateDateTimePicker.Size = new System.Drawing.Size(252, 22);
             this.contractSigningDateDateTimePicker.TabIndex = 39;
             // 
             // contractSnTextBox
             // 
             this.contractSnTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "ContractSn", true));
-            this.contractSnTextBox.Location = new System.Drawing.Point(434, 3);
+            this.contractSnTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contractSnTextBox.Location = new System.Drawing.Point(398, 3);
             this.contractSnTextBox.Name = "contractSnTextBox";
-            this.contractSnTextBox.Size = new System.Drawing.Size(100, 22);
+            this.contractSnTextBox.Size = new System.Drawing.Size(252, 22);
             this.contractSnTextBox.TabIndex = 37;
             // 
             // saleIdTextBox
             // 
             this.saleIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "SaleId", true));
-            this.saleIdTextBox.Location = new System.Drawing.Point(99, 3);
+            this.saleIdTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.saleIdTextBox.Location = new System.Drawing.Point(76, 3);
             this.saleIdTextBox.Name = "saleIdTextBox";
-            this.saleIdTextBox.Size = new System.Drawing.Size(100, 22);
+            this.saleIdTextBox.ReadOnly = true;
+            this.saleIdTextBox.Size = new System.Drawing.Size(251, 22);
             this.saleIdTextBox.TabIndex = 36;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.flowLayoutPanel1, 2);
+            this.flowLayoutPanel1.Controls.Add(this.imprest1DateDateTimePicker);
+            this.flowLayoutPanel1.Controls.Add(this.imprest1StateComboBox);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(330, 168);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(323, 28);
+            this.flowLayoutPanel1.TabIndex = 65;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // imprest1DateDateTimePicker
+            // 
+            this.imprest1DateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "Imprest1Date", true));
+            this.imprest1DateDateTimePicker.Location = new System.Drawing.Point(3, 3);
+            this.imprest1DateDateTimePicker.Name = "imprest1DateDateTimePicker";
+            this.imprest1DateDateTimePicker.Size = new System.Drawing.Size(140, 22);
+            this.imprest1DateDateTimePicker.TabIndex = 51;
+            // 
+            // imprest1StateComboBox
+            // 
+            this.imprest1StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest1State", true));
+            this.imprest1StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.imprest1StateComboBox.FormattingEnabled = true;
+            this.imprest1StateComboBox.Items.AddRange(new object[] {
+            "已付",
+            "未付"});
+            this.imprest1StateComboBox.Location = new System.Drawing.Point(149, 3);
+            this.imprest1StateComboBox.Name = "imprest1StateComboBox";
+            this.imprest1StateComboBox.Size = new System.Drawing.Size(60, 22);
+            this.imprest1StateComboBox.TabIndex = 52;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.flowLayoutPanel2, 2);
+            this.flowLayoutPanel2.Controls.Add(this.imprest2DateDateTimePicker);
+            this.flowLayoutPanel2.Controls.Add(this.imprest2StateComboBox);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(330, 196);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(323, 28);
+            this.flowLayoutPanel2.TabIndex = 68;
+            this.flowLayoutPanel2.WrapContents = false;
+            // 
+            // imprest2DateDateTimePicker
+            // 
+            this.imprest2DateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "Imprest2Date", true));
+            this.imprest2DateDateTimePicker.Location = new System.Drawing.Point(3, 3);
+            this.imprest2DateDateTimePicker.Name = "imprest2DateDateTimePicker";
+            this.imprest2DateDateTimePicker.Size = new System.Drawing.Size(140, 22);
+            this.imprest2DateDateTimePicker.TabIndex = 54;
+            // 
+            // imprest2StateComboBox
+            // 
+            this.imprest2StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest2State", true));
+            this.imprest2StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.imprest2StateComboBox.FormattingEnabled = true;
+            this.imprest2StateComboBox.Items.AddRange(new object[] {
+            "已付",
+            "未付"});
+            this.imprest2StateComboBox.Location = new System.Drawing.Point(149, 3);
+            this.imprest2StateComboBox.Name = "imprest2StateComboBox";
+            this.imprest2StateComboBox.Size = new System.Drawing.Size(60, 22);
+            this.imprest2StateComboBox.TabIndex = 55;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(3, 384);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 28);
+            this.label4.TabIndex = 83;
+            this.label4.Text = "累计已付：";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(333, 384);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 28);
+            this.label5.TabIndex = 84;
+            this.label5.Text = "余款：";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox4.Location = new System.Drawing.Point(76, 387);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(251, 22);
+            this.textBox4.TabIndex = 85;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox5.Location = new System.Drawing.Point(398, 387);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(252, 22);
+            this.textBox5.TabIndex = 86;
             // 
             // tabPage2
             // 
@@ -1264,8 +1415,8 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 21);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(629, 370);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
+            this.tabPage2.Size = new System.Drawing.Size(663, 358);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "客户信息";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1287,22 +1438,25 @@
             this.tableLayoutPanel5.Controls.Add(customerIdLabel, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.customerIdTextBox, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(621, 364);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(653, 348);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // addressTextBox
             // 
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Address", true));
-            this.addressTextBox.Location = new System.Drawing.Point(385, 31);
+            this.addressTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addressTextBox.Location = new System.Drawing.Point(376, 31);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(100, 22);
+            this.addressTextBox.ReadOnly = true;
+            this.addressTextBox.Size = new System.Drawing.Size(274, 22);
             this.addressTextBox.TabIndex = 26;
             // 
             // customersBindingSource
@@ -1313,25 +1467,31 @@
             // telTextBox1
             // 
             this.telTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Tel", true));
-            this.telTextBox1.Location = new System.Drawing.Point(87, 31);
+            this.telTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.telTextBox1.Location = new System.Drawing.Point(56, 31);
             this.telTextBox1.Name = "telTextBox1";
-            this.telTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.telTextBox1.ReadOnly = true;
+            this.telTextBox1.Size = new System.Drawing.Size(273, 22);
             this.telTextBox1.TabIndex = 25;
             // 
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Name", true));
-            this.textBox1.Location = new System.Drawing.Point(385, 3);
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(376, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(274, 22);
             this.textBox1.TabIndex = 24;
             // 
             // customerIdTextBox
             // 
             this.customerIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "CustomerId", true));
-            this.customerIdTextBox.Location = new System.Drawing.Point(87, 3);
+            this.customerIdTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customerIdTextBox.Location = new System.Drawing.Point(56, 3);
             this.customerIdTextBox.Name = "customerIdTextBox";
-            this.customerIdTextBox.Size = new System.Drawing.Size(100, 22);
+            this.customerIdTextBox.ReadOnly = true;
+            this.customerIdTextBox.Size = new System.Drawing.Size(273, 22);
             this.customerIdTextBox.TabIndex = 23;
             // 
             // tabPage3
@@ -1339,7 +1499,8 @@
             this.tabPage3.Controls.Add(this.tableLayoutPanel6);
             this.tabPage3.Location = new System.Drawing.Point(4, 21);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(629, 370);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(5);
+            this.tabPage3.Size = new System.Drawing.Size(663, 358);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "销售员信息";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1363,7 +1524,7 @@
             this.tableLayoutPanel6.Controls.Add(employeeIdLabel, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.employeeIdTextBox, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 4;
@@ -1371,15 +1532,17 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(629, 370);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(653, 348);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
             // hireDateDateTimePicker
             // 
             this.hireDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.employeesBindingSource, "HireDate", true));
-            this.hireDateDateTimePicker.Location = new System.Drawing.Point(88, 59);
+            this.hireDateDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hireDateDateTimePicker.Enabled = false;
+            this.hireDateDateTimePicker.Location = new System.Drawing.Point(68, 59);
             this.hireDateDateTimePicker.Name = "hireDateDateTimePicker";
-            this.hireDateDateTimePicker.Size = new System.Drawing.Size(135, 22);
+            this.hireDateDateTimePicker.Size = new System.Drawing.Size(267, 22);
             this.hireDateDateTimePicker.TabIndex = 19;
             // 
             // employeesBindingSource
@@ -1390,41 +1553,50 @@
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Address", true));
-            this.textBox2.Location = new System.Drawing.Point(390, 31);
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Location = new System.Drawing.Point(382, 31);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(268, 22);
             this.textBox2.TabIndex = 18;
             // 
             // telTextBox
             // 
             this.telTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Tel", true));
-            this.telTextBox.Location = new System.Drawing.Point(88, 31);
+            this.telTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.telTextBox.Location = new System.Drawing.Point(68, 31);
             this.telTextBox.Name = "telTextBox";
-            this.telTextBox.Size = new System.Drawing.Size(100, 22);
+            this.telTextBox.ReadOnly = true;
+            this.telTextBox.Size = new System.Drawing.Size(267, 22);
             this.telTextBox.TabIndex = 17;
             // 
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Name", true));
-            this.textBox3.Location = new System.Drawing.Point(390, 3);
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox3.Location = new System.Drawing.Point(382, 3);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(268, 22);
             this.textBox3.TabIndex = 16;
             // 
             // employeeIdTextBox
             // 
             this.employeeIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "EmployeeId", true));
-            this.employeeIdTextBox.Location = new System.Drawing.Point(88, 3);
+            this.employeeIdTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeIdTextBox.Location = new System.Drawing.Point(68, 3);
             this.employeeIdTextBox.Name = "employeeIdTextBox";
-            this.employeeIdTextBox.Size = new System.Drawing.Size(100, 22);
+            this.employeeIdTextBox.ReadOnly = true;
+            this.employeeIdTextBox.Size = new System.Drawing.Size(267, 22);
             this.employeeIdTextBox.TabIndex = 15;
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.tableLayoutPanel4);
-            this.tabPage5.Location = new System.Drawing.Point(4, 21);
+            this.tabPage5.Location = new System.Drawing.Point(4, 23);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(629, 370);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(5);
+            this.tabPage5.Size = new System.Drawing.Size(663, 356);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "项目信息";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1441,29 +1613,33 @@
             this.tableLayoutPanel4.Controls.Add(this.nameLabel, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.nameTextBox, 3, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(629, 370);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(653, 346);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
             // tenementIdTextBox
             // 
             this.tenementIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tenementsBindingSource, "TenementId", true));
-            this.tenementIdTextBox.Location = new System.Drawing.Point(93, 3);
+            this.tenementIdTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tenementIdTextBox.Location = new System.Drawing.Point(56, 3);
             this.tenementIdTextBox.Name = "tenementIdTextBox";
-            this.tenementIdTextBox.Size = new System.Drawing.Size(100, 22);
+            this.tenementIdTextBox.ReadOnly = true;
+            this.tenementIdTextBox.Size = new System.Drawing.Size(261, 22);
             this.tenementIdTextBox.TabIndex = 1;
             // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tenementsBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(386, 3);
+            this.nameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameTextBox.Location = new System.Drawing.Point(388, 3);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.nameTextBox.ReadOnly = true;
+            this.nameTextBox.Size = new System.Drawing.Size(262, 22);
             this.nameTextBox.TabIndex = 3;
             // 
             // tableLayoutPanel2
@@ -1481,7 +1657,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(637, 582);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(671, 574);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
             // quartersBindingNavigator
@@ -1516,7 +1692,7 @@
             this.quartersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.quartersBindingNavigator.Name = "quartersBindingNavigator";
             this.quartersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.quartersBindingNavigator.Size = new System.Drawing.Size(637, 25);
+            this.quartersBindingNavigator.Size = new System.Drawing.Size(671, 25);
             this.quartersBindingNavigator.TabIndex = 6;
             this.quartersBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -1634,7 +1810,7 @@
             this.pnlNavagator.Location = new System.Drawing.Point(0, 0);
             this.pnlNavagator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.pnlNavagator.Name = "pnlNavagator";
-            this.pnlNavagator.Size = new System.Drawing.Size(637, 25);
+            this.pnlNavagator.Size = new System.Drawing.Size(671, 25);
             this.pnlNavagator.TabIndex = 5;
             // 
             // lblNavagator
@@ -1672,7 +1848,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "QuartersUserControl";
-            this.Size = new System.Drawing.Size(637, 582);
+            this.Size = new System.Drawing.Size(671, 574);
             ((System.ComponentModel.ISupportInitialize)(this.quartersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1687,6 +1863,11 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -1755,35 +1936,9 @@
         private System.Windows.Forms.DateTimePicker depositDateDateTimePicker;
         private System.Windows.Forms.TextBox depositTextBox;
         private System.Windows.Forms.DateTimePicker payingDateDateTimePicker;
-        private System.Windows.Forms.TextBox remarkTextBox;
-        private System.Windows.Forms.ComboBox imprest5StateComboBox;
-        private System.Windows.Forms.DateTimePicker imprest5DateDateTimePicker;
-        private System.Windows.Forms.TextBox imprest5TextBox;
-        private System.Windows.Forms.ComboBox imprest4StateComboBox;
-        private System.Windows.Forms.DateTimePicker imprest4DateDateTimePicker;
-        private System.Windows.Forms.TextBox imprest4TextBox;
-        private System.Windows.Forms.ComboBox imprest3StateComboBox;
-        private System.Windows.Forms.DateTimePicker imprest3DateDateTimePicker;
-        private System.Windows.Forms.TextBox imprest3TextBox;
-        private System.Windows.Forms.ComboBox imprest2StateComboBox;
-        private System.Windows.Forms.DateTimePicker imprest2DateDateTimePicker;
-        private System.Windows.Forms.TextBox imprest2TextBox;
-        private System.Windows.Forms.ComboBox imprest1StateComboBox;
-        private System.Windows.Forms.DateTimePicker imprest1DateDateTimePicker;
         private System.Windows.Forms.TextBox imprest1TextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.DataGridView quartersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.TextBox quantityTextBox;
-        private System.Windows.Forms.TextBox codeTextBox;
         private System.Windows.Forms.TextBox marketPriceTextBox;
         private System.Windows.Forms.TextBox builtUpAreaTextBox;
         private System.Windows.Forms.ComboBox propertyComboBox;
@@ -1810,5 +1965,41 @@
         private TVMS.DataService.DataContainerTDSTableAdapters.EmployeesTableAdapter employeesTableAdapter;
         private System.Windows.Forms.Label tenementIdLabel;
         private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.TextBox quantityTextBox;
+        private System.Windows.Forms.TextBox codeTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.TextBox tenementIdTextBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.DateTimePicker imprest1DateDateTimePicker;
+        private System.Windows.Forms.TextBox imprest2TextBox;
+        private System.Windows.Forms.ComboBox imprest1StateComboBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.TextBox imprest4TextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.DateTimePicker imprest3DateDateTimePicker;
+        private System.Windows.Forms.ComboBox imprest3StateComboBox;
+        private System.Windows.Forms.TextBox imprest3TextBox;
+        private System.Windows.Forms.DateTimePicker imprest2DateDateTimePicker;
+        private System.Windows.Forms.ComboBox imprest2StateComboBox;
+        private System.Windows.Forms.TextBox remarkTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.DateTimePicker imprest5DateDateTimePicker;
+        private System.Windows.Forms.ComboBox imprest5StateComboBox;
+        private System.Windows.Forms.TextBox imprest5TextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.DateTimePicker imprest4DateDateTimePicker;
+        private System.Windows.Forms.ComboBox imprest4StateComboBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

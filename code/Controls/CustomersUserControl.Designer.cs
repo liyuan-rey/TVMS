@@ -105,38 +105,46 @@
             // customerIdLabel
             // 
             customerIdLabel.AutoSize = true;
+            customerIdLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             customerIdLabel.Location = new System.Drawing.Point(3, 0);
             customerIdLabel.Name = "customerIdLabel";
-            customerIdLabel.Size = new System.Drawing.Size(78, 14);
+            customerIdLabel.Size = new System.Drawing.Size(47, 28);
             customerIdLabel.TabIndex = 22;
-            customerIdLabel.Text = "Customer Id:";
+            customerIdLabel.Text = "客户号:";
+            customerIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(233, 0);
+            nameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            nameLabel.Location = new System.Drawing.Point(226, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(42, 14);
+            nameLabel.Size = new System.Drawing.Size(35, 28);
             nameLabel.TabIndex = 23;
-            nameLabel.Text = "Name:";
+            nameLabel.Text = "姓名:";
+            nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // telLabel1
             // 
             telLabel1.AutoSize = true;
+            telLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
             telLabel1.Location = new System.Drawing.Point(3, 28);
             telLabel1.Name = "telLabel1";
-            telLabel1.Size = new System.Drawing.Size(28, 14);
+            telLabel1.Size = new System.Drawing.Size(47, 28);
             telLabel1.TabIndex = 24;
-            telLabel1.Text = "Tel:";
+            telLabel1.Text = "电话:";
+            telLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // addressLabel
             // 
             addressLabel.AutoSize = true;
-            addressLabel.Location = new System.Drawing.Point(233, 28);
+            addressLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            addressLabel.Location = new System.Drawing.Point(226, 28);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new System.Drawing.Size(54, 14);
+            addressLabel.Size = new System.Drawing.Size(35, 28);
             addressLabel.TabIndex = 25;
-            addressLabel.Text = "Address:";
+            addressLabel.Text = "住址:";
+            addressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // splitContainer1
             // 
@@ -177,31 +185,33 @@
             this.customersDataGridView.Location = new System.Drawing.Point(0, 0);
             this.customersDataGridView.Name = "customersDataGridView";
             this.customersDataGridView.RowTemplate.Height = 23;
+            this.customersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.customersDataGridView.Size = new System.Drawing.Size(453, 113);
             this.customersDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "CustomerId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "CustomerId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "客户号";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "姓名";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Address";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn3.HeaderText = "住址";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Tel";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tel";
+            this.dataGridViewTextBoxColumn4.HeaderText = "电话";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // customersBindingSource
@@ -233,7 +243,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage1.Size = new System.Drawing.Size(445, 121);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "客户信息";
@@ -256,57 +266,63 @@
             this.tableLayoutPanel1.Controls.Add(customerIdLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.customerIdTextBox, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(437, 115);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(435, 111);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // addressTextBox
             // 
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Address", true));
-            this.addressTextBox.Location = new System.Drawing.Point(293, 31);
+            this.addressTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addressTextBox.Location = new System.Drawing.Point(267, 31);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(100, 22);
+            this.addressTextBox.Size = new System.Drawing.Size(165, 22);
             this.addressTextBox.TabIndex = 26;
             // 
             // telTextBox1
             // 
             this.telTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Tel", true));
-            this.telTextBox1.Location = new System.Drawing.Point(87, 31);
+            this.telTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.telTextBox1.Location = new System.Drawing.Point(56, 31);
             this.telTextBox1.Name = "telTextBox1";
-            this.telTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.telTextBox1.Size = new System.Drawing.Size(164, 22);
             this.telTextBox1.TabIndex = 25;
             // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(293, 3);
+            this.nameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameTextBox.Location = new System.Drawing.Point(267, 3);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.nameTextBox.Size = new System.Drawing.Size(165, 22);
             this.nameTextBox.TabIndex = 24;
             // 
             // customerIdTextBox
             // 
             this.customerIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "CustomerId", true));
-            this.customerIdTextBox.Location = new System.Drawing.Point(87, 3);
+            this.customerIdTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customerIdTextBox.Location = new System.Drawing.Point(56, 3);
             this.customerIdTextBox.Name = "customerIdTextBox";
-            this.customerIdTextBox.Size = new System.Drawing.Size(100, 22);
+            this.customerIdTextBox.ReadOnly = true;
+            this.customerIdTextBox.Size = new System.Drawing.Size(164, 22);
             this.customerIdTextBox.TabIndex = 23;
             // 
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.Controls.Add(this.quartersDataGridView);
-            this.tabPage2.Location = new System.Drawing.Point(4, 21);
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(629, 292);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
+            this.tabPage2.Size = new System.Drawing.Size(445, 121);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "相关住宅";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -329,65 +345,76 @@
             this.dataGridViewTextBoxColumn44});
             this.quartersDataGridView.DataSource = this.quartersBindingSource;
             this.quartersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quartersDataGridView.Location = new System.Drawing.Point(4, 3);
+            this.quartersDataGridView.Location = new System.Drawing.Point(5, 5);
             this.quartersDataGridView.Name = "quartersDataGridView";
+            this.quartersDataGridView.ReadOnly = true;
             this.quartersDataGridView.RowTemplate.Height = 23;
-            this.quartersDataGridView.Size = new System.Drawing.Size(621, 286);
+            this.quartersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.quartersDataGridView.Size = new System.Drawing.Size(435, 111);
             this.quartersDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn36
             // 
             this.dataGridViewTextBoxColumn36.DataPropertyName = "QuartersId";
-            this.dataGridViewTextBoxColumn36.HeaderText = "QuartersId";
+            this.dataGridViewTextBoxColumn36.HeaderText = "住宅号";
             this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn37
             // 
             this.dataGridViewTextBoxColumn37.DataPropertyName = "Model";
-            this.dataGridViewTextBoxColumn37.HeaderText = "Model";
+            this.dataGridViewTextBoxColumn37.HeaderText = "户型";
             this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn38
             // 
             this.dataGridViewTextBoxColumn38.DataPropertyName = "BuiltUpArea";
-            this.dataGridViewTextBoxColumn38.HeaderText = "BuiltUpArea";
+            this.dataGridViewTextBoxColumn38.HeaderText = "建筑面积";
             this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn39
             // 
             this.dataGridViewTextBoxColumn39.DataPropertyName = "MarketPrice";
-            this.dataGridViewTextBoxColumn39.HeaderText = "MarketPrice";
+            this.dataGridViewTextBoxColumn39.HeaderText = "市场价格";
             this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+            this.dataGridViewTextBoxColumn39.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn40
             // 
             this.dataGridViewTextBoxColumn40.DataPropertyName = "Doorplate";
-            this.dataGridViewTextBoxColumn40.HeaderText = "Doorplate";
+            this.dataGridViewTextBoxColumn40.HeaderText = "门牌";
             this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
+            this.dataGridViewTextBoxColumn40.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn41
             // 
             this.dataGridViewTextBoxColumn41.DataPropertyName = "Property";
-            this.dataGridViewTextBoxColumn41.HeaderText = "Property";
+            this.dataGridViewTextBoxColumn41.HeaderText = "权属";
             this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            this.dataGridViewTextBoxColumn41.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn42
             // 
             this.dataGridViewTextBoxColumn42.DataPropertyName = "Code";
-            this.dataGridViewTextBoxColumn42.HeaderText = "Code";
+            this.dataGridViewTextBoxColumn42.HeaderText = "代码";
             this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+            this.dataGridViewTextBoxColumn42.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn43
             // 
             this.dataGridViewTextBoxColumn43.DataPropertyName = "Quantity";
-            this.dataGridViewTextBoxColumn43.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn43.HeaderText = "数量";
             this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            this.dataGridViewTextBoxColumn43.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn44
             // 
             this.dataGridViewTextBoxColumn44.DataPropertyName = "TenementId";
-            this.dataGridViewTextBoxColumn44.HeaderText = "TenementId";
+            this.dataGridViewTextBoxColumn44.HeaderText = "所属项目号";
             this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+            this.dataGridViewTextBoxColumn44.ReadOnly = true;
             // 
             // quartersBindingSource
             // 
@@ -624,10 +651,6 @@
         private System.Windows.Forms.Label lblNavagator;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView customersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.BindingSource customersBindingSource;
         private TVMS.DataService.DataContainerTDS dataContainerTDS;
         private System.Windows.Forms.BindingNavigator customersBindingNavigator;
@@ -646,6 +669,16 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorRefreshItem;
         private TVMS.DataService.DataContainerTDSTableAdapters.CustomersTableAdapter customersTableAdapter;
         private System.Windows.Forms.DataGridView quartersDataGridView;
+        private System.Windows.Forms.BindingSource quartersBindingSource;
+        private TVMS.DataService.DataContainerTDSTableAdapters.QuartersTableAdapter quartersTableAdapter;
+        private System.Windows.Forms.TextBox addressTextBox;
+        private System.Windows.Forms.TextBox telTextBox1;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox customerIdTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
@@ -655,11 +688,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn42;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn43;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
-        private System.Windows.Forms.BindingSource quartersBindingSource;
-        private TVMS.DataService.DataContainerTDSTableAdapters.QuartersTableAdapter quartersTableAdapter;
-        private System.Windows.Forms.TextBox addressTextBox;
-        private System.Windows.Forms.TextBox telTextBox1;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox customerIdTextBox;
     }
 }

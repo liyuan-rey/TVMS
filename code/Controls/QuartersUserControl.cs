@@ -128,14 +128,12 @@ namespace TVMS.SmartClient.Controls
             {
                 if (quartersBindingSource.Current != null)
                 {
-                    int quarterId = ((DataContainerTDS.QuartersRow)((DataRowView)quartersBindingSource.Current).Row).QuartersId;
+                    DataContainerTDS.QuartersRow row = (DataContainerTDS.QuartersRow)((DataRowView)quartersBindingSource.Current).Row;
 
-                    customersTableAdapter.FillByQuarterId(dataContainerTDS.Customers, quarterId);
-                    employeesTableAdapter.FillByQuarterId(dataContainerTDS.Employees, quarterId);
+                    customersTableAdapter.FillByQuarterId(dataContainerTDS.Customers, row.QuartersId);
+                    employeesTableAdapter.FillByQuarterId(dataContainerTDS.Employees, row.QuartersId);
 
-                    tenementsBindingSource.DataSource = ((DataRowView)quartersBindingSource.Current).Row;
-                    tenementsBindingSource.DataMember = "TVMS_TenementsRow";
-
+                    tenementsBindingSource.DataSource = row.TVMS_TenementsRow;
                 }
             }
             catch (System.Exception ex)
