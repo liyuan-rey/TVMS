@@ -931,10 +931,10 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 21);
+            this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage4.Size = new System.Drawing.Size(663, 358);
+            this.tabPage4.Size = new System.Drawing.Size(663, 356);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "销售单信息";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1013,7 +1013,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(653, 348);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(653, 346);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // remarkTextBox
@@ -1593,10 +1593,10 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.tableLayoutPanel4);
-            this.tabPage5.Location = new System.Drawing.Point(4, 23);
+            this.tabPage5.Location = new System.Drawing.Point(4, 21);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage5.Size = new System.Drawing.Size(663, 356);
+            this.tabPage5.Size = new System.Drawing.Size(663, 358);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "项目信息";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1619,7 +1619,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(653, 346);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(653, 348);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
             // tenementIdTextBox
