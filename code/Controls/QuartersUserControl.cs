@@ -9,9 +9,9 @@ using System.Windows.Forms;
 using TVMS.DataService;
 using TVMS.DataService.DataContainerTDSTableAdapters;
 
-namespace TVMS.SmartClient.Controls
+namespace TVMS.Controls
 {
-    public partial class QuartersUserControl : UserControl
+    public partial class QuartersUserControl : UserControl, ITvmsUserControl
     {
         public QuartersUserControl()
         {
@@ -19,8 +19,6 @@ namespace TVMS.SmartClient.Controls
 
             this.dataContainerTDS.Quarters.TableNewRow += new DataTableNewRowEventHandler(Quarters_TableNewRow);
             this.dataContainerTDS.Quarters.QuartersRowDeleting += new DataContainerTDS.QuartersRowChangeEventHandler(Quarters_QuartersRowDeleting);
-
-            bindingNavigatorRefreshItem.PerformClick();
         }
 
         void Quarters_QuartersRowDeleting(object sender, DataContainerTDS.QuartersRowChangeEvent e)
@@ -107,23 +105,15 @@ namespace TVMS.SmartClient.Controls
 
         private void bindingNavigatorRefreshItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.quartersBindingSource.CancelEdit();
-                this.salesBindingSource.CancelEdit();
-
-                this.dataContainerTDS.Clear();
-
-                this.dataContainerTDS.Merge(DataContainerTDS.GetQuarters());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("读取住宅信息失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            RefreshData();
         }
 
         private void quartersBindingSource_CurrentChanged(object sender, EventArgs e)
         {
+            this.Validate();
+            this.quartersBindingSource.EndEdit();
+            this.salesBindingSource.EndEdit();
+
             try
             {
                 if (quartersBindingSource.Current != null)
@@ -141,5 +131,26 @@ namespace TVMS.SmartClient.Controls
                 MessageBox.Show("读取关联数据失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        #region ITvmsUserControl 成员
+
+        public void RefreshData()
+        {
+            try
+            {
+                this.quartersBindingSource.CancelEdit();
+                this.salesBindingSource.CancelEdit();
+
+                this.dataContainerTDS.Clear();
+
+                this.dataContainerTDS.Merge(DataContainerTDS.GetQuarters());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("读取住宅信息失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
     }
 }

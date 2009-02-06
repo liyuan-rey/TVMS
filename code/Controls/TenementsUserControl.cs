@@ -8,15 +8,13 @@ using System.Windows.Forms;
 using TVMS.DataService;
 using TVMS.DataService.DataContainerTDSTableAdapters;
 
-namespace TVMS.SmartClient.Controls
+namespace TVMS.Controls
 {
-    public partial class TenementsUserControl : UserControl
+    public partial class TenementsUserControl : UserControl, ITvmsUserControl
     {
         public TenementsUserControl()
         {
             InitializeComponent();
-
-            bindingNavigatorRefreshItem.PerformClick();
         }
 
         private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -35,18 +33,7 @@ namespace TVMS.SmartClient.Controls
 
         private void bindingNavigatorRefreshItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.tenementsBindingSource.CancelEdit();
-
-                this.dataContainerTDS.Clear();
-
-                tenementsTableAdapter.Fill(dataContainerTDS.Tenements);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("读取项目列表失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            RefreshData();
         }
 
         private void tenementsBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -65,5 +52,25 @@ namespace TVMS.SmartClient.Controls
             }
 
         }
+
+        #region ITvmsUserControl 成员
+
+        public void RefreshData()
+        {
+            try
+            {
+                this.tenementsBindingSource.CancelEdit();
+
+                this.dataContainerTDS.Clear();
+
+                tenementsTableAdapter.Fill(dataContainerTDS.Tenements);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("读取项目列表失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
     }
 }

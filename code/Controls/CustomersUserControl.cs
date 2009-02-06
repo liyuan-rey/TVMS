@@ -8,15 +8,13 @@ using System.Windows.Forms;
 using TVMS.DataService;
 using TVMS.DataService.DataContainerTDSTableAdapters;
 
-namespace TVMS.SmartClient.Controls
+namespace TVMS.Controls
 {
-    public partial class CustomersUserControl : UserControl
+    public partial class CustomersUserControl : UserControl, ITvmsUserControl
     {
         public CustomersUserControl()
         {
             InitializeComponent();
-
-            bindingNavigatorRefreshItem.PerformClick();
         }
 
         private void customersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -35,18 +33,7 @@ namespace TVMS.SmartClient.Controls
 
         private void bindingNavigatorRefreshItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.customersBindingSource.CancelEdit();
-
-                this.dataContainerTDS.Clear();
-
-                customersTableAdapter.Fill(dataContainerTDS.Customers);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("读取客户列表失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            RefreshData();
         }
 
         private void customersBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -64,5 +51,25 @@ namespace TVMS.SmartClient.Controls
                 MessageBox.Show("读取相关住宅信息失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        #region ITvmsUserControl 成员
+
+        public void RefreshData()
+        {
+            try
+            {
+                this.customersBindingSource.CancelEdit();
+
+                this.dataContainerTDS.Clear();
+
+                customersTableAdapter.Fill(dataContainerTDS.Customers);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("读取客户列表失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
     }
 }

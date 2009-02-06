@@ -1,4 +1,4 @@
-﻿namespace TVMS.SmartClient.Controls
+﻿namespace TVMS.Controls
 {
     partial class TenementsUserControl
     {

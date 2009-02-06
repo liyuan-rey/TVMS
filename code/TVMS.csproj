@@ -47,6 +47,7 @@
     <Compile Include="Controls\GlossaryUserControl.Designer.cs">
       <DependentUpon>GlossaryUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ITvmsUserControl.cs" />
     <Compile Include="DataService\DataContainerTDS.cs">
       <DependentUpon>DataContainerTDS.xsd</DependentUpon>
       <SubType>Component</SubType>

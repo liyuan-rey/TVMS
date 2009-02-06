@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TVMS.SmartClient.Controls;
+using TVMS.Controls;
 
 namespace TVMS.SmartClient
 {
@@ -59,11 +59,21 @@ namespace TVMS.SmartClient
 
         private void LoadObjectMapConfigration()
         {
-            nodeObjectMap["NodeTenements"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.TenementsUserControl");
-            nodeObjectMap["NodeQuarters"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.QuartersUserControl");
-            nodeObjectMap["NodeCustomers"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.CustomersUserControl");
-            nodeObjectMap["NodeEmployees"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.EmployeesUserControl");
-            nodeObjectMap["NodeSales"] = new TvmsTypeInfo("TVMS.SmartClient.Controls.SalesUserControl");
+            // this is prepare for dynamic loading component from configration xml
+            nodeObjectMap["NodeTenements"] = new TvmsTypeInfo("TVMS.Controls.TenementsUserControl");
+            nodeObjectMap["NodeQuarters"] = new TvmsTypeInfo("TVMS.Controls.QuartersUserControl");
+            nodeObjectMap["NodeCustomers"] = new TvmsTypeInfo("TVMS.Controls.CustomersUserControl");
+            nodeObjectMap["NodeEmployees"] = new TvmsTypeInfo("TVMS.Controls.EmployeesUserControl");
+//no used:            nodeObjectMap["NodeSales"] = new TvmsTypeInfo("TVMS.Controls.SalesUserControl");
+
+            if (true) //hack: preload interface without data
+            {
+                GetTvmsUserControl("NodeTenements");
+                GetTvmsUserControl("NodeQuarters");
+                GetTvmsUserControl("NodeCustomers");
+                GetTvmsUserControl("NodeEmployees");
+                GetTvmsUserControl("NodeSales");
+            }
         }
 
         private void tvwWorkspace_AfterSelect(object sender, TreeViewEventArgs e)
@@ -71,27 +81,51 @@ namespace TVMS.SmartClient
             if (!nodeObjectMap.ContainsKey(e.Node.Name))
                 return;
 
+            //
+            Control ctrlToHide = null;
+            Control ctrlToShow = null;
             Panel parentPanel = splitContainer1.Panel2;
 
             foreach (Control ctrl in parentPanel.Controls)
             {
                 if (ctrl.Visible == true && ctrl is UserControl)
                 {
-                    ctrl.Visible = false;
-                    ctrl.Dock = DockStyle.None;
+                    ctrlToHide = ctrl;
+                    break;
                 }
             }
 
-            //
             UserControl uc = GetTvmsUserControl(e.Node.Name);
             if (uc != null)
             {
                 if (!parentPanel.Controls.Contains(uc))
+                {
+                    uc.Visible = false;
                     parentPanel.Controls.Add(uc);
 
+                    if (uc is ITvmsUserControl) // refresh data for the first time
+                        ((ITvmsUserControl)uc).RefreshData();
+                }
+
+                ctrlToShow = uc;
+            }
+
+            // perform layout
+            parentPanel.SuspendLayout();
+
+            if (ctrlToHide != null)
+            {
+                ctrlToHide.Visible = false;
+            }
+
+            if (uc != null)
+            {
                 uc.Dock = DockStyle.Fill;
                 uc.Visible = true;
             }
+
+            parentPanel.ResumeLayout(false);
+            parentPanel.PerformLayout();
         }
 
         private UserControl GetTvmsUserControl(string nodeName)

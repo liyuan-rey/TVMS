@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("住宅");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("客户");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("销售员");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("销售单");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("欢迎使用", new System.Windows.Forms.TreeNode[] {
-            treeNode22,
-            treeNode23,
-            treeNode24,
-            treeNode25,
-            treeNode26});
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("访问网站");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("住宅");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("客户");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("销售员");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("欢迎使用", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("访问网站");
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -135,33 +133,30 @@
             this.tvwWorkspace.HideSelection = false;
             this.tvwWorkspace.Location = new System.Drawing.Point(0, 0);
             this.tvwWorkspace.Name = "tvwWorkspace";
-            treeNode22.Name = "NodeTenements";
-            treeNode22.Tag = "";
-            treeNode22.Text = "项目";
-            treeNode22.ToolTipText = "项目列表";
-            treeNode23.Name = "NodeQuarters";
-            treeNode23.Text = "住宅";
-            treeNode23.ToolTipText = "住宅列表";
-            treeNode24.Name = "NodeCustomers";
-            treeNode24.Tag = "";
-            treeNode24.Text = "客户";
-            treeNode24.ToolTipText = "客户列表";
-            treeNode25.Name = "NodeEmployees";
-            treeNode25.Tag = "";
-            treeNode25.Text = "销售员";
-            treeNode25.ToolTipText = "销售员列表";
-            treeNode26.Name = "NodeSales";
-            treeNode26.Text = "销售单";
-            treeNode26.ToolTipText = "销售单列表";
-            treeNode27.Name = "NodeWelcome";
-            treeNode27.Tag = "";
-            treeNode27.Text = "欢迎使用";
-            treeNode28.Name = "NodeWeb";
-            treeNode28.Tag = "";
-            treeNode28.Text = "访问网站";
+            treeNode1.Name = "NodeTenements";
+            treeNode1.Tag = "";
+            treeNode1.Text = "项目";
+            treeNode1.ToolTipText = "项目列表";
+            treeNode2.Name = "NodeQuarters";
+            treeNode2.Text = "住宅";
+            treeNode2.ToolTipText = "住宅列表";
+            treeNode3.Name = "NodeCustomers";
+            treeNode3.Tag = "";
+            treeNode3.Text = "客户";
+            treeNode3.ToolTipText = "客户列表";
+            treeNode4.Name = "NodeEmployees";
+            treeNode4.Tag = "";
+            treeNode4.Text = "销售员";
+            treeNode4.ToolTipText = "销售员列表";
+            treeNode5.Name = "NodeWelcome";
+            treeNode5.Tag = "";
+            treeNode5.Text = "欢迎使用";
+            treeNode6.Name = "NodeWeb";
+            treeNode6.Tag = "";
+            treeNode6.Text = "访问网站";
             this.tvwWorkspace.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode27,
-            treeNode28});
+            treeNode5,
+            treeNode6});
             this.tvwWorkspace.ShowNodeToolTips = true;
             this.tvwWorkspace.Size = new System.Drawing.Size(161, 335);
             this.tvwWorkspace.TabIndex = 0;
@@ -212,19 +207,19 @@
             // 
             this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.settingsToolStripMenuItem.Text = "设置(&S)...";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(125, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.exitToolStripMenuItem.Text = "退出(&X)";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 

@@ -12,11 +12,13 @@ namespace TVMS.DataService {
             QuartersTableAdapter quaAdapter = new QuartersTableAdapter();
             SalesTableAdapter salAdapter = new SalesTableAdapter();
             TenementsTableAdapter tenAdapter = new TenementsTableAdapter();
+            GlossaryTableAdapter gloAdapter = new GlossaryTableAdapter();
 
             DataContainerTDS ds = new DataContainerTDS();
             quaAdapter.Fill(ds.Quarters);
             salAdapter.Fill(ds.Sales);
             tenAdapter.Fill(ds.Tenements);
+            gloAdapter.Fill(ds.Glossary);
 
             return ds;
         }

@@ -6,15 +6,13 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TVMS.SmartClient.Controls
+namespace TVMS.Controls
 {
-    public partial class SalesUserControl : UserControl
+    public partial class SalesUserControl : UserControl, ITvmsUserControl
     {
         public SalesUserControl()
         {
             InitializeComponent();
-
-            bindingNavigatorRefreshItem.PerformClick();
         }
 
         private void salesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -33,6 +31,18 @@ namespace TVMS.SmartClient.Controls
 
         private void salesBindingNavigatorRefreshItem_Click(object sender, EventArgs e)
         {
+            RefreshData();
+        }
+
+        private void salesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        #region ITvmsUserControl 成员
+
+        public void RefreshData()
+        {
             try
             {
                 this.salesBindingSource.CancelEdit();
@@ -47,9 +57,6 @@ namespace TVMS.SmartClient.Controls
             }
         }
 
-        private void salesBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

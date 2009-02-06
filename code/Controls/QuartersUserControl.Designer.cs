@@ -1,4 +1,4 @@
-﻿namespace TVMS.SmartClient.Controls
+﻿namespace TVMS.Controls
 {
     partial class QuartersUserControl
     {
@@ -77,7 +77,9 @@
             this.marketPriceTextBox = new System.Windows.Forms.TextBox();
             this.builtUpAreaTextBox = new System.Windows.Forms.TextBox();
             this.propertyComboBox = new System.Windows.Forms.ComboBox();
+            this.propertyTermsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.modelComboBox = new System.Windows.Forms.ComboBox();
+            this.modelTermsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doorplateTextBox = new System.Windows.Forms.TextBox();
             this.quartersIdTextBox = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -100,14 +102,17 @@
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.imprest5DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imprest5StateComboBox = new System.Windows.Forms.ComboBox();
+            this.imprest5StateTermsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imprest5TextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.imprest4DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imprest4StateComboBox = new System.Windows.Forms.ComboBox();
+            this.imprest4StateTermsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imprest4TextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.imprest3DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imprest3StateComboBox = new System.Windows.Forms.ComboBox();
+            this.imprest3StateTermsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imprest3TextBox = new System.Windows.Forms.TextBox();
             this.imprest2TextBox = new System.Windows.Forms.TextBox();
             this.imprest1TextBox = new System.Windows.Forms.TextBox();
@@ -120,15 +125,18 @@
             this.payingDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.salePriceTextBox = new System.Windows.Forms.TextBox();
             this.contractTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.contractTypeTermsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contractSigningDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.contractSnTextBox = new System.Windows.Forms.TextBox();
             this.saleIdTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.imprest1DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imprest1StateComboBox = new System.Windows.Forms.ComboBox();
+            this.imprest1StateTermsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.imprest2DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imprest2StateComboBox = new System.Windows.Forms.ComboBox();
+            this.imprest2StateTermsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -213,6 +221,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.quartersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyTermsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelTermsBindingSource)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -223,10 +233,16 @@
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
             this.flowLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imprest5StateTermsBindingSource)).BeginInit();
             this.flowLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imprest4StateTermsBindingSource)).BeginInit();
             this.flowLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imprest3StateTermsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractTypeTermsBindingSource)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imprest1StateTermsBindingSource)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imprest2StateTermsBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
@@ -758,7 +774,9 @@
             // 
             // propertyComboBox
             // 
-            this.propertyComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "Property", true));
+            this.propertyComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.quartersBindingSource, "Property", true));
+            this.propertyComboBox.DataSource = this.propertyTermsBindingSource;
+            this.propertyComboBox.DisplayMember = "TermValue";
             this.propertyComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.propertyComboBox.FormattingEnabled = true;
@@ -766,10 +784,19 @@
             this.propertyComboBox.Name = "propertyComboBox";
             this.propertyComboBox.Size = new System.Drawing.Size(250, 22);
             this.propertyComboBox.TabIndex = 32;
+            this.propertyComboBox.ValueMember = "TermKey";
+            // 
+            // propertyTermsBindingSource
+            // 
+            this.propertyTermsBindingSource.DataMember = "Glossary";
+            this.propertyTermsBindingSource.DataSource = this.dataContainerTDS;
+            this.propertyTermsBindingSource.Filter = "ParentTermId = 900001";
             // 
             // modelComboBox
             // 
-            this.modelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quartersBindingSource, "Model", true));
+            this.modelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.quartersBindingSource, "Model", true));
+            this.modelComboBox.DataSource = this.modelTermsBindingSource;
+            this.modelComboBox.DisplayMember = "TermValue";
             this.modelComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.modelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.modelComboBox.FormattingEnabled = true;
@@ -777,6 +804,13 @@
             this.modelComboBox.Name = "modelComboBox";
             this.modelComboBox.Size = new System.Drawing.Size(249, 22);
             this.modelComboBox.TabIndex = 31;
+            this.modelComboBox.ValueMember = "TermKey";
+            // 
+            // modelTermsBindingSource
+            // 
+            this.modelTermsBindingSource.DataMember = "Glossary";
+            this.modelTermsBindingSource.DataSource = this.dataContainerTDS;
+            this.modelTermsBindingSource.Filter = "ParentTermId = 900000";
             // 
             // doorplateTextBox
             // 
@@ -931,10 +965,10 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 23);
+            this.tabPage4.Location = new System.Drawing.Point(4, 21);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage4.Size = new System.Drawing.Size(663, 356);
+            this.tabPage4.Size = new System.Drawing.Size(663, 358);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "销售单信息";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1013,7 +1047,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(653, 346);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(653, 348);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // remarkTextBox
@@ -1058,15 +1092,21 @@
             // imprest5StateComboBox
             // 
             this.imprest5StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest5State", true));
+            this.imprest5StateComboBox.DataSource = this.imprest5StateTermsBindingSource;
+            this.imprest5StateComboBox.DisplayMember = "TermValue";
             this.imprest5StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.imprest5StateComboBox.FormattingEnabled = true;
-            this.imprest5StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
             this.imprest5StateComboBox.Location = new System.Drawing.Point(149, 3);
             this.imprest5StateComboBox.Name = "imprest5StateComboBox";
             this.imprest5StateComboBox.Size = new System.Drawing.Size(60, 22);
             this.imprest5StateComboBox.TabIndex = 64;
+            this.imprest5StateComboBox.ValueMember = "TermKey";
+            // 
+            // imprest5StateTermsBindingSource
+            // 
+            this.imprest5StateTermsBindingSource.DataMember = "Glossary";
+            this.imprest5StateTermsBindingSource.DataSource = this.dataContainerTDS;
+            this.imprest5StateTermsBindingSource.Filter = "ParentTermId = 900011";
             // 
             // imprest5TextBox
             // 
@@ -1102,15 +1142,21 @@
             // imprest4StateComboBox
             // 
             this.imprest4StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest4State", true));
+            this.imprest4StateComboBox.DataSource = this.imprest4StateTermsBindingSource;
+            this.imprest4StateComboBox.DisplayMember = "TermValue";
             this.imprest4StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.imprest4StateComboBox.FormattingEnabled = true;
-            this.imprest4StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
             this.imprest4StateComboBox.Location = new System.Drawing.Point(149, 3);
             this.imprest4StateComboBox.Name = "imprest4StateComboBox";
             this.imprest4StateComboBox.Size = new System.Drawing.Size(60, 22);
             this.imprest4StateComboBox.TabIndex = 63;
+            this.imprest4StateComboBox.ValueMember = "TermKey";
+            // 
+            // imprest4StateTermsBindingSource
+            // 
+            this.imprest4StateTermsBindingSource.DataMember = "Glossary";
+            this.imprest4StateTermsBindingSource.DataSource = this.dataContainerTDS;
+            this.imprest4StateTermsBindingSource.Filter = "ParentTermId = 900011";
             // 
             // imprest4TextBox
             // 
@@ -1146,15 +1192,21 @@
             // imprest3StateComboBox
             // 
             this.imprest3StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest3State", true));
+            this.imprest3StateComboBox.DataSource = this.imprest3StateTermsBindingSource;
+            this.imprest3StateComboBox.DisplayMember = "TermValue";
             this.imprest3StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.imprest3StateComboBox.FormattingEnabled = true;
-            this.imprest3StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
             this.imprest3StateComboBox.Location = new System.Drawing.Point(149, 3);
             this.imprest3StateComboBox.Name = "imprest3StateComboBox";
             this.imprest3StateComboBox.Size = new System.Drawing.Size(60, 22);
             this.imprest3StateComboBox.TabIndex = 58;
+            this.imprest3StateComboBox.ValueMember = "TermKey";
+            // 
+            // imprest3StateTermsBindingSource
+            // 
+            this.imprest3StateTermsBindingSource.DataMember = "Glossary";
+            this.imprest3StateTermsBindingSource.DataSource = this.dataContainerTDS;
+            this.imprest3StateTermsBindingSource.Filter = "ParentTermId = 900011";
             // 
             // imprest3TextBox
             // 
@@ -1258,16 +1310,22 @@
             // contractTypeComboBox
             // 
             this.contractTypeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "ContractType", true));
+            this.contractTypeComboBox.DataSource = this.contractTypeTermsBindingSource;
+            this.contractTypeComboBox.DisplayMember = "TermValue";
             this.contractTypeComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contractTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contractTypeComboBox.FormattingEnabled = true;
-            this.contractTypeComboBox.Items.AddRange(new object[] {
-            "预售",
-            "销售"});
             this.contractTypeComboBox.Location = new System.Drawing.Point(76, 31);
             this.contractTypeComboBox.Name = "contractTypeComboBox";
             this.contractTypeComboBox.Size = new System.Drawing.Size(251, 22);
             this.contractTypeComboBox.TabIndex = 40;
+            this.contractTypeComboBox.ValueMember = "TermKey";
+            // 
+            // contractTypeTermsBindingSource
+            // 
+            this.contractTypeTermsBindingSource.DataMember = "Glossary";
+            this.contractTypeTermsBindingSource.DataSource = this.dataContainerTDS;
+            this.contractTypeTermsBindingSource.Filter = "ParentTermId = 900002";
             // 
             // contractSigningDateDateTimePicker
             // 
@@ -1322,15 +1380,21 @@
             // imprest1StateComboBox
             // 
             this.imprest1StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest1State", true));
+            this.imprest1StateComboBox.DataSource = this.imprest1StateTermsBindingSource;
+            this.imprest1StateComboBox.DisplayMember = "TermValue";
             this.imprest1StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.imprest1StateComboBox.FormattingEnabled = true;
-            this.imprest1StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
             this.imprest1StateComboBox.Location = new System.Drawing.Point(149, 3);
             this.imprest1StateComboBox.Name = "imprest1StateComboBox";
             this.imprest1StateComboBox.Size = new System.Drawing.Size(60, 22);
             this.imprest1StateComboBox.TabIndex = 52;
+            this.imprest1StateComboBox.ValueMember = "TermKey";
+            // 
+            // imprest1StateTermsBindingSource
+            // 
+            this.imprest1StateTermsBindingSource.DataMember = "Glossary";
+            this.imprest1StateTermsBindingSource.DataSource = this.dataContainerTDS;
+            this.imprest1StateTermsBindingSource.Filter = "ParentTermId = 900011";
             // 
             // flowLayoutPanel2
             // 
@@ -1357,15 +1421,21 @@
             // imprest2StateComboBox
             // 
             this.imprest2StateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.salesBindingSource, "Imprest2State", true));
+            this.imprest2StateComboBox.DataSource = this.imprest2StateTermsBindingSource;
+            this.imprest2StateComboBox.DisplayMember = "TermValue";
             this.imprest2StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.imprest2StateComboBox.FormattingEnabled = true;
-            this.imprest2StateComboBox.Items.AddRange(new object[] {
-            "已付",
-            "未付"});
             this.imprest2StateComboBox.Location = new System.Drawing.Point(149, 3);
             this.imprest2StateComboBox.Name = "imprest2StateComboBox";
             this.imprest2StateComboBox.Size = new System.Drawing.Size(60, 22);
             this.imprest2StateComboBox.TabIndex = 55;
+            this.imprest2StateComboBox.ValueMember = "TermKey";
+            // 
+            // imprest2StateTermsBindingSource
+            // 
+            this.imprest2StateTermsBindingSource.DataMember = "Glossary";
+            this.imprest2StateTermsBindingSource.DataSource = this.dataContainerTDS;
+            this.imprest2StateTermsBindingSource.Filter = "ParentTermId = 900011";
             // 
             // label4
             // 
@@ -1853,6 +1923,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyTermsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelTermsBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
@@ -1864,10 +1936,16 @@
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
             this.flowLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imprest5StateTermsBindingSource)).EndInit();
             this.flowLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imprest4StateTermsBindingSource)).EndInit();
             this.flowLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imprest3StateTermsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractTypeTermsBindingSource)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imprest1StateTermsBindingSource)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imprest2StateTermsBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -2001,5 +2079,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.BindingSource modelTermsBindingSource;
+        private System.Windows.Forms.BindingSource propertyTermsBindingSource;
+        private System.Windows.Forms.BindingSource contractTypeTermsBindingSource;
+        private System.Windows.Forms.BindingSource imprest1StateTermsBindingSource;
+        private System.Windows.Forms.BindingSource imprest2StateTermsBindingSource;
+        private System.Windows.Forms.BindingSource imprest3StateTermsBindingSource;
+        private System.Windows.Forms.BindingSource imprest4StateTermsBindingSource;
+        private System.Windows.Forms.BindingSource imprest5StateTermsBindingSource;
     }
 }
