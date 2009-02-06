@@ -23,16 +23,14 @@ namespace TVMS.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\tvms.mdb;Persist Sec" +
             "urity Info=True")]
         public string SQLConnectionString {
             get {
                 return ((string)(this["SQLConnectionString"]));
-            }
-            set {
-                this["SQLConnectionString"] = value;
             }
         }
     }

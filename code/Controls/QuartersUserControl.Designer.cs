@@ -97,8 +97,10 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.remarkTextBox = new System.Windows.Forms.TextBox();
+            this.nonPaymentTextBox = new System.Windows.Forms.TextBox();
             this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paidUpSumTextBox = new System.Windows.Forms.TextBox();
+            this.remarkTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.imprest5DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imprest5StateComboBox = new System.Windows.Forms.ComboBox();
@@ -139,8 +141,6 @@
             this.imprest2StateTermsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.addressTextBox = new System.Windows.Forms.TextBox();
@@ -860,6 +860,7 @@
             this.quartersDataGridView.AllowUserToDeleteRows = false;
             this.quartersDataGridView.AllowUserToOrderColumns = true;
             this.quartersDataGridView.AutoGenerateColumns = false;
+            this.quartersDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.quartersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -965,10 +966,10 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 21);
+            this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage4.Size = new System.Drawing.Size(663, 358);
+            this.tabPage4.Size = new System.Drawing.Size(663, 356);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "销售单信息";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -981,6 +982,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.nonPaymentTextBox, 3, 14);
+            this.tableLayoutPanel3.Controls.Add(this.paidUpSumTextBox, 1, 14);
             this.tableLayoutPanel3.Controls.Add(remarkLabel, 0, 11);
             this.tableLayoutPanel3.Controls.Add(this.remarkTextBox, 1, 11);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel6, 2, 10);
@@ -1024,8 +1027,6 @@
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel2, 2, 7);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 14);
             this.tableLayoutPanel3.Controls.Add(this.label5, 2, 14);
-            this.tableLayoutPanel3.Controls.Add(this.textBox4, 1, 14);
-            this.tableLayoutPanel3.Controls.Add(this.textBox5, 3, 14);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -1047,8 +1048,33 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(653, 348);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(653, 346);
             this.tableLayoutPanel3.TabIndex = 5;
+            // 
+            // nonPaymentTextBox
+            // 
+            this.nonPaymentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "NonPayment", true));
+            this.nonPaymentTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nonPaymentTextBox.Location = new System.Drawing.Point(398, 387);
+            this.nonPaymentTextBox.Name = "nonPaymentTextBox";
+            this.nonPaymentTextBox.ReadOnly = true;
+            this.nonPaymentTextBox.Size = new System.Drawing.Size(252, 22);
+            this.nonPaymentTextBox.TabIndex = 93;
+            // 
+            // salesBindingSource
+            // 
+            this.salesBindingSource.DataMember = "FK_Sales_Quarters";
+            this.salesBindingSource.DataSource = this.quartersBindingSource;
+            // 
+            // paidUpSumTextBox
+            // 
+            this.paidUpSumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "PaidUpSum", true));
+            this.paidUpSumTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.paidUpSumTextBox.Location = new System.Drawing.Point(76, 387);
+            this.paidUpSumTextBox.Name = "paidUpSumTextBox";
+            this.paidUpSumTextBox.ReadOnly = true;
+            this.paidUpSumTextBox.Size = new System.Drawing.Size(251, 22);
+            this.paidUpSumTextBox.TabIndex = 89;
             // 
             // remarkTextBox
             // 
@@ -1061,11 +1087,6 @@
             this.tableLayoutPanel3.SetRowSpan(this.remarkTextBox, 2);
             this.remarkTextBox.Size = new System.Drawing.Size(574, 56);
             this.remarkTextBox.TabIndex = 81;
-            // 
-            // salesBindingSource
-            // 
-            this.salesBindingSource.DataMember = "FK_Sales_Quarters";
-            this.salesBindingSource.DataSource = this.quartersBindingSource;
             // 
             // flowLayoutPanel6
             // 
@@ -1460,24 +1481,6 @@
             this.label5.TabIndex = 84;
             this.label5.Text = "余款：";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Location = new System.Drawing.Point(76, 387);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(251, 22);
-            this.textBox4.TabIndex = 85;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Location = new System.Drawing.Point(398, 387);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(252, 22);
-            this.textBox5.TabIndex = 86;
             // 
             // tabPage2
             // 
@@ -2077,8 +2080,6 @@
         private System.Windows.Forms.ComboBox imprest4StateComboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.BindingSource modelTermsBindingSource;
         private System.Windows.Forms.BindingSource propertyTermsBindingSource;
         private System.Windows.Forms.BindingSource contractTypeTermsBindingSource;
@@ -2087,5 +2088,7 @@
         private System.Windows.Forms.BindingSource imprest3StateTermsBindingSource;
         private System.Windows.Forms.BindingSource imprest4StateTermsBindingSource;
         private System.Windows.Forms.BindingSource imprest5StateTermsBindingSource;
+        private System.Windows.Forms.TextBox paidUpSumTextBox;
+        private System.Windows.Forms.TextBox nonPaymentTextBox;
     }
 }

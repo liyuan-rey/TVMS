@@ -57,6 +57,7 @@ namespace TVMS.DataService {
             base.Tables.CollectionChanged += schemaChangedHandler;
             base.Relations.CollectionChanged += schemaChangedHandler;
             this.EndInit();
+            this.InitExpressions();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -102,6 +103,7 @@ namespace TVMS.DataService {
             }
             else {
                 this.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                this.InitExpressions();
             }
             this.GetSerializationData(info, context);
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -202,6 +204,7 @@ namespace TVMS.DataService {
         public override global::System.Data.DataSet Clone() {
             DataContainerTDS cln = ((DataContainerTDS)(base.Clone()));
             cln.InitVars();
+            cln.InitExpressions();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
@@ -324,7 +327,7 @@ namespace TVMS.DataService {
             base.Tables.Add(this.tableTenements);
             this.tableQuarters = new QuartersDataTable();
             base.Tables.Add(this.tableQuarters);
-            this.tableSales = new SalesDataTable();
+            this.tableSales = new SalesDataTable(false);
             base.Tables.Add(this.tableSales);
             this.tableCustomers = new CustomersDataTable();
             base.Tables.Add(this.tableCustomers);
@@ -435,6 +438,12 @@ namespace TVMS.DataService {
             }
             xs.Add(dsSchema);
             return type;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private void InitExpressions() {
+            this.Sales.PaidUpSumColumn.Expression = "Cjk+Imprest1+Imprest2+Imprest3+Imprest4+Imprest5";
+            this.Sales.NonPaymentColumn.Expression = "SalePrice-PaidUpSum";
         }
         
         public delegate void TenementsRowChangeEventHandler(object sender, TenementsRowChangeEvent e);
@@ -1121,11 +1130,23 @@ namespace TVMS.DataService {
             
             private global::System.Data.DataColumn columnEmployeeId;
             
+            private global::System.Data.DataColumn columnPaidUpSum;
+            
+            private global::System.Data.DataColumn columnNonPayment;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public SalesDataTable() {
+            public SalesDataTable() : 
+                    this(false) {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public SalesDataTable(bool initExpressions) {
                 this.TableName = "Sales";
                 this.BeginInit();
                 this.InitClass();
+                if ((initExpressions == true)) {
+                    this.InitExpressions();
+                }
                 this.EndInit();
             }
             
@@ -1369,6 +1390,20 @@ namespace TVMS.DataService {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn PaidUpSumColumn {
+                get {
+                    return this.columnPaidUpSum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn NonPaymentColumn {
+                get {
+                    return this.columnNonPayment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1394,6 +1429,89 @@ namespace TVMS.DataService {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void AddSalesRow(SalesRow row) {
                 this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public SalesRow AddSalesRow(
+                        string ContractSn, 
+                        int ContractType, 
+                        System.DateTime ContractSigningDate, 
+                        decimal SalePrice, 
+                        System.DateTime PayingDate, 
+                        decimal Deposit, 
+                        System.DateTime DepositDate, 
+                        decimal Cjk, 
+                        double Cjmj, 
+                        int Cjts, 
+                        double Cjyy, 
+                        decimal Imprest1, 
+                        System.DateTime Imprest1Date, 
+                        int Imprest1State, 
+                        decimal Imprest2, 
+                        System.DateTime Imprest2Date, 
+                        int Imprest2State, 
+                        decimal Imprest3, 
+                        System.DateTime Imprest3Date, 
+                        int Imprest3State, 
+                        decimal Imprest4, 
+                        System.DateTime Imprest4Date, 
+                        int Imprest4State, 
+                        decimal Imprest5, 
+                        System.DateTime Imprest5Date, 
+                        int Imprest5State, 
+                        string Remark, 
+                        QuartersRow parentQuartersRowByFK_Sales_Quarters, 
+                        CustomersRow parentCustomersRowByFK_Sales_Customers, 
+                        EmployeesRow parentEmployeesRowByFK_Sales_Employees, 
+                        decimal PaidUpSum, 
+                        decimal NonPayment) {
+                SalesRow rowSalesRow = ((SalesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        ContractSn,
+                        ContractType,
+                        ContractSigningDate,
+                        SalePrice,
+                        PayingDate,
+                        Deposit,
+                        DepositDate,
+                        Cjk,
+                        Cjmj,
+                        Cjts,
+                        Cjyy,
+                        Imprest1,
+                        Imprest1Date,
+                        Imprest1State,
+                        Imprest2,
+                        Imprest2Date,
+                        Imprest2State,
+                        Imprest3,
+                        Imprest3Date,
+                        Imprest3State,
+                        Imprest4,
+                        Imprest4Date,
+                        Imprest4State,
+                        Imprest5,
+                        Imprest5Date,
+                        Imprest5State,
+                        Remark,
+                        null,
+                        null,
+                        null,
+                        PaidUpSum,
+                        NonPayment};
+                if ((parentQuartersRowByFK_Sales_Quarters != null)) {
+                    columnValuesArray[28] = parentQuartersRowByFK_Sales_Quarters[0];
+                }
+                if ((parentCustomersRowByFK_Sales_Customers != null)) {
+                    columnValuesArray[29] = parentCustomersRowByFK_Sales_Customers[0];
+                }
+                if ((parentEmployeesRowByFK_Sales_Employees != null)) {
+                    columnValuesArray[30] = parentEmployeesRowByFK_Sales_Employees[0];
+                }
+                rowSalesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSalesRow);
+                return rowSalesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1458,6 +1576,8 @@ namespace TVMS.DataService {
                         Imprest5Date,
                         Imprest5State,
                         Remark,
+                        null,
+                        null,
                         null,
                         null,
                         null};
@@ -1531,6 +1651,8 @@ namespace TVMS.DataService {
                 this.columnQuartersId = base.Columns["QuartersId"];
                 this.columnCustomerId = base.Columns["CustomerId"];
                 this.columnEmployeeId = base.Columns["EmployeeId"];
+                this.columnPaidUpSum = base.Columns["PaidUpSum"];
+                this.columnNonPayment = base.Columns["NonPayment"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1597,6 +1719,10 @@ namespace TVMS.DataService {
                 base.Columns.Add(this.columnCustomerId);
                 this.columnEmployeeId = new global::System.Data.DataColumn("EmployeeId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmployeeId);
+                this.columnPaidUpSum = new global::System.Data.DataColumn("PaidUpSum", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaidUpSum);
+                this.columnNonPayment = new global::System.Data.DataColumn("NonPayment", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNonPayment);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSaleId}, true));
                 this.columnSaleId.AutoIncrement = true;
@@ -1604,6 +1730,8 @@ namespace TVMS.DataService {
                 this.columnSaleId.Unique = true;
                 this.columnContractSn.MaxLength = 30;
                 this.columnRemark.MaxLength = 100;
+                this.columnPaidUpSum.ReadOnly = true;
+                this.columnNonPayment.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1619,6 +1747,12 @@ namespace TVMS.DataService {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Type GetRowType() {
                 return typeof(SalesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitExpressions() {
+                this.PaidUpSumColumn.Expression = "Cjk+Imprest1+Imprest2+Imprest3+Imprest4+Imprest5";
+                this.NonPaymentColumn.Expression = "SalePrice-PaidUpSum";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3359,6 +3493,36 @@ namespace TVMS.DataService {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal PaidUpSum {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSales.PaidUpSumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Sales”中列“PaidUpSum”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableSales.PaidUpSumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal NonPayment {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSales.NonPaymentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Sales”中列“NonPayment”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableSales.NonPaymentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public QuartersRow TVMS_QuartersRow {
                 get {
                     return ((QuartersRow)(this.GetParentRow(this.Table.ParentRelations["FK_Sales_Quarters"])));
@@ -3686,6 +3850,26 @@ namespace TVMS.DataService {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetEmployeeIdNull() {
                 this[this.tableSales.EmployeeIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsPaidUpSumNull() {
+                return this.IsNull(this.tableSales.PaidUpSumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetPaidUpSumNull() {
+                this[this.tableSales.PaidUpSumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsNonPaymentNull() {
+                return this.IsNull(this.tableSales.NonPaymentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetNonPaymentNull() {
+                this[this.tableSales.NonPaymentColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5538,7 +5722,7 @@ WHERE   (TVMS_Sales.EmployeeId = ?)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataContainerTDS.SalesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataContainerTDS.SalesDataTable dataTable = new DataContainerTDS.SalesDataTable();
+            DataContainerTDS.SalesDataTable dataTable = new DataContainerTDS.SalesDataTable(true);
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

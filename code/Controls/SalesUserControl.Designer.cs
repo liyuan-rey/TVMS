@@ -252,7 +252,7 @@
             // 
             cjyyLabel.AutoSize = true;
             cjyyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            cjyyLabel.Location = new System.Drawing.Point(306, 140);
+            cjyyLabel.Location = new System.Drawing.Point(315, 140);
             cjyyLabel.Name = "cjyyLabel";
             cjyyLabel.Size = new System.Drawing.Size(59, 28);
             cjyyLabel.TabIndex = 47;
@@ -274,7 +274,7 @@
             // 
             cjmjLabel.AutoSize = true;
             cjmjLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            cjmjLabel.Location = new System.Drawing.Point(306, 112);
+            cjmjLabel.Location = new System.Drawing.Point(315, 112);
             cjmjLabel.Name = "cjmjLabel";
             cjmjLabel.Size = new System.Drawing.Size(59, 28);
             cjmjLabel.TabIndex = 45;
@@ -296,7 +296,7 @@
             // 
             depositDateLabel.AutoSize = true;
             depositDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            depositDateLabel.Location = new System.Drawing.Point(306, 84);
+            depositDateLabel.Location = new System.Drawing.Point(315, 84);
             depositDateLabel.Name = "depositDateLabel";
             depositDateLabel.Size = new System.Drawing.Size(59, 28);
             depositDateLabel.TabIndex = 43;
@@ -318,7 +318,7 @@
             // 
             payingDateLabel.AutoSize = true;
             payingDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            payingDateLabel.Location = new System.Drawing.Point(306, 56);
+            payingDateLabel.Location = new System.Drawing.Point(315, 56);
             payingDateLabel.Name = "payingDateLabel";
             payingDateLabel.Size = new System.Drawing.Size(59, 28);
             payingDateLabel.TabIndex = 41;
@@ -351,7 +351,7 @@
             // 
             contractSigningDateLabel.AutoSize = true;
             contractSigningDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            contractSigningDateLabel.Location = new System.Drawing.Point(306, 28);
+            contractSigningDateLabel.Location = new System.Drawing.Point(315, 28);
             contractSigningDateLabel.Name = "contractSigningDateLabel";
             contractSigningDateLabel.Size = new System.Drawing.Size(59, 28);
             contractSigningDateLabel.TabIndex = 38;
@@ -362,7 +362,7 @@
             // 
             contractSnLabel.AutoSize = true;
             contractSnLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            contractSnLabel.Location = new System.Drawing.Point(306, 0);
+            contractSnLabel.Location = new System.Drawing.Point(315, 0);
             contractSnLabel.Name = "contractSnLabel";
             contractSnLabel.Size = new System.Drawing.Size(59, 28);
             contractSnLabel.TabIndex = 36;
@@ -409,6 +409,7 @@
             this.salesDataGridView.AllowUserToDeleteRows = false;
             this.salesDataGridView.AllowUserToOrderColumns = true;
             this.salesDataGridView.AutoGenerateColumns = false;
+            this.salesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.salesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -760,7 +761,7 @@
             this.remarkTextBox.Multiline = true;
             this.remarkTextBox.Name = "remarkTextBox";
             this.tableLayoutPanel3.SetRowSpan(this.remarkTextBox, 2);
-            this.remarkTextBox.Size = new System.Drawing.Size(520, 56);
+            this.remarkTextBox.Size = new System.Drawing.Size(537, 56);
             this.remarkTextBox.TabIndex = 81;
             // 
             // flowLayoutPanel6
@@ -770,10 +771,10 @@
             this.flowLayoutPanel6.Controls.Add(this.imprest5DateDateTimePicker);
             this.flowLayoutPanel6.Controls.Add(this.imprest5StateComboBox);
             this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(303, 280);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(312, 280);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(296, 28);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(304, 28);
             this.flowLayoutPanel6.TabIndex = 80;
             this.flowLayoutPanel6.WrapContents = false;
             // 
@@ -804,7 +805,7 @@
             this.imprest5TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imprest5TextBox.Location = new System.Drawing.Point(76, 283);
             this.imprest5TextBox.Name = "imprest5TextBox";
-            this.imprest5TextBox.Size = new System.Drawing.Size(224, 22);
+            this.imprest5TextBox.Size = new System.Drawing.Size(233, 22);
             this.imprest5TextBox.TabIndex = 78;
             // 
             // flowLayoutPanel5
@@ -814,10 +815,10 @@
             this.flowLayoutPanel5.Controls.Add(this.imprest4DateDateTimePicker);
             this.flowLayoutPanel5.Controls.Add(this.imprest4StateComboBox);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(303, 252);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(312, 252);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(296, 28);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(304, 28);
             this.flowLayoutPanel5.TabIndex = 77;
             this.flowLayoutPanel5.WrapContents = false;
             // 
@@ -848,7 +849,7 @@
             this.imprest4TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imprest4TextBox.Location = new System.Drawing.Point(76, 255);
             this.imprest4TextBox.Name = "imprest4TextBox";
-            this.imprest4TextBox.Size = new System.Drawing.Size(224, 22);
+            this.imprest4TextBox.Size = new System.Drawing.Size(233, 22);
             this.imprest4TextBox.TabIndex = 76;
             // 
             // flowLayoutPanel4
@@ -858,10 +859,10 @@
             this.flowLayoutPanel4.Controls.Add(this.imprest3DateDateTimePicker);
             this.flowLayoutPanel4.Controls.Add(this.imprest3StateComboBox);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(303, 224);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(312, 224);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(296, 28);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(304, 28);
             this.flowLayoutPanel4.TabIndex = 71;
             this.flowLayoutPanel4.WrapContents = false;
             // 
@@ -892,7 +893,7 @@
             this.imprest3TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imprest3TextBox.Location = new System.Drawing.Point(76, 227);
             this.imprest3TextBox.Name = "imprest3TextBox";
-            this.imprest3TextBox.Size = new System.Drawing.Size(224, 22);
+            this.imprest3TextBox.Size = new System.Drawing.Size(233, 22);
             this.imprest3TextBox.TabIndex = 70;
             // 
             // imprest2TextBox
@@ -901,7 +902,7 @@
             this.imprest2TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imprest2TextBox.Location = new System.Drawing.Point(76, 199);
             this.imprest2TextBox.Name = "imprest2TextBox";
-            this.imprest2TextBox.Size = new System.Drawing.Size(224, 22);
+            this.imprest2TextBox.Size = new System.Drawing.Size(233, 22);
             this.imprest2TextBox.TabIndex = 67;
             // 
             // imprest1TextBox
@@ -910,16 +911,16 @@
             this.imprest1TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imprest1TextBox.Location = new System.Drawing.Point(76, 171);
             this.imprest1TextBox.Name = "imprest1TextBox";
-            this.imprest1TextBox.Size = new System.Drawing.Size(224, 22);
+            this.imprest1TextBox.Size = new System.Drawing.Size(233, 22);
             this.imprest1TextBox.TabIndex = 49;
             // 
             // cjyyTextBox
             // 
             this.cjyyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Cjyy", true));
             this.cjyyTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cjyyTextBox.Location = new System.Drawing.Point(371, 143);
+            this.cjyyTextBox.Location = new System.Drawing.Point(380, 143);
             this.cjyyTextBox.Name = "cjyyTextBox";
-            this.cjyyTextBox.Size = new System.Drawing.Size(225, 22);
+            this.cjyyTextBox.Size = new System.Drawing.Size(233, 22);
             this.cjyyTextBox.TabIndex = 48;
             // 
             // cjtsTextBox
@@ -928,16 +929,16 @@
             this.cjtsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cjtsTextBox.Location = new System.Drawing.Point(76, 143);
             this.cjtsTextBox.Name = "cjtsTextBox";
-            this.cjtsTextBox.Size = new System.Drawing.Size(224, 22);
+            this.cjtsTextBox.Size = new System.Drawing.Size(233, 22);
             this.cjtsTextBox.TabIndex = 47;
             // 
             // cjmjTextBox
             // 
             this.cjmjTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "Cjmj", true));
             this.cjmjTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cjmjTextBox.Location = new System.Drawing.Point(371, 115);
+            this.cjmjTextBox.Location = new System.Drawing.Point(380, 115);
             this.cjmjTextBox.Name = "cjmjTextBox";
-            this.cjmjTextBox.Size = new System.Drawing.Size(225, 22);
+            this.cjmjTextBox.Size = new System.Drawing.Size(233, 22);
             this.cjmjTextBox.TabIndex = 46;
             // 
             // cjkTextBox
@@ -946,16 +947,16 @@
             this.cjkTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cjkTextBox.Location = new System.Drawing.Point(76, 115);
             this.cjkTextBox.Name = "cjkTextBox";
-            this.cjkTextBox.Size = new System.Drawing.Size(224, 22);
+            this.cjkTextBox.Size = new System.Drawing.Size(233, 22);
             this.cjkTextBox.TabIndex = 45;
             // 
             // depositDateDateTimePicker
             // 
             this.depositDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "DepositDate", true));
             this.depositDateDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.depositDateDateTimePicker.Location = new System.Drawing.Point(371, 87);
+            this.depositDateDateTimePicker.Location = new System.Drawing.Point(380, 87);
             this.depositDateDateTimePicker.Name = "depositDateDateTimePicker";
-            this.depositDateDateTimePicker.Size = new System.Drawing.Size(225, 22);
+            this.depositDateDateTimePicker.Size = new System.Drawing.Size(233, 22);
             this.depositDateDateTimePicker.TabIndex = 44;
             // 
             // depositTextBox
@@ -964,16 +965,16 @@
             this.depositTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.depositTextBox.Location = new System.Drawing.Point(76, 87);
             this.depositTextBox.Name = "depositTextBox";
-            this.depositTextBox.Size = new System.Drawing.Size(224, 22);
+            this.depositTextBox.Size = new System.Drawing.Size(233, 22);
             this.depositTextBox.TabIndex = 43;
             // 
             // payingDateDateTimePicker
             // 
             this.payingDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "PayingDate", true));
             this.payingDateDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.payingDateDateTimePicker.Location = new System.Drawing.Point(371, 59);
+            this.payingDateDateTimePicker.Location = new System.Drawing.Point(380, 59);
             this.payingDateDateTimePicker.Name = "payingDateDateTimePicker";
-            this.payingDateDateTimePicker.Size = new System.Drawing.Size(225, 22);
+            this.payingDateDateTimePicker.Size = new System.Drawing.Size(233, 22);
             this.payingDateDateTimePicker.TabIndex = 42;
             // 
             // salePriceTextBox
@@ -982,7 +983,7 @@
             this.salePriceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salePriceTextBox.Location = new System.Drawing.Point(76, 59);
             this.salePriceTextBox.Name = "salePriceTextBox";
-            this.salePriceTextBox.Size = new System.Drawing.Size(224, 22);
+            this.salePriceTextBox.Size = new System.Drawing.Size(233, 22);
             this.salePriceTextBox.TabIndex = 41;
             // 
             // contractTypeComboBox
@@ -996,25 +997,25 @@
             "销售"});
             this.contractTypeComboBox.Location = new System.Drawing.Point(76, 31);
             this.contractTypeComboBox.Name = "contractTypeComboBox";
-            this.contractTypeComboBox.Size = new System.Drawing.Size(224, 22);
+            this.contractTypeComboBox.Size = new System.Drawing.Size(233, 22);
             this.contractTypeComboBox.TabIndex = 40;
             // 
             // contractSigningDateDateTimePicker
             // 
             this.contractSigningDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.salesBindingSource, "ContractSigningDate", true));
             this.contractSigningDateDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contractSigningDateDateTimePicker.Location = new System.Drawing.Point(371, 31);
+            this.contractSigningDateDateTimePicker.Location = new System.Drawing.Point(380, 31);
             this.contractSigningDateDateTimePicker.Name = "contractSigningDateDateTimePicker";
-            this.contractSigningDateDateTimePicker.Size = new System.Drawing.Size(225, 22);
+            this.contractSigningDateDateTimePicker.Size = new System.Drawing.Size(233, 22);
             this.contractSigningDateDateTimePicker.TabIndex = 39;
             // 
             // contractSnTextBox
             // 
             this.contractSnTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesBindingSource, "ContractSn", true));
             this.contractSnTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contractSnTextBox.Location = new System.Drawing.Point(371, 3);
+            this.contractSnTextBox.Location = new System.Drawing.Point(380, 3);
             this.contractSnTextBox.Name = "contractSnTextBox";
-            this.contractSnTextBox.Size = new System.Drawing.Size(225, 22);
+            this.contractSnTextBox.Size = new System.Drawing.Size(233, 22);
             this.contractSnTextBox.TabIndex = 37;
             // 
             // saleIdTextBox
@@ -1024,7 +1025,7 @@
             this.saleIdTextBox.Location = new System.Drawing.Point(76, 3);
             this.saleIdTextBox.Name = "saleIdTextBox";
             this.saleIdTextBox.ReadOnly = true;
-            this.saleIdTextBox.Size = new System.Drawing.Size(224, 22);
+            this.saleIdTextBox.Size = new System.Drawing.Size(233, 22);
             this.saleIdTextBox.TabIndex = 36;
             // 
             // flowLayoutPanel1
@@ -1034,10 +1035,10 @@
             this.flowLayoutPanel1.Controls.Add(this.imprest1DateDateTimePicker);
             this.flowLayoutPanel1.Controls.Add(this.imprest1StateComboBox);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(303, 168);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(312, 168);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(296, 28);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(304, 28);
             this.flowLayoutPanel1.TabIndex = 65;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -1069,10 +1070,10 @@
             this.flowLayoutPanel2.Controls.Add(this.imprest2DateDateTimePicker);
             this.flowLayoutPanel2.Controls.Add(this.imprest2StateComboBox);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(303, 196);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(312, 196);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(296, 28);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(304, 28);
             this.flowLayoutPanel2.TabIndex = 68;
             this.flowLayoutPanel2.WrapContents = false;
             // 
@@ -1114,7 +1115,7 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(306, 384);
+            this.label5.Location = new System.Drawing.Point(315, 384);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 28);
             this.label5.TabIndex = 84;
@@ -1127,16 +1128,16 @@
             this.textBox4.Location = new System.Drawing.Point(76, 387);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(224, 22);
+            this.textBox4.Size = new System.Drawing.Size(233, 22);
             this.textBox4.TabIndex = 85;
             // 
             // textBox5
             // 
             this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Location = new System.Drawing.Point(371, 387);
+            this.textBox5.Location = new System.Drawing.Point(380, 387);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(225, 22);
+            this.textBox5.Size = new System.Drawing.Size(233, 22);
             this.textBox5.TabIndex = 86;
             // 
             // tabPage2
@@ -1145,7 +1146,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(629, 292);
+            this.tabPage2.Size = new System.Drawing.Size(626, 292);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "住宅信息";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1154,7 +1155,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 21);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(629, 292);
+            this.tabPage3.Size = new System.Drawing.Size(626, 292);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "客户信息";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1163,7 +1164,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 21);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(629, 292);
+            this.tabPage4.Size = new System.Drawing.Size(626, 292);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "销售员信息";
             this.tabPage4.UseVisualStyleBackColor = true;

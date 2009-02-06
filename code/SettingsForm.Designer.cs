@@ -28,31 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.connStringTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.glossaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataContainerTDS = new TVMS.DataService.DataContainerTDS();
+            this.glossaryUserControl = new TVMS.Controls.GlossaryUserControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.glossaryTableAdapter = new TVMS.DataService.DataContainerTDSTableAdapters.GlossaryTableAdapter();
-            this.glossaryUserControl1 = new TVMS.Controls.GlossaryUserControl();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.glossaryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -61,30 +51,9 @@
             this.tabControl1.Size = new System.Drawing.Size(404, 201);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.connStringTextBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage1.Size = new System.Drawing.Size(396, 174);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "连接";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // connStringTextBox
-            // 
-            this.connStringTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.connStringTextBox.Location = new System.Drawing.Point(5, 5);
-            this.connStringTextBox.Multiline = true;
-            this.connStringTextBox.Name = "connStringTextBox";
-            this.connStringTextBox.Size = new System.Drawing.Size(386, 164);
-            this.connStringTextBox.TabIndex = 0;
-            this.connStringTextBox.Tag = "";
-            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.glossaryUserControl1);
+            this.tabPage2.Controls.Add(this.glossaryUserControl);
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
@@ -93,15 +62,13 @@
             this.tabPage2.Text = "字典";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // glossaryBindingSource
+            // glossaryUserControl
             // 
-            this.glossaryBindingSource.DataMember = "Glossary";
-            this.glossaryBindingSource.DataSource = this.dataContainerTDS;
-            // 
-            // dataContainerTDS
-            // 
-            this.dataContainerTDS.DataSetName = "DataContainerTDS";
-            this.dataContainerTDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.glossaryUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.glossaryUserControl.Location = new System.Drawing.Point(5, 5);
+            this.glossaryUserControl.Name = "glossaryUserControl";
+            this.glossaryUserControl.Size = new System.Drawing.Size(386, 164);
+            this.glossaryUserControl.TabIndex = 0;
             // 
             // panel1
             // 
@@ -144,18 +111,6 @@
             this.panel2.Size = new System.Drawing.Size(404, 201);
             this.panel2.TabIndex = 2;
             // 
-            // glossaryTableAdapter
-            // 
-            this.glossaryTableAdapter.ClearBeforeFill = true;
-            // 
-            // glossaryUserControl1
-            // 
-            this.glossaryUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.glossaryUserControl1.Location = new System.Drawing.Point(5, 5);
-            this.glossaryUserControl1.Name = "glossaryUserControl1";
-            this.glossaryUserControl1.Size = new System.Drawing.Size(386, 164);
-            this.glossaryUserControl1.TabIndex = 0;
-            // 
             // SettingsForm
             // 
             this.AcceptButton = this.okButton;
@@ -176,11 +131,7 @@
             this.Text = "设置";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.glossaryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataContainerTDS)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -190,16 +141,11 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox connStringTextBox;
-        private TVMS.DataService.DataContainerTDS dataContainerTDS;
-        private System.Windows.Forms.BindingSource glossaryBindingSource;
-        private TVMS.DataService.DataContainerTDSTableAdapters.GlossaryTableAdapter glossaryTableAdapter;
-        private TVMS.Controls.GlossaryUserControl glossaryUserControl1;
+        private TVMS.Controls.GlossaryUserControl glossaryUserControl;
     }
 }

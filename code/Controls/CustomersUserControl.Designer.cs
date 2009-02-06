@@ -175,6 +175,7 @@
             this.customersDataGridView.AllowUserToDeleteRows = false;
             this.customersDataGridView.AllowUserToOrderColumns = true;
             this.customersDataGridView.AutoGenerateColumns = false;
+            this.customersDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.customersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -333,6 +334,7 @@
             this.quartersDataGridView.AllowUserToDeleteRows = false;
             this.quartersDataGridView.AllowUserToOrderColumns = true;
             this.quartersDataGridView.AutoGenerateColumns = false;
+            this.quartersDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.quartersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn36,
             this.dataGridViewTextBoxColumn37,

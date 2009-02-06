@@ -10,13 +10,11 @@ using TVMS.DataService.DataContainerTDSTableAdapters;
 
 namespace TVMS.Controls
 {
-    public partial class GlossaryUserControl : UserControl
+    public partial class GlossaryUserControl : UserControl, ITvmsUserControl
     {
         public GlossaryUserControl()
         {
             InitializeComponent();
-
-            categoryToolStripRefreshButton.PerformClick();
         }
 
         public bool Save(bool showMessage)
@@ -48,19 +46,7 @@ namespace TVMS.Controls
 
         private void categoryToolStripRefreshButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                itemBindingSource.CancelEdit();
-                categoryBindingSource.CancelEdit();
-
-                dataContainerTDS.Clear();
-
-                glossaryTableAdapter.Fill(dataContainerTDS.Glossary);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("读取字典列表失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            RefreshData();
         }
 
         private void itemToolStripRefreshButton_Click(object sender, EventArgs e)
@@ -151,5 +137,26 @@ namespace TVMS.Controls
                 row.Delete();
             }
         }
+
+        #region ITvmsUserControl 成员
+
+        public void RefreshData()
+        {
+            try
+            {
+                itemBindingSource.CancelEdit();
+                categoryBindingSource.CancelEdit();
+
+                dataContainerTDS.Clear();
+
+                glossaryTableAdapter.Fill(dataContainerTDS.Glossary);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("读取字典列表失败。\r\n" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
     }
 }

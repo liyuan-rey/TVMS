@@ -110,6 +110,7 @@
             this.categoryDataGridView.AllowUserToAddRows = false;
             this.categoryDataGridView.AllowUserToDeleteRows = false;
             this.categoryDataGridView.AutoGenerateColumns = false;
+            this.categoryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.categoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7,
@@ -240,6 +241,7 @@
             this.itemDataGridView.AllowUserToAddRows = false;
             this.itemDataGridView.AllowUserToDeleteRows = false;
             this.itemDataGridView.AutoGenerateColumns = false;
+            this.itemDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.itemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,

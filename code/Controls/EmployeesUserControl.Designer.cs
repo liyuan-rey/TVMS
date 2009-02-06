@@ -189,6 +189,7 @@
             this.employeesDataGridView.AllowUserToDeleteRows = false;
             this.employeesDataGridView.AllowUserToOrderColumns = true;
             this.employeesDataGridView.AutoGenerateColumns = false;
+            this.employeesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.employeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -364,6 +365,7 @@
             this.quartersDataGridView.AllowUserToDeleteRows = false;
             this.quartersDataGridView.AllowUserToOrderColumns = true;
             this.quartersDataGridView.AutoGenerateColumns = false;
+            this.quartersDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.quartersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
